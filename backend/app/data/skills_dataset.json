@@ -1,0 +1,497 @@
+{
+  "software_engineering": {
+    "synonyms": ["software engineer","sde","software developer","programmer","backend engineer","fullstack","full stack","software development engineer"],
+    "core_skills": {
+      "Python": ["python","python3","python 3","py"],
+      "Java": ["java","core java","java se","java ee","j2ee","java 8","java 11","java 17"],
+      "JavaScript": ["javascript","js","es6","es2015","vanilla js","ecmascript"],
+      "TypeScript": ["typescript","ts"],
+      "C++": ["c++","cpp","c plus plus"],
+      "C#": ["c#","csharp","c sharp",".net c#"],
+      "Go": ["go","golang"],
+      "SQL": ["sql","structured query language","sequel"],
+      "Git": ["git","github","gitlab","bitbucket","version control"],
+      "REST API": ["rest api","restful api","rest","restful","api development","http api","web api"],
+      "Linux": ["linux","unix","ubuntu","centos","debian","bash scripting","bash"],
+      "Docker": ["docker","containerization","containers"],
+      "Agile": ["agile","scrum","kanban","sprint","agile methodology"],
+      "Data Structures": ["data structures","dsa","algorithms","data structures and algorithms"],
+      "OOP": ["oop","object oriented","object-oriented programming","oops"],
+      "PostgreSQL": ["postgresql","postgres","psql"],
+      "MongoDB": ["mongodb","mongo","nosql"],
+      "AWS": ["aws","amazon web services","amazon aws"],
+      "Unit Testing": ["unit testing","junit","pytest","tdd","test driven development"],
+      "Spring Boot": ["spring boot","spring","spring framework","spring mvc"]
+    },
+    "advanced_skills": {
+      "Kubernetes": ["kubernetes","k8s","container orchestration"],
+      "Terraform": ["terraform","infrastructure as code","iac"],
+      "Kafka": ["kafka","apache kafka","message queue","event streaming"],
+      "Redis": ["redis","in-memory cache","caching"],
+      "GraphQL": ["graphql","graph ql"],
+      "Microservices": ["microservices","micro services","microservice architecture","service oriented"],
+      "CI/CD": ["ci/cd","cicd","continuous integration","continuous deployment","continuous delivery","jenkins","github actions","gitlab ci"],
+      "System Design": ["system design","distributed systems","high level design","hld","low level design","lld"],
+      "Elasticsearch": ["elasticsearch","elastic search","opensearch"],
+      "Machine Learning": ["machine learning","ml","ml models"],
+      "Azure": ["azure","microsoft azure","azure cloud"],
+      "GCP": ["gcp","google cloud","google cloud platform"]
+    },
+    "soft_skills": {
+      "Problem Solving": ["problem solving","analytical thinking","troubleshooting","debugging"],
+      "Communication": ["communication","verbal communication","written communication"],
+      "Teamwork": ["teamwork","team player","collaboration","cross-functional"],
+      "Leadership": ["leadership","team lead","tech lead","mentoring","mentorship"],
+      "Adaptability": ["adaptability","flexibility","open to change"],
+      "Time Management": ["time management","deadline management","prioritization"],
+      "Attention to Detail": ["attention to detail","accuracy","precision","detail oriented"],
+      "Creativity": ["creativity","creative thinking","innovation"]
+    }
+  },
+
+  "frontend_development": {
+    "synonyms": ["frontend developer","front end developer","ui developer","web developer","react developer","angular developer","vue developer"],
+    "core_skills": {
+      "React": ["react","reactjs","react.js","react js"],
+      "HTML": ["html","html5","hypertext markup language"],
+      "CSS": ["css","css3","cascading style sheets"],
+      "JavaScript": ["javascript","js","es6","ecmascript","vanilla js"],
+      "TypeScript": ["typescript","ts"],
+      "Tailwind CSS": ["tailwind","tailwindcss","tailwind css"],
+      "Git": ["git","github","version control","gitlab"],
+      "REST API": ["rest api","restful","api integration","fetch api","axios"],
+      "Responsive Design": ["responsive design","responsive web design","mobile-first","media queries"],
+      "Figma": ["figma","design tools"],
+      "Vue.js": ["vue","vuejs","vue.js"],
+      "Next.js": ["next.js","nextjs","next js","ssr","server side rendering"]
+    },
+    "advanced_skills": {
+      "Redux": ["redux","redux toolkit","state management","zustand","recoil"],
+      "Webpack": ["webpack","vite","parcel","bundler","build tools"],
+      "Testing": ["jest","vitest","react testing library","cypress","playwright","e2e testing"],
+      "Web Performance": ["web performance","core web vitals","lighthouse","page speed","lazy loading"],
+      "GraphQL": ["graphql","apollo client"],
+      "Storybook": ["storybook","component library","design system","ui library"],
+      "Accessibility": ["accessibility","wcag","a11y","aria"],
+      "Angular": ["angular","angularjs","ng"]
+    },
+    "soft_skills": {
+      "Attention to Detail": ["attention to detail","pixel perfect","detail oriented"],
+      "Creativity": ["creativity","creative thinking","ui sensibility"],
+      "Collaboration": ["collaboration","cross-functional","designer collaboration"],
+      "Communication": ["communication","verbal communication","written communication"],
+      "Adaptability": ["adaptability","open to feedback","flexibility"]
+    }
+  },
+
+  "data_analyst": {
+    "synonyms": ["data analyst","business analyst","analytics analyst","reporting analyst","bi analyst","business intelligence analyst","mis analyst"],
+    "core_skills": {
+      "SQL": ["sql","structured query language","mysql","postgresql","oracle sql","ms sql","sql server","t-sql","pl/sql"],
+      "Excel": ["excel","ms excel","microsoft excel","advanced excel","excel vba","spreadsheets","pivot tables","vlookup","xlookup","power query"],
+      "Power BI": ["power bi","powerbi","microsoft power bi","power bi desktop","dax","power query"],
+      "Tableau": ["tableau","tableau desktop","tableau public","tableau server"],
+      "Python": ["python","python for data analysis","python analytics"],
+      "Data Visualization": ["data visualization","data viz","charts","dashboards","reporting"],
+      "Google Analytics": ["google analytics","ga4","universal analytics","google analytics 4"],
+      "Statistical Analysis": ["statistical analysis","statistics","statistical modeling","hypothesis testing","regression analysis"],
+      "Data Cleaning": ["data cleaning","data wrangling","data preprocessing","etl","data quality"],
+      "MIS Reporting": ["mis","mis reporting","mis reports","management information system","management reporting"]
+    },
+    "advanced_skills": {
+      "Pandas": ["pandas","dataframes","numpy","scipy"],
+      "Machine Learning": ["machine learning","ml","predictive analytics","scikit-learn","sklearn"],
+      "Looker": ["looker","looker studio","google data studio"],
+      "BigQuery": ["bigquery","google bigquery"],
+      "Snowflake": ["snowflake","snowflake data warehouse"],
+      "A/B Testing": ["a/b testing","ab testing","split testing","experiment design"],
+      "R": ["r","r programming","r language","ggplot","dplyr"],
+      "Airflow": ["airflow","apache airflow","workflow orchestration"]
+    },
+    "soft_skills": {
+      "Analytical Thinking": ["analytical thinking","analytical skills","critical thinking","data driven"],
+      "Communication": ["communication","storytelling","data storytelling","presentation"],
+      "Attention to Detail": ["attention to detail","accuracy","detail oriented"],
+      "Problem Solving": ["problem solving","solution focused","insights driven"],
+      "Collaboration": ["collaboration","cross-functional","stakeholder collaboration"]
+
+    }
+  },
+
+  "data_science": {
+    "synonyms": ["data scientist","ml engineer","machine learning engineer","ai engineer","applied scientist","research scientist"],
+    "core_skills": {
+      "Python": ["python","python3","python programming"],
+      "Machine Learning": ["machine learning","ml","supervised learning","unsupervised learning","classification","regression","clustering"],
+      "Deep Learning": ["deep learning","neural networks","neural network","dl"],
+      "Pandas": ["pandas","dataframes","data manipulation"],
+      "NumPy": ["numpy","numerical computing"],
+      "Scikit-learn": ["scikit-learn","sklearn","scikit learn"],
+      "SQL": ["sql","mysql","postgresql","database querying"],
+      "Statistics": ["statistics","statistical modeling","probability","hypothesis testing"],
+      "Feature Engineering": ["feature engineering","feature selection","feature extraction"],
+      "Data Visualization": ["data visualization","matplotlib","seaborn","plotly"]
+    },
+    "advanced_skills": {
+      "TensorFlow": ["tensorflow","tf","keras"],
+      "PyTorch": ["pytorch","torch"],
+      "NLP": ["nlp","natural language processing","text analytics","sentiment analysis","named entity recognition","ner"],
+      "Computer Vision": ["computer vision","cv","image processing","object detection"],
+      "XGBoost": ["xgboost","lightgbm","catboost","gradient boosting"],
+      "MLOps": ["mlops","ml pipeline","model deployment","mlflow","model monitoring"],
+      "Spark": ["spark","apache spark","pyspark","big data"],
+      "LLM": ["llm","large language models","gpt","bert","transformers","hugging face","generative ai","rag"],
+      "Time Series": ["time series","forecasting","arima","prophet"]
+    },
+    "soft_skills": {
+      "Research": ["research","research skills","scientific thinking"],
+      "Communication": ["communication","technical writing","presentation"],
+      "Problem Solving": ["problem solving","analytical thinking","critical thinking"],
+      "Collaboration": ["collaboration","cross-functional","stakeholder collaboration"],
+      "Adaptability": ["adaptability","fast learning","intellectual curiosity"]
+    }
+  },
+
+  "accounting": {
+    "synonyms": ["accountant","accounts executive","accounts officer","finance executive","bookkeeper","audit associate","tax associate","ca","cpa","chartered accountant","accounts manager"],
+    "core_skills": {
+      "Accounting": ["accounting","accountancy","bookkeeping","book keeping","ledger","ledger management","general ledger","gl","accounts"],
+      "Tally": ["tally","tally erp","tally erp 9","tally prime","tally.erp","tally software"],
+      "GST": ["gst","goods and services tax","gst filing","gst return","gstr","gst compliance"],
+      "TDS": ["tds","tax deducted at source","tds return","tds filing","tds compliance"],
+      "Excel": ["excel","ms excel","microsoft excel","advanced excel","pivot tables","vlookup","spreadsheets"],
+      "Tax": ["tax","taxation","income tax","corporate tax","itr","tax return","tax filing","direct tax","indirect tax"],
+      "Audit": ["audit","auditing","internal audit","statutory audit","audit report","audit compliance"],
+      "Accounts Payable": ["accounts payable","ap","vendor payments","payment processing","creditors"],
+      "Accounts Receivable": ["accounts receivable","ar","collections","debtors","invoice management"],
+      "Financial Reporting": ["financial reporting","financial statements","balance sheet","profit loss","p&l","income statement"],
+      "Reconciliation": ["reconciliation","bank reconciliation","account reconciliation","brs"],
+      "Bookkeeping": ["bookkeeping","book keeping","journals","ledgers","trial balance"]
+    },
+    "advanced_skills": {
+      "GAAP": ["gaap","generally accepted accounting principles","us gaap","accounting standards"],
+      "IFRS": ["ifrs","international financial reporting standards","ind as","indian accounting standards"],
+      "SAP FICO": ["sap fico","sap","sap finance","sap accounting","sap erp"],
+      "ERP": ["erp","erp software","enterprise resource planning","erp system","sap erp","oracle erp","netsuite"],
+      "Cost Accounting": ["cost accounting","cost analysis","costing","management accounting","managerial accounting"],
+      "Payroll": ["payroll","payroll management","payroll processing","salary processing"],
+      "MIS": ["mis","management information system","mis reporting","mis reports"],
+      "Financial Analysis": ["financial analysis","financial modeling","variance analysis","budgeting","forecasting"],
+      "Excel Macros": ["excel macros","vba macros","excel automation","vba programming"],
+      "Audit Software": ["audit software","caseware","audit management software","audit documentation software"],
+      "Audit": ["audit","auditing","internal audit","statutory audit","audit report","audit compliance"],
+      "Taxation": ["taxation","tax","income tax","corporate tax","itr","tax return","tax filing","direct tax","indirect tax"]
+
+    },
+    "soft_skills": {
+      "Attention to Detail": ["attention to detail","accuracy","precision","detail oriented"],
+      "Integrity": ["integrity","ethics","ethical","confidentiality"],
+      "Analytical Thinking": ["analytical thinking","analytical skills","numerical ability"],
+      "Time Management": ["time management","deadline management","prioritization"],
+      "Communication": ["communication","verbal communication","written communication"]
+    }
+  },
+
+  "financial_analysis": {
+    "synonyms": ["financial analyst","finance analyst","fp&a analyst","investment analyst","equity analyst","credit analyst","treasury analyst","finance manager"],
+    "core_skills": {
+      "Financial Modeling": ["financial modeling","financial model","financial modelling","3 statement model","dcf model"],
+      "Excel": ["excel","ms excel","advanced excel","excel modeling","excel vba","pivot tables"],
+      "Valuation": ["valuation","company valuation","equity valuation","business valuation"],
+      "DCF": ["dcf","discounted cash flow","discounted cashflow","dcf analysis","dcf valuation"],
+      "Financial Statements": ["financial statements","financial statement analysis","income statement","balance sheet","cash flow statement"],
+      "Budgeting": ["budgeting","budget preparation","annual budget","budget planning","budget vs actual"],
+      "Forecasting": ["forecasting","financial forecasting","revenue forecasting","sales forecasting","projections"],
+      "Variance Analysis": ["variance analysis","budget variance","actual vs budget","variance reporting"],
+      "P&L Management": ["p&l","profit and loss","p&l management","p&l analysis"],
+      "PowerPoint": ["powerpoint","ppt","presentations","board presentations"]
+    },
+    "advanced_skills": {
+      "Bloomberg": ["bloomberg","bloomberg terminal","bloomberg data"],
+      "CFA": ["cfa","chartered financial analyst","cfa level 1","cfa level 2"],
+      "Power BI": ["power bi","powerbi","data visualization finance"],
+      "M&A": ["m&a","mergers and acquisitions","deal advisory","buy side","sell side"],
+      "LBO": ["lbo","leveraged buyout","lbo model"],
+      "Capital Markets": ["capital markets","equity markets","debt markets","ipo","investment banking"],
+      "Risk Management": ["risk management","financial risk","credit risk","market risk"],
+      "Python": ["python","python finance","quantitative analysis"]
+    },
+    "soft_skills": {
+      "Analytical Thinking": ["analytical thinking","quantitative skills","numerical reasoning"],
+      "Attention to Detail": ["attention to detail","accuracy","precision"],
+      "Communication": ["communication","stakeholder communication","presentation skills"],
+      "Problem Solving": ["problem solving","critical thinking","decision making"],
+      "Time Management": ["time management","deadline management","prioritization"]
+    }
+  },
+
+  "hr": {
+    "synonyms": ["hr executive","human resources","hr generalist","hrbp","hr business partner","people operations","hr manager","talent manager","hr officer"],
+    "core_skills": {
+      "Recruitment": ["recruitment","recruiting","talent acquisition","hiring","full cycle recruitment","end to end recruitment","campus recruitment"],
+      "Talent Acquisition": ["talent acquisition","sourcing","headhunting","talent sourcing","candidate sourcing"],
+      "Onboarding": ["onboarding","new hire onboarding","employee onboarding","induction","joining formalities"],
+      "Payroll": ["payroll","payroll management","payroll processing","salary processing","payroll compliance"],
+      "Performance Management": ["performance management","performance appraisal","appraisal","performance review","kpi","okr"],
+      "Employee Relations": ["employee relations","employee engagement","grievance handling","conflict resolution"],
+      "HR Policies": ["hr policies","policy making","sop","hr procedures","hr compliance"],
+      "HRIS": ["hris","hr software","hr system","hrms","workday","darwinbox","keka","sap hr","bamboohr"],
+      "Interviewing": ["interviewing","interview","behavioral interview","technical interview","screening"],
+      "Excel": ["excel","ms excel","advanced excel","hr excel","pivot tables"]
+    },
+    "advanced_skills": {
+      "OKR": ["okr","objectives and key results","goal setting"],
+      "HR Analytics": ["hr analytics","people analytics","workforce analytics","data driven hr"],
+      "Learning & Development": ["learning development","l&d","training","training development","lms"],
+      "Employer Branding": ["employer branding","linkedin branding","talent brand"],
+      "Workforce Planning": ["workforce planning","headcount planning","org design"],
+      "Compensation & Benefits": ["compensation benefits","c&b","total rewards","salary benchmarking"],
+      "SHRM": ["shrm","shrm-cp","hr certification"],
+      "Diversity & Inclusion": ["diversity inclusion","dei","d&i","inclusive hiring"]
+    },
+    "soft_skills": {
+      "Communication": ["communication","interpersonal skills","verbal communication"],
+      "Empathy": ["empathy","emotional intelligence","eq","people skills"],
+      "Confidentiality": ["confidentiality","discretion","data privacy hr"],
+      "Negotiation": ["negotiation","offer negotiation","salary negotiation"],
+      "Problem Solving": ["problem solving","conflict resolution","employee relations"]
+    }
+  },
+
+  "sales": {
+    "synonyms": ["sales executive","sales representative","sales manager","account executive","business development executive","sales consultant","inside sales","field sales","sales officer"],
+    "core_skills": {
+      "B2B Sales": ["b2b sales","business to business","b2b","enterprise sales","corporate sales"],
+      "B2C Sales": ["b2c sales","retail sales","consumer sales","direct sales","b2c"],
+      "Lead Generation": ["lead generation","lead gen","prospecting","cold calling","cold outreach","warm calling"],
+      "CRM": ["crm","salesforce","hubspot crm","zoho crm","crm software","customer relationship management"],
+      "Pipeline Management": ["pipeline management","sales pipeline","deal tracking","opportunity management"],
+      "Target Achievement": ["target achievement","quota achievement","revenue target","sales target","achieving targets"],
+      "Negotiation": ["negotiation","deal negotiation","price negotiation","contract negotiation","closing deals"],
+      "Account Management": ["account management","key account management","kam","client management","relationship management"],
+      "Product Knowledge": ["product knowledge","product demo","product presentation","solution selling"],
+      "Excel": ["excel","ms excel","sales reports","reporting"]
+    },
+    "advanced_skills": {
+      "SaaS Sales": ["saas sales","software sales","subscription sales","arr","mrr"],
+      "Revenue Operations": ["revenue operations","revops","sales ops","sales operations"],
+      "LinkedIn Sales Navigator": ["linkedin sales navigator","social selling","linkedin outreach"],
+      "Sales Forecasting": ["sales forecasting","revenue forecasting","quota planning"],
+      "Customer Success": ["customer success","customer retention","churn management","upselling","cross selling"]
+    },
+    "soft_skills": {
+      "Communication": ["communication","persuasion","verbal communication","presentation skills"],
+      "Resilience": ["resilience","persistence","rejection handling"],
+      "Networking": ["networking","relationship building","client relationships"],
+      "Goal Orientation": ["goal oriented","target driven","result oriented","achievement driven"],
+      "Adaptability": ["adaptability","open to feedback","flexibility"]
+    }
+  },
+
+  "business_development": {
+    "synonyms": ["business development executive","bde","bda","bd manager","growth manager","partnerships manager","alliance manager","business development manager"],
+    "core_skills": {
+      "Business Development": ["business development","bd","new business","revenue growth","market development"],
+      "Lead Generation": ["lead generation","prospecting","outreach","cold outreach","pipeline building"],
+      "Partnerships": ["partnerships","strategic partnerships","alliances","channel partnerships","partner management"],
+      "Market Research": ["market research","market analysis","competitive analysis","competitor analysis","industry research"],
+      "CRM": ["crm","salesforce","hubspot","zoho crm","customer relationship management"],
+      "Negotiation": ["negotiation","deal negotiation","contract negotiation","commercial negotiation"],
+      "Proposal Writing": ["proposal writing","rfp","rfq","business proposals"],
+      "Presentation": ["presentation","pitch","client presentation","powerpoint"],
+      "Networking": ["networking","relationship building","stakeholder management"],
+      "Excel": ["excel","ms excel","business reporting"]
+    },
+    "advanced_skills": {
+      "Go-to-Market": ["go-to-market","gtm","gtm strategy","market entry"],
+      "Revenue Modeling": ["revenue modeling","revenue projection","financial modeling bd"],
+      "International Business": ["international business","global expansion","cross-border","export sales"],
+      "SaaS BD": ["saas business development","technology partnerships","api partnerships"]
+    },
+    "soft_skills": {
+      "Communication": ["communication","persuasion","storytelling"],
+      "Strategic Thinking": ["strategic thinking","strategic planning"],
+      "Networking": ["networking","relationship building"],
+      "Resilience": ["resilience","persistence","self-motivated"],
+      "Adaptability": ["adaptability","open to feedback","flexibility"]
+    }
+  },
+
+  "customer_support": {
+    "synonyms": ["customer support executive","customer service","customer care","support agent","helpdesk","technical support","service desk","customer support representative"],
+    "core_skills": {
+      "Customer Service": ["customer service","customer support","customer care","customer handling","customer satisfaction","csat"],
+      "Communication": ["communication","verbal communication","written communication","email communication","chat support"],
+      "Ticketing System": ["ticketing system","zendesk","freshdesk","jira service desk","servicenow","ticket management"],
+      "Problem Resolution": ["problem resolution","issue resolution","troubleshooting","query resolution","complaint handling"],
+      "SLA Management": ["sla","service level agreement","sla compliance","sla management"],
+      "CRM": ["crm","salesforce","hubspot","zoho crm","customer data"],
+      "Escalation Handling": ["escalation","escalation management","escalation handling"],
+      "Excel": ["excel","ms excel","reporting"],
+      "Chat Support": ["chat support","live chat","intercom","chatbot"]
+    },
+    "advanced_skills": {
+      "Technical Support": ["technical support","l1 support","l2 support","it support"],
+      "NPS": ["nps","net promoter score","customer satisfaction score","csat","customer feedback"],
+      "Call Center": ["call center","contact center","inbound","outbound","ivr","dialer"],
+      "Quality Assurance": ["quality assurance","qa call","call monitoring","quality audit"]
+    },
+    "soft_skills": {
+      "Empathy": ["empathy","active listening","customer empathy","patience"],
+      "Communication": ["communication","clear communication","articulation"],
+      "Problem Solving": ["problem solving","quick thinking","solution focused"],
+      "Resilience": ["resilience","stress management","handling difficult customers"],
+      "Adaptability": ["adaptability","open to feedback","flexibility"]
+    }   
+  },
+
+  "operations": {
+    "synonyms": ["operations executive","operations manager","operations analyst","supply chain","logistics manager","process manager","ops executive","operations officer"],
+    "core_skills": {
+      "Operations Management": ["operations management","ops management","operational excellence","process management"],
+      "Supply Chain": ["supply chain","supply chain management","scm","end to end supply chain"],
+      "Inventory Management": ["inventory management","inventory control","stock management","warehouse management"],
+      "Procurement": ["procurement","purchasing","vendor management","supplier management","sourcing"],
+      "Logistics": ["logistics","transportation","fleet management","last mile delivery","distribution"],
+      "ERP": ["erp","erp software","enterprise resource planning","sap","oracle","erp system"],
+      "Process Improvement": ["process improvement","process optimization","lean","six sigma","kaizen"],
+      "Excel": ["excel","ms excel","advanced excel","operations reporting"],
+      "Vendor Management": ["vendor management","supplier relations","vendor negotiation"],
+      "Quality Control": ["quality control","qc","quality management","iso"]
+    },
+    "advanced_skills": {
+      "Lean": ["lean","lean manufacturing","lean management","lean operations","waste reduction"],
+      "Six Sigma": ["six sigma","lean six sigma","six sigma green belt","six sigma black belt","dmaic"],
+      "SAP": ["sap","sap mm","sap sd","sap wm","sap operations"],
+      "Demand Planning": ["demand planning","demand forecasting","s&op","sales and operations planning"],
+      "Project Management": ["project management","pmp","prince2","project planning"]
+    },
+    "soft_skills": {
+      "Analytical Thinking": ["analytical thinking","data driven","problem solving"],
+      "Leadership": ["leadership","team management","people management"],
+      "Communication": ["communication","cross-functional communication","stakeholder communication"],
+      "Attention to Detail": ["attention to detail","accuracy","precision"],
+      "Adaptability": ["adaptability","open to feedback","flexibility"]
+    }
+  },
+
+  "digital_marketing": {
+    "synonyms": ["digital marketing executive","marketing executive","performance marketer","growth marketer","seo executive","social media manager","content marketer","digital marketer"],
+    "core_skills": {
+      "SEO": ["seo","search engine optimization","on page seo","off page seo","technical seo","keyword research","link building"],
+      "Google Ads": ["google ads","google adwords","ppc","pay per click","search ads","display ads"],
+      "Facebook Ads": ["facebook ads","meta ads","instagram ads","fb ads","social media ads","paid social"],
+      "Google Analytics": ["google analytics","ga4","google analytics 4","web analytics"],
+      "Social Media": ["social media","social media marketing","smm","instagram marketing","linkedin marketing"],
+      "Content Marketing": ["content marketing","content creation","blog writing","content strategy","copywriting"],
+      "Email Marketing": ["email marketing","email campaigns","email automation","mailchimp","klaviyo"],
+      "Campaign Management": ["campaign management","digital campaigns","marketing campaigns"],
+      "Excel": ["excel","ms excel","marketing reporting","campaign reporting"],
+      "Canva": ["canva","design tools","graphic design basics"]
+    },
+    "advanced_skills": {
+      "Marketing Automation": ["marketing automation","hubspot","marketo","pardot","drip campaigns"],
+      "CRO": ["cro","conversion rate optimization","landing page optimization","a/b testing"],
+      "Ahrefs": ["ahrefs","semrush","moz","seo tools"],
+      "Performance Marketing": ["performance marketing","roi marketing","roas","cost per acquisition","cpa"],
+      "Influencer Marketing": ["influencer marketing","influencer campaigns","creator marketing"],
+      "Growth Hacking": ["growth hacking","growth marketing","viral marketing"]
+    },
+    "soft_skills": {
+      "Creativity": ["creativity","creative thinking","content ideation"],
+      "Analytical Thinking": ["analytical thinking","data driven marketing","metrics focused"],
+      "Communication": ["communication","copywriting","storytelling"],
+      "Adaptability": ["adaptability","open to feedback","flexibility"],
+      "Time Management": ["time management","campaign management","deadline management"]
+    }
+  },
+
+  "ui_ux_design": {
+    "synonyms": ["ui designer","ux designer","ui ux designer","product designer","interaction designer","visual designer","ux researcher"],
+    "core_skills": {
+      "Figma": ["figma","figma design","figma prototyping","figma components"],
+      "Adobe XD": ["adobe xd","xd","adobe experience design"],
+      "Wireframing": ["wireframing","wireframes","low fidelity wireframes","lo-fi wireframes","mockups"],
+      "Prototyping": ["prototyping","interactive prototypes","clickable prototypes","high fidelity"],
+      "User Research": ["user research","usability research","ux research","user interviews"],
+      "Usability Testing": ["usability testing","user testing","user testing sessions"],
+      "Design Systems": ["design systems","component library","design language","ui kit","style guide"],
+      "Typography": ["typography","font selection","type hierarchy"],
+      "Color Theory": ["color theory","color palette","color schemes","visual design"],
+      "Sketch": ["sketch","sketch app","sketch design"]
+    },
+    "advanced_skills": {
+      "Information Architecture": ["information architecture","ia","site maps","user flows","navigation design"],
+      "Interaction Design": ["interaction design","micro interactions","animation","motion design"],
+      "Accessibility": ["accessibility","wcag","a11y","inclusive design"],
+      "Photoshop": ["photoshop","adobe photoshop","photo editing"],
+      "Illustrator": ["illustrator","adobe illustrator","vector design"],
+      "Framer": ["framer","framer motion","advanced prototyping"],
+      "After Effects": ["after effects","motion graphics","animation ae"]
+    },
+    "soft_skills": {
+      "Empathy": ["empathy","user empathy","user centered design","design thinking"],
+      "Communication": ["communication","design rationale","stakeholder presentation"],
+      "Attention to Detail": ["attention to detail","pixel perfect","visual accuracy"],
+      "Creativity": ["creativity","creative problem solving"],
+      "Collaboration": ["collaboration","cross-functional","designer developer collaboration"]
+    }
+  },
+
+  "consulting": {
+    "synonyms": ["management consultant","strategy consultant","business consultant","associate consultant","analyst consulting","strategy analyst"],
+    "core_skills": {
+      "Problem Solving": ["problem solving","structured problem solving","mece","hypothesis driven"],
+      "Presentation": ["presentation","powerpoint","ppt","deck preparation","client presentation","slide decks"],
+      "Excel": ["excel","ms excel","advanced excel","financial modeling consulting"],
+      "Market Research": ["market research","market analysis","industry analysis","competitive landscape"],
+      "Financial Modeling": ["financial modeling","financial analysis","business case","roi analysis"],
+      "Stakeholder Management": ["stakeholder management","client management","client engagement"],
+      "Data Analysis": ["data analysis","quantitative analysis","data driven insights"],
+      "Project Management": ["project management","project planning","workstream management"],
+      "Strategy": ["strategy","strategic planning","business strategy","growth strategy"],
+      "Communication": ["communication","verbal communication","written communication"]
+    },
+    "advanced_skills": {
+      "Digital Transformation": ["digital transformation","digital strategy","technology consulting"],
+      "Organizational Design": ["organizational design","org design","operating model"],
+      "Due Diligence": ["due diligence","commercial due diligence","financial due diligence"],
+      "Change Management": ["change management","transformation","program management"],
+      "Agile": ["agile consulting","agile transformation","scrum coaching"]
+    },
+    "soft_skills": {
+      "Analytical Thinking": ["analytical thinking","critical thinking","structured thinking","logical reasoning"],
+      "Communication": ["communication","executive presence","persuasion","storytelling"],
+      "Leadership": ["leadership","team management","client leadership"],
+      "Adaptability": ["adaptability","fast learning","intellectual curiosity"]
+    }
+  },
+
+  "education": {
+    "synonyms": ["teacher","professor","lecturer","instructor","trainer","faculty","academic","edtech teacher","tutor"],
+    "core_skills": {
+      "Teaching": ["teaching","instruction","lesson delivery","classroom teaching","online teaching","tutoring"],
+      "Curriculum Development": ["curriculum development","curriculum design","lesson planning","course development","syllabus design"],
+      "Assessment": ["assessment","evaluation","exam preparation","test design","grading","rubrics"],
+      "Communication": ["communication","classroom communication","parent communication"],
+      "Classroom Management": ["classroom management","student management","discipline","behavior management"],
+      "LMS": ["lms","learning management system","moodle","canvas","blackboard","google classroom"],
+      "Excel": ["excel","ms excel","academic reporting","grade tracking"],
+      "Presentation": ["presentation","powerpoint","slides","lecture delivery"]
+    },
+    "advanced_skills": {
+      "Instructional Design": ["instructional design","e-learning development","scorm","articulate","captivate"],
+      "EdTech": ["edtech","educational technology","online learning","blended learning"],
+      "Research": ["research","academic research","educational research","publications","journal articles"],
+      "CBSE": ["cbse","icse","state board","ib","cambridge","igcse"]
+    },
+    "soft_skills": {
+      "Patience": ["patience","empathy","student empathy"],
+      "Communication": ["communication","clear explanation","articulation"],
+      "Creativity": ["creativity","innovative teaching","engaging content"],
+      "Adaptability": ["adaptability","differentiated instruction"],
+      "Collaboration": ["collaboration","parent collaboration","colleague collaboration"]
+    }
+  }
+}
+

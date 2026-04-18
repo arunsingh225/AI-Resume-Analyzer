@@ -1,0 +1,3323 @@
+{
+  "software_engineering": {
+    "fresher": [
+      {
+        "role": "Junior Software Developer",
+        "required_skills": [
+          "Python",
+          "JavaScript",
+          "Git",
+          "SQL",
+          "REST API",
+          "HTML",
+          "CSS"
+        ],
+        "companies": [
+          "Infosys",
+          "TCS",
+          "Wipro",
+          "Capgemini",
+          "HCL",
+          "Accenture"
+        ],
+        "avg_salary": "\u20b94\u20138 LPA",
+        "job_match_keywords": [
+          "software developer",
+          "coding",
+          "python",
+          "javascript",
+          "fresher",
+          "entry level",
+          "junior developer"
+        ]
+      },
+      {
+        "role": "Associate Software Engineer",
+        "required_skills": [
+          "Java",
+          "Git",
+          "Data Structures",
+          "SQL",
+          "OOP",
+          "Agile"
+        ],
+        "companies": [
+          "Infosys",
+          "Cognizant",
+          "Mphasis",
+          "LTIMindtree",
+          "Persistent Systems"
+        ],
+        "avg_salary": "\u20b93.5\u20137 LPA",
+        "job_match_keywords": [
+          "associate engineer",
+          "java",
+          "oop",
+          "data structures",
+          "campus hire",
+          "fresher"
+        ]
+      }
+    ],
+    "junior": [
+      {
+        "role": "Software Developer",
+        "required_skills": [
+          "Python",
+          "JavaScript",
+          "React",
+          "Node.js",
+          "SQL",
+          "Docker",
+          "Git",
+          "REST API"
+        ],
+        "companies": [
+          "Razorpay",
+          "Swiggy",
+          "Zepto",
+          "CRED",
+          "Groww",
+          "Juspay"
+        ],
+        "avg_salary": "\u20b98\u201315 LPA",
+        "job_match_keywords": [
+          "software developer",
+          "react",
+          "node",
+          "backend",
+          "api",
+          "2 years experience"
+        ]
+      },
+      {
+        "role": "Full Stack Developer",
+        "required_skills": [
+          "React",
+          "Node.js",
+          "TypeScript",
+          "MongoDB",
+          "PostgreSQL",
+          "Docker",
+          "Git"
+        ],
+        "companies": [
+          "BrowserStack",
+          "Postman",
+          "Freshworks",
+          "Zoho",
+          "Leadsquared"
+        ],
+        "avg_salary": "\u20b910\u201318 LPA",
+        "job_match_keywords": [
+          "full stack",
+          "mern",
+          "react node",
+          "typescript",
+          "mongodb"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior Software Engineer",
+        "required_skills": [
+          "Python",
+          "Java",
+          "Microservices",
+          "Docker",
+          "Kubernetes",
+          "PostgreSQL",
+          "Redis",
+          "CI/CD",
+          "System Design"
+        ],
+        "companies": [
+          "Flipkart",
+          "Paytm",
+          "PhonePe",
+          "Amazon",
+          "Microsoft",
+          "Google",
+          "Atlassian"
+        ],
+        "avg_salary": "\u20b920\u201340 LPA",
+        "job_match_keywords": [
+          "senior engineer",
+          "microservices",
+          "kubernetes",
+          "distributed systems",
+          "system design",
+          "cloud",
+          "senior sde"
+        ]
+      },
+      {
+        "role": "Backend Engineer",
+        "required_skills": [
+          "Go",
+          "Python",
+          "Kafka",
+          "Redis",
+          "Kubernetes",
+          "AWS",
+          "Microservices",
+          "gRPC"
+        ],
+        "companies": [
+          "CRED",
+          "Razorpay",
+          "Zepto",
+          "PhonePe",
+          "BrowserStack",
+          "Postman"
+        ],
+        "avg_salary": "\u20b918\u201335 LPA",
+        "job_match_keywords": [
+          "backend engineer",
+          "go",
+          "kafka",
+          "redis",
+          "api",
+          "distributed",
+          "backend"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Staff Engineer / Tech Lead",
+        "required_skills": [
+          "System Design",
+          "Cloud Architecture",
+          "Distributed Systems",
+          "Leadership",
+          "Python",
+          "Java",
+          "Microservices",
+          "Mentoring"
+        ],
+        "companies": [
+          "Google",
+          "Microsoft",
+          "Amazon",
+          "Meta",
+          "Adobe",
+          "Salesforce"
+        ],
+        "avg_salary": "\u20b950\u2013100 LPA",
+        "job_match_keywords": [
+          "staff engineer",
+          "tech lead",
+          "principal engineer",
+          "architecture",
+          "leadership",
+          "senior",
+          "staff"
+        ]
+      },
+      {
+        "role": "Engineering Manager",
+        "required_skills": [
+          "Leadership",
+          "System Design",
+          "Agile",
+          "Cloud",
+          "Team Management",
+          "Roadmap",
+          "Hiring"
+        ],
+        "companies": [
+          "Flipkart",
+          "Swiggy",
+          "Razorpay",
+          "Navi",
+          "CRED",
+          "Urban Company"
+        ],
+        "avg_salary": "\u20b945\u201380 LPA",
+        "job_match_keywords": [
+          "engineering manager",
+          "em",
+          "team lead",
+          "manager",
+          "people management",
+          "engineering leadership"
+        ]
+      }
+    ]
+  },
+  "frontend_development": {
+    "fresher": [
+      {
+        "role": "Junior Frontend Developer",
+        "required_skills": [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "React",
+          "Git",
+          "Responsive Design"
+        ],
+        "companies": [
+          "Infosys",
+          "TCS",
+          "Capgemini",
+          "Wipro",
+          "NIIT Technologies"
+        ],
+        "avg_salary": "\u20b94\u20137 LPA",
+        "job_match_keywords": [
+          "frontend developer",
+          "html css",
+          "javascript",
+          "react",
+          "ui developer",
+          "fresher"
+        ]
+      },
+      {
+        "role": "UI Developer Trainee",
+        "required_skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Bootstrap",
+          "Figma",
+          "Git"
+        ],
+        "companies": [
+          "Sapient",
+          "Hexaware",
+          "Birlasoft",
+          "Zensar",
+          "Mphasis"
+        ],
+        "avg_salary": "\u20b93.5\u20136 LPA",
+        "job_match_keywords": [
+          "ui developer",
+          "html",
+          "css",
+          "bootstrap",
+          "javascript",
+          "trainee",
+          "fresher"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior Frontend Engineer",
+        "required_skills": [
+          "React",
+          "TypeScript",
+          "Next.js",
+          "GraphQL",
+          "Testing Library",
+          "Web Performance",
+          "Design Systems",
+          "Accessibility"
+        ],
+        "companies": [
+          "CRED",
+          "Razorpay",
+          "Swiggy",
+          "Zepto",
+          "BrowserStack",
+          "Urban Company"
+        ],
+        "avg_salary": "\u20b918\u201335 LPA",
+        "job_match_keywords": [
+          "senior frontend",
+          "react typescript",
+          "nextjs",
+          "design system",
+          "web performance",
+          "accessibility",
+          "senior ui"
+        ]
+      },
+      {
+        "role": "React/Next.js Developer",
+        "required_skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind",
+          "REST API",
+          "Git",
+          "CI/CD"
+        ],
+        "companies": [
+          "Freshworks",
+          "Zoho",
+          "Postman",
+          "Atlassian",
+          "Chargebee"
+        ],
+        "avg_salary": "\u20b915\u201328 LPA",
+        "job_match_keywords": [
+          "react",
+          "nextjs",
+          "typescript",
+          "tailwind",
+          "frontend",
+          "ssg",
+          "ssr"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Principal Frontend Engineer",
+        "required_skills": [
+          "Architecture",
+          "React",
+          "Performance",
+          "Design Systems",
+          "Mentoring",
+          "TypeScript",
+          "Accessibility",
+          "Web Vitals"
+        ],
+        "companies": [
+          "Google",
+          "Microsoft",
+          "Adobe",
+          "Salesforce",
+          "Razorpay"
+        ],
+        "avg_salary": "\u20b950\u201390 LPA",
+        "job_match_keywords": [
+          "principal frontend",
+          "frontend architect",
+          "web platform",
+          "design system leadership",
+          "senior frontend"
+        ]
+      }
+    ]
+  },
+  "data_science": {
+    "fresher": [
+      {
+        "role": "Data Science Intern / Analyst",
+        "required_skills": [
+          "Python",
+          "Pandas",
+          "SQL",
+          "Statistics",
+          "Scikit-learn",
+          "Matplotlib",
+          "Excel",
+          "Git"
+        ],
+        "companies": [
+          "Mu Sigma",
+          "Fractal Analytics",
+          "Latent View",
+          "EXL Service",
+          "WNS Analytics"
+        ],
+        "avg_salary": "\u20b94\u20138 LPA",
+        "job_match_keywords": [
+          "data science",
+          "data analyst",
+          "python",
+          "pandas",
+          "sql",
+          "machine learning",
+          "fresher",
+          "entry level"
+        ]
+      },
+      {
+        "role": "Junior ML Engineer",
+        "required_skills": [
+          "Python",
+          "Scikit-learn",
+          "TensorFlow",
+          "SQL",
+          "Statistics",
+          "Git",
+          "Jupyter"
+        ],
+        "companies": [
+          "Tiger Analytics",
+          "Analytics Vidhya",
+          "Sigmoid",
+          "Gramener"
+        ],
+        "avg_salary": "\u20b95\u201310 LPA",
+        "job_match_keywords": [
+          "machine learning engineer",
+          "ml",
+          "deep learning",
+          "tensorflow",
+          "python",
+          "junior ml"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Data Scientist",
+        "required_skills": [
+          "Python",
+          "Machine Learning",
+          "TensorFlow",
+          "Pandas",
+          "SQL",
+          "NLP",
+          "Spark",
+          "A/B Testing",
+          "Statistics"
+        ],
+        "companies": [
+          "Walmart Labs",
+          "Juspay",
+          "HealthifyMe",
+          "Cars24",
+          "Nykaa",
+          "Licious"
+        ],
+        "avg_salary": "\u20b918\u201340 LPA",
+        "job_match_keywords": [
+          "data scientist",
+          "machine learning",
+          "nlp",
+          "tensorflow",
+          "a/b test",
+          "statistical modeling",
+          "ml"
+        ]
+      },
+      {
+        "role": "ML Engineer",
+        "required_skills": [
+          "Python",
+          "PyTorch",
+          "TensorFlow",
+          "MLOps",
+          "MLflow",
+          "Docker",
+          "Kubernetes",
+          "CI/CD",
+          "Feature Engineering"
+        ],
+        "companies": [
+          "Sarvam AI",
+          "Krutrim AI",
+          "PhonePe",
+          "Razorpay",
+          "Zepto",
+          "BrowserStack"
+        ],
+        "avg_salary": "\u20b920\u201345 LPA",
+        "job_match_keywords": [
+          "ml engineer",
+          "mlops",
+          "pytorch",
+          "model deployment",
+          "feature store",
+          "model training"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Lead Data Scientist / Research Scientist",
+        "required_skills": [
+          "LLM",
+          "MLOps",
+          "Python",
+          "Deep Learning",
+          "Research",
+          "System Design",
+          "Mentoring",
+          "Publications"
+        ],
+        "companies": [
+          "Google DeepMind",
+          "Microsoft AI",
+          "Meta AI",
+          "Samsung R&D",
+          "Sarvam AI"
+        ],
+        "avg_salary": "\u20b960\u2013150 LPA",
+        "job_match_keywords": [
+          "lead data scientist",
+          "research scientist",
+          "applied ml",
+          "llm",
+          "generative ai",
+          "principal data scientist"
+        ]
+      }
+    ]
+  },
+  "devops_cloud": {
+    "fresher": [
+      {
+        "role": "Junior DevOps Engineer",
+        "required_skills": [
+          "Linux",
+          "Docker",
+          "Git",
+          "Bash",
+          "CI/CD",
+          "AWS Basics",
+          "Python"
+        ],
+        "companies": [
+          "Infosys",
+          "TCS",
+          "Capgemini",
+          "HCL",
+          "Wipro",
+          "Mphasis"
+        ],
+        "avg_salary": "\u20b94\u20138 LPA",
+        "job_match_keywords": [
+          "devops engineer",
+          "docker",
+          "linux",
+          "ci/cd",
+          "aws",
+          "bash",
+          "junior devops"
+        ]
+      },
+      {
+        "role": "Cloud Support Engineer",
+        "required_skills": [
+          "AWS",
+          "Linux",
+          "Networking",
+          "Python",
+          "Monitoring",
+          "Troubleshooting"
+        ],
+        "companies": [
+          "AWS India",
+          "Google Cloud India",
+          "Microsoft Azure India",
+          "HCL",
+          "Rackspace"
+        ],
+        "avg_salary": "\u20b94\u20137 LPA",
+        "job_match_keywords": [
+          "cloud support",
+          "aws support",
+          "cloud engineer",
+          "linux",
+          "networking",
+          "troubleshooting"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior DevOps / SRE Engineer",
+        "required_skills": [
+          "Kubernetes",
+          "Terraform",
+          "AWS",
+          "CI/CD",
+          "Prometheus",
+          "Grafana",
+          "Helm",
+          "Ansible",
+          "Docker",
+          "Python"
+        ],
+        "companies": [
+          "ThoughtWorks",
+          "Harness",
+          "Druva",
+          "BrowserStack",
+          "Freshworks",
+          "Netskope"
+        ],
+        "avg_salary": "\u20b918\u201335 LPA",
+        "job_match_keywords": [
+          "devops engineer",
+          "sre",
+          "kubernetes",
+          "terraform",
+          "platform engineering",
+          "site reliability",
+          "helm",
+          "gitops"
+        ]
+      },
+      {
+        "role": "Cloud Platform Engineer",
+        "required_skills": [
+          "AWS",
+          "Azure",
+          "GCP",
+          "Terraform",
+          "Kubernetes",
+          "Python",
+          "GitOps",
+          "ArgoCD"
+        ],
+        "companies": [
+          "Atlassian",
+          "Postman",
+          "Chargebee",
+          "Leadsquared",
+          "Whatfix"
+        ],
+        "avg_salary": "\u20b920\u201338 LPA",
+        "job_match_keywords": [
+          "cloud engineer",
+          "platform engineer",
+          "aws",
+          "azure",
+          "gcp",
+          "iac",
+          "terraform",
+          "multi-cloud"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Principal SRE / DevOps Architect",
+        "required_skills": [
+          "Platform Engineering",
+          "Multi-Cloud",
+          "FinOps",
+          "Chaos Engineering",
+          "Kubernetes",
+          "Architecture",
+          "Team Leadership"
+        ],
+        "companies": [
+          "Google",
+          "Microsoft",
+          "Amazon",
+          "Cloudflare",
+          "Datadog"
+        ],
+        "avg_salary": "\u20b960\u2013120 LPA",
+        "job_match_keywords": [
+          "principal sre",
+          "devops architect",
+          "platform architect",
+          "infrastructure leadership",
+          "cloud architecture"
+        ]
+      }
+    ]
+  },
+  "investment_banking": {
+    "fresher": [
+      {
+        "role": "Investment Banking Analyst (IBD)",
+        "required_skills": [
+          "Financial Modeling",
+          "DCF",
+          "Excel",
+          "PowerPoint",
+          "Valuation",
+          "Bloomberg",
+          "Financial Statements"
+        ],
+        "companies": [
+          "Goldman Sachs",
+          "JP Morgan",
+          "Morgan Stanley",
+          "Citi",
+          "Bank of America"
+        ],
+        "avg_salary": "\u20b915\u201330 LPA",
+        "job_match_keywords": [
+          "investment banking analyst",
+          "ib analyst",
+          "financial modeling",
+          "dcf",
+          "m&a analyst",
+          "campus ib"
+        ]
+      },
+      {
+        "role": "Financial Advisory Analyst",
+        "required_skills": [
+          "Financial Modeling",
+          "Excel",
+          "Due Diligence",
+          "Valuation",
+          "Research",
+          "PowerPoint"
+        ],
+        "companies": [
+          "Deloitte (Deal Advisory)",
+          "EY (TAS)",
+          "KPMG (Deal Advisory)",
+          "PwC (Deals)",
+          "Grant Thornton"
+        ],
+        "avg_salary": "\u20b98\u201315 LPA",
+        "job_match_keywords": [
+          "financial advisory",
+          "deal advisory",
+          "due diligence",
+          "valuation analyst",
+          "fresher finance",
+          "m&a advisory"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Associate, Investment Banking",
+        "required_skills": [
+          "Financial Modeling",
+          "M&A",
+          "DCF",
+          "LBO",
+          "Bloomberg",
+          "Capital Markets",
+          "Pitch Book",
+          "Deal Execution"
+        ],
+        "companies": [
+          "Goldman Sachs",
+          "JP Morgan",
+          "Morgan Stanley",
+          "Citi",
+          "Avendus",
+          "Kotak IB"
+        ],
+        "avg_salary": "\u20b930\u201360 LPA",
+        "job_match_keywords": [
+          "ib associate",
+          "investment banking associate",
+          "m&a associate",
+          "capital markets",
+          "deal execution",
+          "lbo",
+          "pitch"
+        ]
+      },
+      {
+        "role": "Vice President, Investment Banking",
+        "required_skills": [
+          "M&A Deal Management",
+          "Client Relationships",
+          "Financial Modeling",
+          "Team Leadership",
+          "Sector Expertise",
+          "Bloomberg"
+        ],
+        "companies": [
+          "Goldman Sachs",
+          "JP Morgan",
+          "Morgan Stanley",
+          "Barclays",
+          "HSBC IB",
+          "MAPE"
+        ],
+        "avg_salary": "\u20b960\u2013120 LPA",
+        "job_match_keywords": [
+          "vp investment banking",
+          "ib vp",
+          "deal lead",
+          "client coverage",
+          "sector head"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Director / MD, Investment Banking",
+        "required_skills": [
+          "Origination",
+          "Client Coverage",
+          "M&A",
+          "Leadership",
+          "PE Relationships",
+          "Capital Markets",
+          "Sector Strategy"
+        ],
+        "companies": [
+          "Goldman Sachs",
+          "JP Morgan",
+          "Morgan Stanley",
+          "Citi",
+          "Avendus",
+          "Moelis",
+          "Jefferies"
+        ],
+        "avg_salary": "\u20b91.2\u20135 Cr PA",
+        "job_match_keywords": [
+          "md ib",
+          "director investment banking",
+          "origination",
+          "deal origination",
+          "managing director",
+          "ib leadership"
+        ]
+      }
+    ]
+  },
+  "financial_analysis": {
+    "fresher": [
+      {
+        "role": "Financial Analyst",
+        "required_skills": [
+          "Excel",
+          "Financial Modeling",
+          "Accounting",
+          "GAAP",
+          "Budgeting",
+          "PowerPoint",
+          "SQL"
+        ],
+        "companies": [
+          "Deloitte",
+          "EY",
+          "KPMG",
+          "PwC",
+          "Grant Thornton",
+          "BDO India"
+        ],
+        "avg_salary": "\u20b94\u20139 LPA",
+        "job_match_keywords": [
+          "financial analyst",
+          "fp&a",
+          "financial modeling",
+          "excel",
+          "analyst",
+          "fresher finance"
+        ]
+      },
+      {
+        "role": "Business Analyst \u2013 Finance",
+        "required_skills": [
+          "Excel",
+          "SQL",
+          "Power BI",
+          "Data Analysis",
+          "Financial Reporting",
+          "Variance Analysis"
+        ],
+        "companies": [
+          "Amazon",
+          "Flipkart",
+          "Swiggy",
+          "Zomato",
+          "Nykaa",
+          "PolicyBazaar"
+        ],
+        "avg_salary": "\u20b95\u201310 LPA",
+        "job_match_keywords": [
+          "business analyst",
+          "financial analyst",
+          "sql",
+          "power bi",
+          "excel",
+          "reporting",
+          "finance fresher"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "FP&A Manager",
+        "required_skills": [
+          "Financial Planning",
+          "Budgeting",
+          "Forecasting",
+          "Power BI",
+          "Excel",
+          "Variance Analysis",
+          "P&L",
+          "SAP",
+          "Stakeholder Management"
+        ],
+        "companies": [
+          "Amazon",
+          "Microsoft",
+          "Unilever",
+          "Procter & Gamble",
+          "Maruti Suzuki",
+          "Flipkart"
+        ],
+        "avg_salary": "\u20b918\u201335 LPA",
+        "job_match_keywords": [
+          "fp&a manager",
+          "financial planning",
+          "budgeting",
+          "forecasting",
+          "p&l",
+          "cfo office",
+          "variance analysis"
+        ]
+      },
+      {
+        "role": "Senior Financial Analyst",
+        "required_skills": [
+          "Financial Modeling",
+          "Excel",
+          "Power BI",
+          "SQL",
+          "FP&A",
+          "Budgeting",
+          "Stakeholder Management"
+        ],
+        "companies": [
+          "Google India",
+          "Adobe",
+          "Salesforce",
+          "Oracle",
+          "SAP India",
+          "Cisco India"
+        ],
+        "avg_salary": "\u20b915\u201328 LPA",
+        "job_match_keywords": [
+          "senior financial analyst",
+          "senior analyst",
+          "fp&a",
+          "finance business partner",
+          "budget",
+          "forecast"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "CFO / VP Finance",
+        "required_skills": [
+          "Financial Strategy",
+          "Investor Relations",
+          "Fundraising",
+          "M&A",
+          "P&L",
+          "IFRS",
+          "Board Governance",
+          "Leadership"
+        ],
+        "companies": [
+          "Startup Series C+",
+          "Zomato",
+          "Nykaa",
+          "Razorpay",
+          "Flipkart",
+          "Tata Group"
+        ],
+        "avg_salary": "\u20b980\u2013200 LPA",
+        "job_match_keywords": [
+          "cfo",
+          "vp finance",
+          "head of finance",
+          "chief financial officer",
+          "financial leadership",
+          "finance director"
+        ]
+      }
+    ]
+  },
+  "accounting": {
+    "fresher": [
+      {
+        "role": "Accounts Executive",
+        "required_skills": [
+          "Tally",
+          "Excel",
+          "Accounting",
+          "GST",
+          "TDS",
+          "Accounts Payable",
+          "Accounts Receivable"
+        ],
+        "companies": [
+          "HDFC Bank",
+          "ICICI Bank",
+          "Bajaj Finserv",
+          "Muthoot Finance",
+          "NBFCs",
+          "Mahindra Finance"
+        ],
+        "avg_salary": "\u20b92.5\u20135 LPA",
+        "job_match_keywords": [
+          "accounts executive",
+          "accountant",
+          "tally",
+          "gst",
+          "tds",
+          "bookkeeper",
+          "ledger",
+          "reconciliation"
+        ]
+      },
+      {
+        "role": "Junior Accountant",
+        "required_skills": [
+          "Accounting",
+          "Tally",
+          "GST",
+          "Excel",
+          "Financial Reporting",
+          "Reconciliation"
+        ],
+        "companies": [
+          "Deloitte",
+          "EY",
+          "KPMG",
+          "PwC",
+          "Grant Thornton",
+          "BDO India"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "junior accountant",
+          "accounts",
+          "tally",
+          "gst",
+          "bookkeeping",
+          "financial reporting",
+          "fresher ca"
+        ]
+      },
+      {
+        "role": "Audit Associate",
+        "required_skills": [
+          "Audit",
+          "Accounting",
+          "GAAP",
+          "Excel",
+          "Financial Statements",
+          "TDS"
+        ],
+        "companies": [
+          "Deloitte",
+          "EY",
+          "KPMG",
+          "PwC",
+          "Grant Thornton",
+          "S.R. Batliboi"
+        ],
+        "avg_salary": "\u20b93.5\u20137 LPA",
+        "job_match_keywords": [
+          "audit associate",
+          "audit trainee",
+          "ca fresher",
+          "statutory audit",
+          "internal audit",
+          "financial audit"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior Accountant",
+        "required_skills": [
+          "Accounting",
+          "Tally",
+          "GST",
+          "TDS",
+          "SAP FICO",
+          "Excel",
+          "Financial Reporting",
+          "Reconciliation",
+          "MIS"
+        ],
+        "companies": [
+          "Amazon India",
+          "Microsoft India",
+          "Unilever",
+          "P&G",
+          "Maruti Suzuki",
+          "HDFC Bank"
+        ],
+        "avg_salary": "\u20b96\u201314 LPA",
+        "job_match_keywords": [
+          "senior accountant",
+          "accountant",
+          "gst",
+          "tds",
+          "sap fico",
+          "mis reporting",
+          "financial reporting"
+        ]
+      },
+      {
+        "role": "Manager \u2013 Accounts & Finance",
+        "required_skills": [
+          "Accounting",
+          "Financial Reporting",
+          "Budgeting",
+          "Excel",
+          "ERP",
+          "Tax",
+          "Payroll",
+          "MIS"
+        ],
+        "companies": [
+          "Tata Group",
+          "Reliance",
+          "Infosys",
+          "Wipro",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "avg_salary": "\u20b910\u201320 LPA",
+        "job_match_keywords": [
+          "accounts manager",
+          "finance manager",
+          "accounting",
+          "erp",
+          "budgeting",
+          "mis",
+          "payroll",
+          "tax"
+        ]
+      },
+      {
+        "role": "Audit Manager",
+        "required_skills": [
+          "Audit",
+          "GAAP",
+          "IFRS",
+          "SAP FICO",
+          "Financial Statements",
+          "Tax Audit",
+          "Excel"
+        ],
+        "companies": [
+          "Deloitte",
+          "EY",
+          "KPMG",
+          "PwC",
+          "Grant Thornton"
+        ],
+        "avg_salary": "\u20b912\u201322 LPA",
+        "job_match_keywords": [
+          "audit manager",
+          "statutory audit",
+          "internal audit",
+          "ifrs",
+          "gaap",
+          "ind as",
+          "big4"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Finance Controller",
+        "required_skills": [
+          "GAAP",
+          "IFRS",
+          "SAP FICO",
+          "Financial Reporting",
+          "Budgeting",
+          "Tax",
+          "Team Management"
+        ],
+        "companies": [
+          "Amazon",
+          "Microsoft",
+          "Google India",
+          "Unilever",
+          "P&G"
+        ],
+        "avg_salary": "\u20b920\u201345 LPA",
+        "job_match_keywords": [
+          "finance controller",
+          "financial controller",
+          "chief accountant",
+          "head of finance",
+          "ifrs",
+          "gaap"
+        ]
+      },
+      {
+        "role": "CFO",
+        "required_skills": [
+          "Financial Strategy",
+          "IFRS",
+          "GAAP",
+          "Investor Relations",
+          "Fundraising",
+          "M&A",
+          "Leadership"
+        ],
+        "companies": [
+          "Startups",
+          "Tata Group",
+          "Reliance",
+          "Infosys",
+          "Wipro"
+        ],
+        "avg_salary": "\u20b950\u2013150 LPA",
+        "job_match_keywords": [
+          "cfo",
+          "chief financial officer",
+          "vp finance",
+          "head finance",
+          "financial leadership"
+        ]
+      }
+    ]
+  },
+  "clinical_medicine": {
+    "fresher": [
+      {
+        "role": "Junior Medical Officer",
+        "required_skills": [
+          "MBBS",
+          "Patient Care",
+          "Clinical Assessment",
+          "EHR",
+          "Pharmacology",
+          "Emergency Care",
+          "Medical Documentation"
+        ],
+        "companies": [
+          "Apollo Hospitals",
+          "Fortis",
+          "Max Healthcare",
+          "Narayana Health",
+          "Medanta",
+          "Manipal Hospitals"
+        ],
+        "avg_salary": "\u20b97\u201314 LPA",
+        "job_match_keywords": [
+          "junior doctor",
+          "medical officer",
+          "mbbs",
+          "jr resident",
+          "intern doctor",
+          "clinical"
+        ]
+      },
+      {
+        "role": "Resident Physician",
+        "required_skills": [
+          "MBBS",
+          "MD Pursuing",
+          "Patient Care",
+          "ICU Support",
+          "Diagnosis",
+          "Emergency",
+          "Rounds"
+        ],
+        "companies": [
+          "AIIMS",
+          "PGI Chandigarh",
+          "NIMHANS",
+          "JIPMER",
+          "CMC Vellore",
+          "Government Medical Colleges"
+        ],
+        "avg_salary": "\u20b91\u20132 LPA (stipend) + PG seat",
+        "job_match_keywords": [
+          "resident",
+          "pg student",
+          "junior resident",
+          "neet pg",
+          "md ms",
+          "residency"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Specialist / Consultant Physician",
+        "required_skills": [
+          "MD",
+          "Specialty",
+          "Patient Management",
+          "Clinical Research",
+          "ICU",
+          "Evidence-Based Medicine",
+          "Teaching"
+        ],
+        "companies": [
+          "Apollo Hospitals",
+          "Fortis",
+          "Max Healthcare",
+          "Narayana",
+          "Aster DM",
+          "Columbia Asia"
+        ],
+        "avg_salary": "\u20b918\u201345 LPA",
+        "job_match_keywords": [
+          "consultant physician",
+          "specialist",
+          "md consultant",
+          "senior registrar",
+          "attending physician"
+        ]
+      },
+      {
+        "role": "Clinical Research Physician",
+        "required_skills": [
+          "MBBS/MD",
+          "GCP",
+          "Clinical Trials",
+          "Pharmacovigilance",
+          "Medical Writing",
+          "Regulatory",
+          "Protocol Design"
+        ],
+        "companies": [
+          "IQVIA",
+          "Parexel",
+          "Sun Pharma R&D",
+          "Pfizer India",
+          "Cipla R&D",
+          "Dr. Reddy's"
+        ],
+        "avg_salary": "\u20b912\u201325 LPA",
+        "job_match_keywords": [
+          "clinical research physician",
+          "medical monitor",
+          "cra physician",
+          "gcp",
+          "clinical trials md"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Medical Director / HOD",
+        "required_skills": [
+          "Clinical Leadership",
+          "Specialty Expertise",
+          "Healthcare Strategy",
+          "Quality Improvement",
+          "Accreditation",
+          "Team Management",
+          "Research"
+        ],
+        "companies": [
+          "Apollo Group",
+          "Fortis",
+          "Narayana",
+          "Medanta",
+          "AIIMS",
+          "Max Healthcare"
+        ],
+        "avg_salary": "\u20b950\u2013150 LPA",
+        "job_match_keywords": [
+          "medical director",
+          "head of department",
+          "clinical director",
+          "hod",
+          "chief medical officer",
+          "cmo"
+        ]
+      }
+    ]
+  },
+  "ui_ux_design": {
+    "fresher": [
+      {
+        "role": "Junior UI/UX Designer",
+        "required_skills": [
+          "Figma",
+          "Wireframing",
+          "Prototyping",
+          "User Research",
+          "Typography",
+          "Color Theory",
+          "Adobe XD"
+        ],
+        "companies": [
+          "Razorpay",
+          "CRED",
+          "Meesho",
+          "Groww",
+          "Ola",
+          "Urban Company",
+          "Swiggy"
+        ],
+        "avg_salary": "\u20b93.5\u20138 LPA",
+        "job_match_keywords": [
+          "ui ux designer",
+          "ui designer",
+          "ux designer",
+          "figma",
+          "wireframe",
+          "product designer",
+          "fresher designer",
+          "junior designer"
+        ]
+      },
+      {
+        "role": "Visual Designer",
+        "required_skills": [
+          "Figma",
+          "Photoshop",
+          "Illustrator",
+          "Typography",
+          "Color Theory",
+          "Adobe XD"
+        ],
+        "companies": [
+          "Ogilvy",
+          "Dentsu",
+          "Grey Group",
+          "Wunderman Thompson",
+          "Lowe Lintas",
+          "McCann"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "visual designer",
+          "graphic designer",
+          "brand designer",
+          "ui designer",
+          "illustrator",
+          "photoshop",
+          "creative designer"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Product Designer",
+        "required_skills": [
+          "Figma",
+          "Design Systems",
+          "User Research",
+          "Usability Testing",
+          "Prototyping",
+          "Wireframing",
+          "Information Architecture"
+        ],
+        "companies": [
+          "Swiggy",
+          "Paytm",
+          "Flipkart",
+          "Zepto",
+          "BrowserStack",
+          "Navi"
+        ],
+        "avg_salary": "\u20b914\u201332 LPA",
+        "job_match_keywords": [
+          "product designer",
+          "ux designer",
+          "design system",
+          "user research",
+          "interaction design",
+          "figma product",
+          "senior ui ux"
+        ]
+      },
+      {
+        "role": "UX Researcher",
+        "required_skills": [
+          "User Research",
+          "Usability Testing",
+          "Figma",
+          "Wireframing",
+          "Design Systems"
+        ],
+        "companies": [
+          "Google India",
+          "Microsoft India",
+          "Samsung R&D",
+          "Intuit India",
+          "Atlassian"
+        ],
+        "avg_salary": "\u20b916\u201335 LPA",
+        "job_match_keywords": [
+          "ux researcher",
+          "user research manager",
+          "research ops",
+          "usability",
+          "qualitative research",
+          "mixed methods ux"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Design Lead / Head of Design",
+        "required_skills": [
+          "Figma",
+          "Design Systems",
+          "User Research",
+          "Usability Testing",
+          "Interaction Design",
+          "Design Ops",
+          "Team Leadership"
+        ],
+        "companies": [
+          "Flipkart",
+          "PhonePe",
+          "Navi",
+          "Razorpay",
+          "Urban Company",
+          "Lenskart"
+        ],
+        "avg_salary": "\u20b935\u201380 LPA",
+        "job_match_keywords": [
+          "design lead",
+          "head of design",
+          "design director",
+          "chief design officer",
+          "design manager",
+          "vp design"
+        ]
+      }
+    ]
+  },
+  "corporate_law": {
+    "fresher": [
+      {
+        "role": "Junior Associate / Legal Trainee",
+        "required_skills": [
+          "Legal Research",
+          "Contract Drafting",
+          "Legal Writing",
+          "Corporate Law",
+          "Due Diligence Basics",
+          "MS Word",
+          "SCC Online"
+        ],
+        "companies": [
+          "AZB & Partners",
+          "Cyril Amarchand Mangaldas",
+          "Shardul Amarchand",
+          "Khaitan & Co",
+          "J. Sagar Associates",
+          "Trilegal"
+        ],
+        "avg_salary": "\u20b96\u201312 LPA",
+        "job_match_keywords": [
+          "legal trainee",
+          "junior associate",
+          "law graduate",
+          "llb",
+          "corporate law fresher",
+          "article trainee",
+          "junior lawyer"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior Associate \u2013 Corporate M&A",
+        "required_skills": [
+          "M&A",
+          "Due Diligence",
+          "Shareholders Agreement",
+          "Term Sheet",
+          "SEBI",
+          "FEMA",
+          "Corporate Restructuring",
+          "Client Management"
+        ],
+        "companies": [
+          "AZB & Partners",
+          "Cyril Amarchand",
+          "Shardul Amarchand",
+          "Khaitan",
+          "Trilegal",
+          "Nishith Desai"
+        ],
+        "avg_salary": "\u20b920\u201350 LPA",
+        "job_match_keywords": [
+          "senior associate",
+          "corporate lawyer",
+          "m&a associate",
+          "pe lawyer",
+          "vc law",
+          "sebi corporate"
+        ]
+      },
+      {
+        "role": "In-house Legal Counsel",
+        "required_skills": [
+          "Contract Management",
+          "SEBI/RBI Compliance",
+          "Corporate Governance",
+          "M&A Support",
+          "Employment Law",
+          "Vendor Contracts"
+        ],
+        "companies": [
+          "Razorpay",
+          "Swiggy",
+          "Zomato",
+          "Flipkart",
+          "Nykaa",
+          "Urban Company",
+          "PolicyBazaar"
+        ],
+        "avg_salary": "\u20b915\u201335 LPA",
+        "job_match_keywords": [
+          "in-house counsel",
+          "legal counsel",
+          "corporate counsel",
+          "company secretary",
+          "inhouse legal",
+          "legal manager"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Partner / General Counsel",
+        "required_skills": [
+          "Origination",
+          "Client Relationships",
+          "M&A Leadership",
+          "Team Management",
+          "Legal Strategy",
+          "Board Advisory",
+          "Governance"
+        ],
+        "companies": [
+          "AZB",
+          "Cyril Amarchand",
+          "Shardul",
+          "Khaitan",
+          "Trilegal",
+          "Tata Group Legal",
+          "Reliance Legal"
+        ],
+        "avg_salary": "\u20b980\u2013300 LPA",
+        "job_match_keywords": [
+          "partner law firm",
+          "general counsel",
+          "chief legal officer",
+          "clo",
+          "head of legal",
+          "legal director"
+        ]
+      }
+    ]
+  },
+  "talent_acquisition": {
+    "fresher": [
+      {
+        "role": "HR Executive / Junior Recruiter",
+        "required_skills": [
+          "Recruitment",
+          "Sourcing",
+          "Job Posting",
+          "Interview Scheduling",
+          "Offer Management",
+          "ATS",
+          "Excel"
+        ],
+        "companies": [
+          "TeamLease",
+          "Randstad India",
+          "ManpowerGroup",
+          "Quess Corp",
+          "Adecco India",
+          "ABC Consultants"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "hr executive",
+          "junior recruiter",
+          "talent acquisition executive",
+          "recruitment coordinator",
+          "fresher hr"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Talent Acquisition Manager",
+        "required_skills": [
+          "Full-Cycle Recruiting",
+          "Employer Branding",
+          "ATS",
+          "LinkedIn Recruiter",
+          "Diversity Hiring",
+          "Hiring Metrics",
+          "Stakeholder Management",
+          "Tech Recruiting"
+        ],
+        "companies": [
+          "Razorpay",
+          "CRED",
+          "BrowserStack",
+          "Zepto",
+          "PhonePe",
+          "Navi",
+          "Swiggy"
+        ],
+        "avg_salary": "\u20b912\u201325 LPA",
+        "job_match_keywords": [
+          "ta manager",
+          "talent acquisition manager",
+          "recruitment manager",
+          "sourcing lead",
+          "hiring manager",
+          "ta lead"
+        ]
+      },
+      {
+        "role": "Senior Technical Recruiter",
+        "required_skills": [
+          "Technical Recruiting",
+          "Boolean Search",
+          "LinkedIn Recruiter",
+          "Niche Hiring",
+          "Offer Management",
+          "Employer Branding",
+          "Data Analytics"
+        ],
+        "companies": [
+          "Amazon",
+          "Microsoft",
+          "Google",
+          "Adobe",
+          "Salesforce",
+          "Atlassian"
+        ],
+        "avg_salary": "\u20b915\u201328 LPA",
+        "job_match_keywords": [
+          "technical recruiter",
+          "tech ta",
+          "engineering recruiter",
+          "senior recruiter",
+          "niche hiring",
+          "executive search"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Head of Talent Acquisition",
+        "required_skills": [
+          "TA Strategy",
+          "Employer Brand",
+          "Executive Hiring",
+          "OD",
+          "People Analytics",
+          "Budget Management",
+          "Team Leadership",
+          "RPO"
+        ],
+        "companies": [
+          "Unicorn Startups",
+          "Flipkart",
+          "Swiggy",
+          "Amazon India",
+          "Google India",
+          "Microsoft India"
+        ],
+        "avg_salary": "\u20b940\u201390 LPA",
+        "job_match_keywords": [
+          "head of ta",
+          "vp talent acquisition",
+          "talent leader",
+          "cpo talent",
+          "chief talent officer",
+          "ta head"
+        ]
+      }
+    ]
+  },
+  "digital_marketing": {
+    "fresher": [
+      {
+        "role": "Digital Marketing Executive",
+        "required_skills": [
+          "SEO",
+          "Google Analytics",
+          "Social Media",
+          "Content Marketing",
+          "Email Marketing",
+          "Excel",
+          "Google Ads"
+        ],
+        "companies": [
+          "Dentsu",
+          "WPP India",
+          "Grey Group",
+          "Ogilvy",
+          "Publicis",
+          "iProspect",
+          "GroupM"
+        ],
+        "avg_salary": "\u20b92.5\u20135.5 LPA",
+        "job_match_keywords": [
+          "digital marketing executive",
+          "seo executive",
+          "social media executive",
+          "content executive",
+          "marketing executive",
+          "digital marketing fresher"
+        ]
+      },
+      {
+        "role": "SEO Analyst",
+        "required_skills": [
+          "SEO",
+          "Google Analytics",
+          "Content Marketing",
+          "Excel",
+          "Ahrefs"
+        ],
+        "companies": [
+          "Healthkart",
+          "IndiaMART",
+          "Naukri",
+          "PolicyBazaar",
+          "Cars24",
+          "99acres"
+        ],
+        "avg_salary": "\u20b92.5\u20135 LPA",
+        "job_match_keywords": [
+          "seo analyst",
+          "seo executive",
+          "search engine optimization",
+          "keyword research",
+          "on-page",
+          "off-page",
+          "seo fresher"
+        ]
+      },
+      {
+        "role": "Social Media Executive",
+        "required_skills": [
+          "Social Media",
+          "Content Marketing",
+          "Canva",
+          "Facebook Ads",
+          "Google Analytics",
+          "Campaign Management"
+        ],
+        "companies": [
+          "boAt",
+          "Mamaearth",
+          "Nykaa",
+          "Myntra",
+          "Zomato",
+          "Swiggy"
+        ],
+        "avg_salary": "\u20b92.5\u20135 LPA",
+        "job_match_keywords": [
+          "social media executive",
+          "social media manager",
+          "content creator",
+          "instagram manager",
+          "community manager",
+          "smm"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Performance Marketing Manager",
+        "required_skills": [
+          "Google Ads",
+          "Facebook Ads",
+          "Google Analytics",
+          "SEO",
+          "CRO",
+          "Campaign Management",
+          "Excel",
+          "Ahrefs"
+        ],
+        "companies": [
+          "Swiggy",
+          "Zomato",
+          "Meesho",
+          "Nykaa",
+          "Myntra",
+          "Amazon India",
+          "Flipkart"
+        ],
+        "avg_salary": "\u20b910\u201322 LPA",
+        "job_match_keywords": [
+          "performance marketing",
+          "google ads manager",
+          "facebook ads manager",
+          "paid media",
+          "media buying",
+          "roas",
+          "performance manager"
+        ]
+      },
+      {
+        "role": "SEO Manager / Growth Manager",
+        "required_skills": [
+          "SEO",
+          "Ahrefs",
+          "Google Analytics",
+          "Content Marketing",
+          "CRO",
+          "Campaign Management",
+          "Excel"
+        ],
+        "companies": [
+          "Healthkart",
+          "PolicyBazaar",
+          "ET Money",
+          "IndiaMART",
+          "Justdial",
+          "Cars24"
+        ],
+        "avg_salary": "\u20b98\u201318 LPA",
+        "job_match_keywords": [
+          "seo manager",
+          "growth manager",
+          "organic growth",
+          "seo strategy",
+          "link building manager",
+          "content marketing manager"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "VP Marketing / Head of Marketing",
+        "required_skills": [
+          "SEO",
+          "Google Ads",
+          "Facebook Ads",
+          "Marketing Automation",
+          "Performance Marketing",
+          "Growth Hacking",
+          "Campaign Management",
+          "Team Leadership"
+        ],
+        "companies": [
+          "Zomato",
+          "Swiggy",
+          "Razorpay",
+          "CRED",
+          "Nykaa",
+          "upGrad"
+        ],
+        "avg_salary": "\u20b935\u2013100 LPA",
+        "job_match_keywords": [
+          "vp marketing",
+          "head of marketing",
+          "chief marketing officer",
+          "cmo",
+          "marketing director",
+          "marketing leadership"
+        ]
+      }
+    ]
+  },
+  "sales": {
+    "fresher": [
+      {
+        "role": "Sales Development Representative (SDR)",
+        "required_skills": [
+          "Lead Generation",
+          "Cold Calling",
+          "CRM",
+          "Communication",
+          "Product Knowledge",
+          "B2B Sales"
+        ],
+        "companies": [
+          "Freshworks",
+          "Zoho",
+          "BrowserStack",
+          "Chargebee",
+          "Leadsquared",
+          "Clevertap"
+        ],
+        "avg_salary": "\u20b93.5\u20137 LPA",
+        "job_match_keywords": [
+          "sdr",
+          "sales development",
+          "lead generation",
+          "cold calling",
+          "inside sales",
+          "junior sales",
+          "fresher sales"
+        ]
+      },
+      {
+        "role": "Business Development Executive",
+        "required_skills": [
+          "Lead Generation",
+          "B2B Sales",
+          "CRM",
+          "Negotiation",
+          "Pipeline Management",
+          "Excel"
+        ],
+        "companies": [
+          "IndiaMART",
+          "Justdial",
+          "TradeIndia",
+          "D2C Brands",
+          "SaaS Startups"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "business development executive",
+          "bde",
+          "field sales",
+          "b2b",
+          "lead generation",
+          "sales executive",
+          "fresher"
+        ]
+      },
+      {
+        "role": "Inside Sales Executive",
+        "required_skills": [
+          "Cold Calling",
+          "Lead Generation",
+          "CRM",
+          "B2B Sales",
+          "B2C Sales",
+          "Target Achievement",
+          "Communication"
+        ],
+        "companies": [
+          "UpGrad",
+          "Unacademy",
+          "Byju's",
+          "Vedantu",
+          "PolicyBazaar"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "inside sales",
+          "telesales",
+          "tele-caller",
+          "phone sales",
+          "inside sales executive",
+          "edtech sales"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior Sales Executive / Sales Manager",
+        "required_skills": [
+          "B2B Sales",
+          "Account Management",
+          "Pipeline Management",
+          "CRM",
+          "Negotiation",
+          "Target Achievement",
+          "Lead Generation"
+        ],
+        "companies": [
+          "Freshworks",
+          "Zoho",
+          "BrowserStack",
+          "Razorpay",
+          "PhonePe",
+          "PayU"
+        ],
+        "avg_salary": "\u20b98\u201320 LPA",
+        "job_match_keywords": [
+          "senior sales",
+          "sales manager",
+          "account executive",
+          "regional sales",
+          "b2b sales manager",
+          "enterprise sales"
+        ]
+      },
+      {
+        "role": "Enterprise Account Executive",
+        "required_skills": [
+          "Enterprise Sales",
+          "B2B Sales",
+          "CRM",
+          "Negotiation",
+          "Account Management",
+          "Pipeline Management",
+          "SaaS Sales"
+        ],
+        "companies": [
+          "Salesforce",
+          "SAP",
+          "Oracle",
+          "Adobe",
+          "Microsoft",
+          "ServiceNow"
+        ],
+        "avg_salary": "\u20b915\u201335 LPA",
+        "job_match_keywords": [
+          "enterprise sales",
+          "account executive",
+          "ae",
+          "b2b saas sales",
+          "quota",
+          "deal closure",
+          "enterprise account"
+        ]
+      },
+      {
+        "role": "Key Account Manager",
+        "required_skills": [
+          "Account Management",
+          "B2B Sales",
+          "Negotiation",
+          "CRM",
+          "Relationship Management",
+          "Target Achievement",
+          "Pipeline Management"
+        ],
+        "companies": [
+          "Amazon",
+          "Flipkart",
+          "Swiggy",
+          "Zomato",
+          "Nykaa",
+          "Myntra"
+        ],
+        "avg_salary": "\u20b910\u201322 LPA",
+        "job_match_keywords": [
+          "key account manager",
+          "kam",
+          "account manager",
+          "client management",
+          "relationship management",
+          "key accounts"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "VP Sales / Head of Sales",
+        "required_skills": [
+          "B2B Sales",
+          "Revenue Operations",
+          "Pipeline Management",
+          "CRM",
+          "Team Leadership",
+          "Sales Forecasting",
+          "Account Management"
+        ],
+        "companies": [
+          "Salesforce",
+          "SAP",
+          "Freshworks",
+          "Razorpay",
+          "CRED",
+          "Swiggy B2B"
+        ],
+        "avg_salary": "\u20b940\u2013120 LPA",
+        "job_match_keywords": [
+          "vp sales",
+          "head of sales",
+          "revenue leader",
+          "chief revenue officer",
+          "cro",
+          "sales director"
+        ]
+      }
+    ]
+  },
+  "consulting": {
+    "fresher": [
+      {
+        "role": "Business Analyst \u2013 Consulting",
+        "required_skills": [
+          "Problem Solving",
+          "Excel",
+          "Presentation",
+          "Market Research",
+          "Financial Modeling",
+          "Communication",
+          "Data Analysis"
+        ],
+        "companies": [
+          "McKinsey",
+          "BCG",
+          "Bain",
+          "Kearney",
+          "Deloitte Consulting",
+          "EY Consulting",
+          "Accenture"
+        ],
+        "avg_salary": "\u20b910\u201322 LPA",
+        "job_match_keywords": [
+          "business analyst consulting",
+          "consulting analyst",
+          "strategy analyst",
+          "mba fresher consulting",
+          "junior consultant",
+          "associate analyst"
+        ]
+      },
+      {
+        "role": "Associate Consultant",
+        "required_skills": [
+          "Problem Solving",
+          "Excel",
+          "Presentation",
+          "Market Research",
+          "Financial Modeling",
+          "Stakeholder Management",
+          "Data Analysis"
+        ],
+        "companies": [
+          "McKinsey",
+          "BCG",
+          "Bain",
+          "Roland Berger",
+          "L.E.K",
+          "A.T. Kearney",
+          "Kearney"
+        ],
+        "avg_salary": "\u20b914\u201328 LPA",
+        "job_match_keywords": [
+          "associate consultant",
+          "ac",
+          "junior consultant",
+          "mbb analyst",
+          "strategy consulting fresher"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Consultant / Senior Consultant",
+        "required_skills": [
+          "Problem Solving",
+          "Strategy",
+          "Financial Modeling",
+          "Project Management",
+          "Stakeholder Management",
+          "Excel",
+          "Presentation",
+          "Data Analysis"
+        ],
+        "companies": [
+          "McKinsey",
+          "BCG",
+          "Bain",
+          "Deloitte",
+          "EY",
+          "Kearney",
+          "Alvarez & Marsal"
+        ],
+        "avg_salary": "\u20b928\u201365 LPA",
+        "job_match_keywords": [
+          "senior consultant",
+          "consultant",
+          "management consulting",
+          "strategy consultant",
+          "client project",
+          "workstream lead"
+        ]
+      },
+      {
+        "role": "Manager \u2013 Strategy & Consulting",
+        "required_skills": [
+          "Strategy",
+          "Problem Solving",
+          "Digital Transformation",
+          "Financial Modeling",
+          "Change Management",
+          "Stakeholder Management",
+          "Project Management"
+        ],
+        "companies": [
+          "Deloitte",
+          "Accenture",
+          "Infosys Consulting",
+          "Wipro Consulting",
+          "IBM"
+        ],
+        "avg_salary": "\u20b922\u201350 LPA",
+        "job_match_keywords": [
+          "consulting manager",
+          "strategy manager",
+          "digital consulting manager",
+          "transformation manager",
+          "manager consulting"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Associate Director / Partner",
+        "required_skills": [
+          "Strategy",
+          "Business Development",
+          "Client Relationships",
+          "Financial Modeling",
+          "Team Leadership",
+          "Change Management",
+          "Project Management"
+        ],
+        "companies": [
+          "McKinsey",
+          "BCG",
+          "Bain",
+          "Kearney",
+          "Alvarez & Marsal",
+          "Roland Berger"
+        ],
+        "avg_salary": "\u20b980\u2013300 LPA",
+        "job_match_keywords": [
+          "associate director consulting",
+          "partner consulting",
+          "principal consultant",
+          "engagement manager",
+          "consulting director",
+          "mbb partner"
+        ]
+      }
+    ]
+  },
+  "hr": {
+    "fresher": [
+      {
+        "role": "HR Executive",
+        "required_skills": [
+          "Recruitment",
+          "Onboarding",
+          "Excel",
+          "HRIS",
+          "HR Policies",
+          "Employee Relations"
+        ],
+        "companies": [
+          "TeamLease",
+          "Randstad India",
+          "ManpowerGroup",
+          "Quess Corp",
+          "Adecco"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "hr executive",
+          "hr fresher",
+          "recruitment",
+          "onboarding",
+          "employee relations",
+          "hr generalist entry level"
+        ]
+      },
+      {
+        "role": "Recruiter",
+        "required_skills": [
+          "Recruitment",
+          "Talent Acquisition",
+          "Sourcing",
+          "Interviewing",
+          "Excel",
+          "HRIS"
+        ],
+        "companies": [
+          "TeamLease",
+          "Randstad",
+          "ABC Consultants",
+          "Michael Page",
+          "Naukri"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "recruiter",
+          "talent acquisition fresher",
+          "sourcing",
+          "screening",
+          "junior recruiter",
+          "staffing"
+        ]
+      },
+      {
+        "role": "HR Coordinator",
+        "required_skills": [
+          "Onboarding",
+          "HR Policies",
+          "Payroll",
+          "Excel",
+          "Employee Relations",
+          "HRIS"
+        ],
+        "companies": [
+          "Infosys",
+          "TCS",
+          "Wipro",
+          "Capgemini",
+          "HCL"
+        ],
+        "avg_salary": "\u20b93\u20135.5 LPA",
+        "job_match_keywords": [
+          "hr coordinator",
+          "hr admin",
+          "hr operations",
+          "hr fresher",
+          "human resources coordinator"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior HR Executive / HR Manager",
+        "required_skills": [
+          "Recruitment",
+          "Talent Acquisition",
+          "Performance Management",
+          "HRIS",
+          "Employee Relations",
+          "HR Policies",
+          "Excel",
+          "Payroll"
+        ],
+        "companies": [
+          "Amazon",
+          "Microsoft",
+          "Google",
+          "Flipkart",
+          "Swiggy",
+          "Zepto"
+        ],
+        "avg_salary": "\u20b98\u201318 LPA",
+        "job_match_keywords": [
+          "hr manager",
+          "senior hr",
+          "hr generalist",
+          "hrbp",
+          "people manager",
+          "talent manager"
+        ]
+      },
+      {
+        "role": "Talent Acquisition Manager",
+        "required_skills": [
+          "Talent Acquisition",
+          "Recruitment",
+          "Employer Branding",
+          "HR Analytics",
+          "OKR",
+          "HRIS"
+        ],
+        "companies": [
+          "Razorpay",
+          "CRED",
+          "BrowserStack",
+          "PhonePe",
+          "Navi",
+          "Zepto"
+        ],
+        "avg_salary": "\u20b912\u201322 LPA",
+        "job_match_keywords": [
+          "talent acquisition manager",
+          "ta manager",
+          "recruitment manager",
+          "head of talent",
+          "sourcing lead"
+        ]
+      },
+      {
+        "role": "HR Business Partner (HRBP)",
+        "required_skills": [
+          "Recruitment",
+          "Performance Management",
+          "Employee Relations",
+          "Workforce Planning",
+          "HR Analytics",
+          "OKR",
+          "Payroll"
+        ],
+        "companies": [
+          "Amazon",
+          "Google",
+          "Microsoft",
+          "Flipkart",
+          "Swiggy"
+        ],
+        "avg_salary": "\u20b914\u201328 LPA",
+        "job_match_keywords": [
+          "hrbp",
+          "hr business partner",
+          "people partner",
+          "hr strategy",
+          "workforce planning",
+          "org design"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Head of HR / HR Director",
+        "required_skills": [
+          "HR Policies",
+          "Talent Acquisition",
+          "Performance Management",
+          "Compensation & Benefits",
+          "OKR",
+          "Learning & Development",
+          "HR Analytics",
+          "Workforce Planning"
+        ],
+        "companies": [
+          "Tata Group",
+          "Reliance",
+          "Infosys",
+          "Wipro",
+          "Amazon India"
+        ],
+        "avg_salary": "\u20b935\u201380 LPA",
+        "job_match_keywords": [
+          "head of hr",
+          "hr director",
+          "vp hr",
+          "chro",
+          "chief people officer",
+          "hr leadership"
+        ]
+      }
+    ]
+  },
+  "business_development": {
+    "fresher": [
+      {
+        "role": "Business Development Associate",
+        "required_skills": [
+          "Lead Generation",
+          "Market Research",
+          "CRM",
+          "Networking",
+          "Proposal Writing",
+          "Communication",
+          "Excel"
+        ],
+        "companies": [
+          "Startups",
+          "IndiaMART",
+          "Naukri",
+          "Delhivery",
+          "Shiprocket"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "bda",
+          "business development associate",
+          "bd executive",
+          "lead generation",
+          "market research",
+          "outreach"
+        ]
+      },
+      {
+        "role": "Partnerships Associate",
+        "required_skills": [
+          "Partnerships",
+          "Lead Generation",
+          "CRM",
+          "Communication",
+          "Market Research",
+          "Networking"
+        ],
+        "companies": [
+          "Razorpay",
+          "Paytm",
+          "Cashfree",
+          "Instamojo",
+          "SaaS Startups"
+        ],
+        "avg_salary": "\u20b93.5\u20136.5 LPA",
+        "job_match_keywords": [
+          "partnerships associate",
+          "alliance associate",
+          "partner management",
+          "channel partnerships",
+          "bd associate"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Business Development Manager",
+        "required_skills": [
+          "Business Development",
+          "Lead Generation",
+          "Partnerships",
+          "Market Research",
+          "CRM",
+          "Negotiation",
+          "Go-to-Market",
+          "Revenue Modeling"
+        ],
+        "companies": [
+          "Razorpay",
+          "PhonePe",
+          "Zepto",
+          "Delhivery",
+          "MakeMyTrip",
+          "Naukri"
+        ],
+        "avg_salary": "\u20b910\u201322 LPA",
+        "job_match_keywords": [
+          "business development manager",
+          "bd manager",
+          "partnership manager",
+          "growth manager",
+          "alliance manager"
+        ]
+      },
+      {
+        "role": "Head of Partnerships",
+        "required_skills": [
+          "Partnerships",
+          "Business Development",
+          "Go-to-Market",
+          "Revenue Modeling",
+          "Negotiation",
+          "International Business",
+          "CRM"
+        ],
+        "companies": [
+          "Google India",
+          "Amazon India",
+          "Microsoft India",
+          "Razorpay",
+          "Flipkart"
+        ],
+        "avg_salary": "\u20b918\u201340 LPA",
+        "job_match_keywords": [
+          "head of partnerships",
+          "director bd",
+          "vp partnerships",
+          "global alliances",
+          "strategic partnerships"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "VP Business Development",
+        "required_skills": [
+          "Business Development",
+          "Revenue Modeling",
+          "Go-to-Market",
+          "Partnerships",
+          "International Business",
+          "Team Leadership",
+          "CRM"
+        ],
+        "companies": [
+          "Google",
+          "Amazon",
+          "Microsoft",
+          "Salesforce",
+          "Razorpay"
+        ],
+        "avg_salary": "\u20b940\u2013100 LPA",
+        "job_match_keywords": [
+          "vp business development",
+          "chief business officer",
+          "cbo",
+          "head of growth",
+          "revenue growth leader"
+        ]
+      }
+    ]
+  },
+  "customer_support": {
+    "fresher": [
+      {
+        "role": "Customer Support Executive",
+        "required_skills": [
+          "Customer Service",
+          "Communication",
+          "Ticketing System",
+          "Problem Resolution",
+          "CRM",
+          "SLA Management"
+        ],
+        "companies": [
+          "Amazon",
+          "Flipkart",
+          "Zomato",
+          "Swiggy",
+          "Myntra",
+          "Meesho",
+          "Nykaa"
+        ],
+        "avg_salary": "\u20b92.5\u20135 LPA",
+        "job_match_keywords": [
+          "customer support",
+          "customer service",
+          "support executive",
+          "helpdesk",
+          "customer care",
+          "fresher support"
+        ]
+      },
+      {
+        "role": "Technical Support Executive",
+        "required_skills": [
+          "Technical Support",
+          "Customer Service",
+          "Communication",
+          "Ticketing System",
+          "Product Knowledge",
+          "Problem Resolution"
+        ],
+        "companies": [
+          "Freshworks",
+          "Zoho",
+          "BrowserStack",
+          "Leadsquared",
+          "SaaS Companies"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "technical support",
+          "l1 support",
+          "it support",
+          "software support",
+          "tech support",
+          "technical helpdesk"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior Customer Support Executive / Team Lead",
+        "required_skills": [
+          "Customer Service",
+          "Escalation Handling",
+          "SLA Management",
+          "CRM",
+          "Quality Assurance",
+          "NPS",
+          "Team Leadership",
+          "Excel"
+        ],
+        "companies": [
+          "Amazon",
+          "Flipkart",
+          "Swiggy",
+          "Zomato",
+          "Urban Company",
+          "PhonePe"
+        ],
+        "avg_salary": "\u20b95\u201312 LPA",
+        "job_match_keywords": [
+          "senior support",
+          "support team lead",
+          "customer experience manager",
+          "cx manager",
+          "support manager"
+        ]
+      },
+      {
+        "role": "Customer Success Manager",
+        "required_skills": [
+          "Customer Service",
+          "Account Management",
+          "CRM",
+          "NPS",
+          "SLA Management",
+          "Escalation Handling",
+          "Product Knowledge"
+        ],
+        "companies": [
+          "Freshworks",
+          "Zoho",
+          "BrowserStack",
+          "Clevertap",
+          "Leadsquared",
+          "SaaS Companies"
+        ],
+        "avg_salary": "\u20b98\u201318 LPA",
+        "job_match_keywords": [
+          "customer success manager",
+          "csm",
+          "client success",
+          "account health",
+          "churn reduction",
+          "customer success"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Head of Customer Experience",
+        "required_skills": [
+          "Customer Service",
+          "NPS",
+          "Quality Assurance",
+          "CRM",
+          "SLA Management",
+          "Team Leadership",
+          "Analytics",
+          "Escalation Handling"
+        ],
+        "companies": [
+          "Amazon",
+          "Flipkart",
+          "Swiggy",
+          "Zomato",
+          "Urban Company"
+        ],
+        "avg_salary": "\u20b920\u201345 LPA",
+        "job_match_keywords": [
+          "head of customer experience",
+          "vp cx",
+          "director customer support",
+          "customer experience leader",
+          "chief cx officer"
+        ]
+      }
+    ]
+  },
+  "operations": {
+    "fresher": [
+      {
+        "role": "Operations Executive",
+        "required_skills": [
+          "Operations Management",
+          "Excel",
+          "Vendor Management",
+          "Inventory Management",
+          "Procurement",
+          "ERP"
+        ],
+        "companies": [
+          "Amazon",
+          "Flipkart",
+          "Zepto",
+          "Delhivery",
+          "Meesho",
+          "BigBasket"
+        ],
+        "avg_salary": "\u20b93\u20136 LPA",
+        "job_match_keywords": [
+          "operations executive",
+          "ops executive",
+          "supply chain executive",
+          "operations analyst",
+          "fresher ops"
+        ]
+      },
+      {
+        "role": "Supply Chain Analyst",
+        "required_skills": [
+          "Supply Chain",
+          "Excel",
+          "Inventory Management",
+          "Procurement",
+          "Logistics",
+          "ERP"
+        ],
+        "companies": [
+          "Amazon",
+          "Walmart India",
+          "Tata Group",
+          "Mahindra",
+          "Bajaj Auto"
+        ],
+        "avg_salary": "\u20b93.5\u20137 LPA",
+        "job_match_keywords": [
+          "supply chain analyst",
+          "logistics analyst",
+          "scm analyst",
+          "procurement analyst",
+          "warehouse analyst"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Operations Manager",
+        "required_skills": [
+          "Operations Management",
+          "Supply Chain",
+          "Vendor Management",
+          "Process Improvement",
+          "Excel",
+          "ERP",
+          "Quality Control",
+          "Team Leadership"
+        ],
+        "companies": [
+          "Amazon",
+          "Flipkart",
+          "Zepto",
+          "Delhivery",
+          "Porter",
+          "BigBasket",
+          "Urban Company"
+        ],
+        "avg_salary": "\u20b910\u201322 LPA",
+        "job_match_keywords": [
+          "operations manager",
+          "ops manager",
+          "supply chain manager",
+          "logistics manager",
+          "process manager"
+        ]
+      },
+      {
+        "role": "Supply Chain Manager",
+        "required_skills": [
+          "Supply Chain",
+          "Procurement",
+          "Vendor Management",
+          "Inventory Management",
+          "Demand Planning",
+          "ERP",
+          "Logistics",
+          "Process Improvement"
+        ],
+        "companies": [
+          "Tata Group",
+          "Mahindra",
+          "Maruti Suzuki",
+          "Amazon",
+          "Walmart",
+          "Unilever"
+        ],
+        "avg_salary": "\u20b912\u201326 LPA",
+        "job_match_keywords": [
+          "supply chain manager",
+          "scm manager",
+          "procurement manager",
+          "logistics manager",
+          "vendor management manager"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Head of Operations",
+        "required_skills": [
+          "Operations Management",
+          "Supply Chain",
+          "Process Improvement",
+          "Lean",
+          "Six Sigma",
+          "ERP",
+          "Team Leadership",
+          "Vendor Management"
+        ],
+        "companies": [
+          "Amazon",
+          "Flipkart",
+          "Tata Group",
+          "Mahindra",
+          "Reliance",
+          "Unilever"
+        ],
+        "avg_salary": "\u20b930\u201380 LPA",
+        "job_match_keywords": [
+          "head of operations",
+          "vp operations",
+          "chief operations officer",
+          "coo",
+          "operations director",
+          "operations leadership"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "fresher": [
+      {
+        "role": "Teacher / Faculty",
+        "required_skills": [
+          "Teaching",
+          "Curriculum Development",
+          "Communication",
+          "Assessment",
+          "Classroom Management",
+          "Presentation",
+          "Excel"
+        ],
+        "companies": [
+          "CBSE Schools",
+          "ICSE Schools",
+          "Narayana Group",
+          "Aakash",
+          "Allen Institute",
+          "Byju's",
+          "Vedantu"
+        ],
+        "avg_salary": "\u20b92.5\u20136 LPA",
+        "job_match_keywords": [
+          "teacher",
+          "faculty",
+          "lecturer",
+          "instructor",
+          "subject teacher",
+          "fresher teacher",
+          "academic staff"
+        ]
+      },
+      {
+        "role": "Content Creator \u2013 EdTech",
+        "required_skills": [
+          "Teaching",
+          "Curriculum Development",
+          "Communication",
+          "Presentation",
+          "LMS",
+          "Excel"
+        ],
+        "companies": [
+          "Byju's",
+          "Unacademy",
+          "Vedantu",
+          "Testbook",
+          "PrepLadder",
+          "PhysicsWallah"
+        ],
+        "avg_salary": "\u20b93\u20137 LPA",
+        "job_match_keywords": [
+          "content creator edtech",
+          "academic content",
+          "subject matter expert",
+          "sme",
+          "e-learning content",
+          "online tutor"
+        ]
+      }
+    ],
+    "mid": [
+      {
+        "role": "Senior Teacher / HOD",
+        "required_skills": [
+          "Teaching",
+          "Curriculum Development",
+          "Assessment",
+          "Classroom Management",
+          "Communication",
+          "Presentation",
+          "LMS"
+        ],
+        "companies": [
+          "DPS",
+          "Ryan International",
+          "Narayana",
+          "Aakash",
+          "Allen",
+          "Heritage Schools"
+        ],
+        "avg_salary": "\u20b96\u201314 LPA",
+        "job_match_keywords": [
+          "senior teacher",
+          "head of department",
+          "hod",
+          "senior faculty",
+          "academic lead",
+          "curriculum head"
+        ]
+      },
+      {
+        "role": "Academic Manager \u2013 EdTech",
+        "required_skills": [
+          "Teaching",
+          "Curriculum Development",
+          "Instructional Design",
+          "LMS",
+          "EdTech",
+          "Assessment",
+          "Team Leadership"
+        ],
+        "companies": [
+          "Byju's",
+          "Unacademy",
+          "upGrad",
+          "Vedantu",
+          "Simplilearn",
+          "Great Learning"
+        ],
+        "avg_salary": "\u20b98\u201318 LPA",
+        "job_match_keywords": [
+          "academic manager",
+          "curriculum manager",
+          "learning manager",
+          "edtech manager",
+          "academic operations",
+          "instructional design manager"
+        ]
+      }
+    ],
+    "senior": [
+      {
+        "role": "Principal / Academic Director",
+        "required_skills": [
+          "Teaching",
+          "Curriculum Development",
+          "Assessment",
+          "Classroom Management",
+          "Leadership",
+          "Communication",
+          "Research"
+        ],
+        "companies": [
+          "Top CBSE/ICSE Schools",
+          "IITs",
+          "NITs",
+          "Private Universities",
+          "Edtech Groups"
+        ],
+        "avg_salary": "\u20b915\u201340 LPA",
+        "job_match_keywords": [
+          "principal",
+          "academic director",
+          "vp academics",
+          "dean",
+          "head academics",
+          "academic leadership",
+          "chief academic officer"
+        ]
+      }
+    ]
+  },
+  "data_analyst": {
+  "fresher": [
+    {
+      "role": "Data Analyst",
+      "required_skills": [
+        "SQL",
+        "Excel",
+        "Power BI",
+        "Data Visualization",
+        "Data Cleaning",
+        "Statistics"
+      ],
+      "companies": [
+        "TCS",
+        "Infosys",
+        "Wipro",
+        "Accenture",
+        "Capgemini",
+        "Cognizant"
+      ],
+      "avg_salary": "₹3–7 LPA",
+      "job_match_keywords": [
+        "data analyst",
+        "sql",
+        "excel",
+        "power bi",
+        "fresher",
+        "entry level",
+        "data analysis"
+      ]
+    },
+    {
+      "role": "Business Analyst",
+      "required_skills": [
+        "Excel",
+        "SQL",
+        "Data Visualization",
+        "MIS Reporting",
+        "Power BI",
+        "Communication"
+      ],
+      "companies": [
+        "Amazon",
+        "Flipkart",
+        "Zomato",
+        "Swiggy",
+        "Nykaa",
+        "PolicyBazaar"
+      ],
+      "avg_salary": "₹4–8 LPA",
+      "job_match_keywords": [
+        "business analyst",
+        "mis",
+        "reporting",
+        "sql",
+        "excel",
+        "fresher"
+      ]
+    }
+  ],
+  "mid": [
+    {
+      "role": "Senior Data Analyst",
+      "required_skills": [
+        "SQL",
+        "Python",
+        "Power BI",
+        "Tableau",
+        "Data Visualization",
+        "Statistical Analysis",
+        "A/B Testing"
+      ],
+      "companies": [
+        "Amazon",
+        "Google",
+        "Microsoft",
+        "Flipkart",
+        "Swiggy",
+        "Zomato"
+      ],
+      "avg_salary": "₹10–22 LPA",
+      "job_match_keywords": [
+        "senior data analyst",
+        "analytics",
+        "python",
+        "sql",
+        "dashboard",
+        "data insights"
+      ]
+    },
+    {
+      "role": "BI Analyst",
+      "required_skills": [
+        "SQL",
+        "Power BI",
+        "Tableau",
+        "Data Warehousing",
+        "Excel",
+        "ETL"
+      ],
+      "companies": [
+        "Mu Sigma",
+        "Fractal Analytics",
+        "Latent View",
+        "EXL",
+        "WNS Analytics"
+      ],
+      "avg_salary": "₹8–18 LPA",
+      "job_match_keywords": [
+        "bi analyst",
+        "business intelligence",
+        "power bi",
+        "tableau",
+        "data warehouse"
+      ]
+    }
+  ],
+  "senior": [
+    {
+      "role": "Analytics Manager",
+      "required_skills": [
+        "SQL",
+        "Python",
+        "Machine Learning",
+        "Data Visualization",
+        "Stakeholder Management",
+        "Team Leadership"
+      ],
+      "companies": [
+        "Google",
+        "Amazon",
+        "Microsoft",
+        "Flipkart",
+        "Uber",
+        "Swiggy"
+      ],
+      "avg_salary": "₹20–45 LPA",
+      "job_match_keywords": [
+        "analytics manager",
+        "data analytics lead",
+        "team lead analytics",
+        "data strategy",
+        "analytics leadership"
+      ]
+    }
+  ]
+}
+}

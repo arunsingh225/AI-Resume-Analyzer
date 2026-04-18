@@ -1,0 +1,819 @@
+{
+  "frontend_developer": {
+    "mncs": [
+      {"name":"Google (Chrome/Web)","ats_strictness":"high","preferred_skills":["Angular","TypeScript","Performance","Web Vitals","PWA"]},
+      {"name":"Microsoft (M365/Teams)","ats_strictness":"high","preferred_skills":["React","TypeScript","Fluent UI","Accessibility"]},
+      {"name":"Adobe (DX Cloud)","ats_strictness":"medium","preferred_skills":["React","TypeScript","Spectrum Design System","Web Perf"]}
+    ],
+    "startups": [
+      {"name":"CRED","ats_strictness":"high","preferred_skills":["React","TypeScript","Motion","Design Systems","Performance"]},
+      {"name":"Razorpay","ats_strictness":"medium","preferred_skills":["React","TypeScript","Fintech UI","Accessibility"]},
+      {"name":"Vercel","ats_strictness":"high","preferred_skills":["Next.js","React","Edge Computing","Open Source"]},
+      {"name":"Linear","ats_strictness":"high","preferred_skills":["React","TypeScript","Electron","Design Eng"]},
+      {"name":"BrowserStack","ats_strictness":"medium","preferred_skills":["React","Testing","Developer Tools","Performance"]}
+    ],
+    "product_companies": [
+      {"name":"Swiggy","ats_strictness":"medium","preferred_skills":["React","Web Performance","Mobile Web","Consumer Apps"]},
+      {"name":"Meesho","ats_strictness":"medium","preferred_skills":["React","Vernacular UI","Low-end Device Optimization"]}
+    ]
+  },
+  "backend_developer": {
+    "mncs": [
+      {"name":"Amazon","ats_strictness":"high","preferred_skills":["Java","Distributed Systems","AWS","Microservices","Leadership"]},
+      {"name":"Microsoft","ats_strictness":"high","preferred_skills":["C#","Azure","Microservices","Distributed Systems"]},
+      {"name":"Google","ats_strictness":"high","preferred_skills":["Go","Python","Distributed Systems","Large Scale"]}
+    ],
+    "startups": [
+      {"name":"Razorpay","ats_strictness":"medium","preferred_skills":["Go","Python","Payments","High Throughput APIs"]},
+      {"name":"PhonePe","ats_strictness":"medium","preferred_skills":["Java","Kotlin","Fintech","Scale","Microservices"]},
+      {"name":"Zepto","ats_strictness":"medium","preferred_skills":["Python","Go","Real-Time Systems","High Availability"]},
+      {"name":"Postman","ats_strictness":"medium","preferred_skills":["Node.js","Go","API Platform","Developer Tools"]}
+    ],
+    "product_companies": [
+      {"name":"Flipkart","ats_strictness":"medium","preferred_skills":["Java","Microservices","Kafka","High Scale"]},
+      {"name":"Atlassian","ats_strictness":"medium","preferred_skills":["Java","Python","Cloud","SaaS Platform"]}
+    ]
+  },
+  "fullstack_developer": {
+    "mncs": [
+      {"name":"Thoughtworks","ats_strictness":"medium","preferred_skills":["React","Node.js","TDD","Agile","Cloud"]},
+      {"name":"Accenture (Digital)","ats_strictness":"medium","preferred_skills":["React","Java","Azure","Digital Transformation"]}
+    ],
+    "startups": [
+      {"name":"BrowserStack","ats_strictness":"medium","preferred_skills":["React","Node.js","TypeScript","SaaS"]},
+      {"name":"Freshworks","ats_strictness":"low","preferred_skills":["React","Ruby on Rails","SaaS","B2B"]},
+      {"name":"Chargebee","ats_strictness":"medium","preferred_skills":["React","Python","Subscription SaaS","APIs"]},
+      {"name":"Leadsquared","ats_strictness":"low","preferred_skills":["React","Node.js","CRM Platform","B2B SaaS"]}
+    ],
+    "product_companies": [
+      {"name":"Zoho","ats_strictness":"low","preferred_skills":["Java","React","SaaS","Full Stack","B2B"]},
+      {"name":"Clevertap","ats_strictness":"medium","preferred_skills":["React","Node.js","Analytics SaaS","MarTech"]}
+    ]
+  },
+  "java_developer": {
+    "mncs": [
+      {"name":"Oracle","ats_strictness":"high","preferred_skills":["Java","JVM","Spring","Enterprise","JDBC"]},
+      {"name":"IBM","ats_strictness":"medium","preferred_skills":["Java","Spring Boot","Microservices","IBM Cloud"]},
+      {"name":"Infosys","ats_strictness":"medium","preferred_skills":["Java","Spring","REST API","Microservices","Oracle DB"]}
+    ],
+    "startups": [
+      {"name":"PhonePe","ats_strictness":"medium","preferred_skills":["Java","Kotlin","Spring Boot","High Scale Fintech"]},
+      {"name":"Paytm","ats_strictness":"medium","preferred_skills":["Java","Spring Boot","Payments","Microservices"]},
+      {"name":"Myntra","ats_strictness":"medium","preferred_skills":["Java","Spring","Kafka","E-Commerce Scale"]}
+    ],
+    "product_companies": [
+      {"name":"SAP Labs","ats_strictness":"high","preferred_skills":["Java","ABAP","SAP Platform","Enterprise"]},
+      {"name":"LTIMindtree","ats_strictness":"medium","preferred_skills":["Java","Spring","Microservices","Banking Domain"]}
+    ]
+  },
+  "python_developer": {
+    "mncs": [
+      {"name":"Google","ats_strictness":"high","preferred_skills":["Python","Django","Distributed Systems","APIs","GCP"]},
+      {"name":"Meta","ats_strictness":"high","preferred_skills":["Python","Hack","Data Infrastructure","Large Scale"]}
+    ],
+    "startups": [
+      {"name":"Sarvam AI","ats_strictness":"high","preferred_skills":["Python","FastAPI","LLM","NLP","Async"]},
+      {"name":"Razorpay","ats_strictness":"medium","preferred_skills":["Python","Django","Celery","Fintech APIs"]},
+      {"name":"Juspay","ats_strictness":"medium","preferred_skills":["Python","Haskell","Payment Systems","Functional Programming"]},
+      {"name":"HealthifyMe","ats_strictness":"low","preferred_skills":["Python","Django","Health APIs","Nutrition ML"]}
+    ],
+    "product_companies": [
+      {"name":"Freshworks","ats_strictness":"low","preferred_skills":["Python","Django","CRM SaaS","B2B Integration"]},
+      {"name":"Zoho","ats_strictness":"low","preferred_skills":["Python","Scripting","SaaS Backend","Integration"]}
+    ]
+  },
+  "software_engineer": {
+    "mncs": [
+      {"name":"Google","ats_strictness":"high","preferred_skills":["System Design","Distributed Systems","Python","Go","Algorithms"]},
+      {"name":"Microsoft","ats_strictness":"high","preferred_skills":["C#","Azure","System Design","Cloud Architecture"]},
+      {"name":"Amazon","ats_strictness":"high","preferred_skills":["Java","Python","AWS","Leadership Principles","System Design"]},
+      {"name":"Meta","ats_strictness":"high","preferred_skills":["System Design","Python","C++","Large Scale","Algorithms"]},
+      {"name":"Adobe","ats_strictness":"medium","preferred_skills":["Java","AWS","Microservices","Creative Cloud"]}
+    ],
+    "startups": [
+      {"name":"CRED","ats_strictness":"high","preferred_skills":["Kotlin","Python","System Design","Premium UX Backend"]},
+      {"name":"Zepto","ats_strictness":"medium","preferred_skills":["Python","Go","Real-Time Commerce","Microservices"]},
+      {"name":"BrowserStack","ats_strictness":"medium","preferred_skills":["Python","Java","Distributed Testing","SaaS"]}
+    ],
+    "product_companies": [
+      {"name":"Atlassian","ats_strictness":"medium","preferred_skills":["Java","React","Cloud","SaaS Platform","Agile"]},
+      {"name":"Intuit India","ats_strictness":"medium","preferred_skills":["Java","Python","ML","Fintech","Tax Products"]}
+    ]
+  },
+  "data_analyst": {
+    "mncs": [
+      {"name":"Amazon (Business Analytics)","ats_strictness":"high","preferred_skills":["SQL","Python","Tableau","Business Intelligence","Excel"]},
+      {"name":"Google (Analytics)","ats_strictness":"high","preferred_skills":["SQL","BigQuery","Data Studio","Python","Statistics"]},
+      {"name":"Microsoft (BI)","ats_strictness":"medium","preferred_skills":["Power BI","SQL","Azure","DAX","Excel"]}
+    ],
+    "startups": [
+      {"name":"Mu Sigma","ats_strictness":"medium","preferred_skills":["SQL","Python","Business Analytics","Tableau","Problem Solving"]},
+      {"name":"Fractal Analytics","ats_strictness":"medium","preferred_skills":["Python","SQL","ML Basics","Statistics","Consulting"]},
+      {"name":"Latent View Analytics","ats_strictness":"medium","preferred_skills":["SQL","Power BI","Python","Data Storytelling"]},
+      {"name":"EXL Service","ats_strictness":"low","preferred_skills":["SQL","Excel","Tableau","Insurance Analytics","Operations"]}
+    ],
+    "product_companies": [
+      {"name":"Swiggy (Analytics)","ats_strictness":"medium","preferred_skills":["SQL","Python","Superset","Food Tech Analytics"]},
+      {"name":"Nykaa (Analytics)","ats_strictness":"low","preferred_skills":["SQL","Excel","Python","Beauty E-Commerce Analytics"]}
+    ]
+  },
+  "data_scientist": {
+    "mncs": [
+      {"name":"Google DeepMind (India)","ats_strictness":"high","preferred_skills":["Python","TensorFlow","Research","ML Theory","Publications"]},
+      {"name":"Microsoft AI","ats_strictness":"high","preferred_skills":["Python","PyTorch","Azure ML","Applied Science"]},
+      {"name":"Walmart Labs","ats_strictness":"medium","preferred_skills":["Python","Spark","ML","Retail Analytics","Recommendation Systems"]}
+    ],
+    "startups": [
+      {"name":"Sarvam AI","ats_strictness":"high","preferred_skills":["NLP","LLM","PyTorch","Indic Languages","Research"]},
+      {"name":"Juspay","ats_strictness":"medium","preferred_skills":["ML","Fraud Detection","Python","Haskell","Payments"]},
+      {"name":"Licious","ats_strictness":"low","preferred_skills":["Python","Demand Forecasting","Supply Chain ML","SQL"]}
+    ],
+    "product_companies": [
+      {"name":"Flipkart (ML)","ats_strictness":"medium","preferred_skills":["Python","Recommendation Systems","Search ML","Spark"]},
+      {"name":"PhonePe (Data Science)","ats_strictness":"medium","preferred_skills":["Python","Risk ML","Fraud Detection","SQL"]}
+    ]
+  },
+  "ml_ai_engineer": {
+    "mncs": [
+      {"name":"Google DeepMind","ats_strictness":"high","preferred_skills":["PyTorch","Research","LLM","Distributed Training","Publications"]},
+      {"name":"Microsoft AI (Copilot)","ats_strictness":"high","preferred_skills":["PyTorch","LLM","RAG","Azure OpenAI","Fine-tuning"]},
+      {"name":"Samsung R&D","ats_strictness":"medium","preferred_skills":["Deep Learning","Computer Vision","On-Device AI","C++","Python"]}
+    ],
+    "startups": [
+      {"name":"Sarvam AI","ats_strictness":"high","preferred_skills":["LLM","NLP","Indic AI","PyTorch","MLOps"]},
+      {"name":"Krutrim AI","ats_strictness":"high","preferred_skills":["LLM","Python","MLOps","Foundation Models"]},
+      {"name":"Observe.AI","ats_strictness":"medium","preferred_skills":["NLP","Speech AI","Python","LLM","Contact Center"]},
+      {"name":"Mad Street Den (Vue.ai)","ats_strictness":"medium","preferred_skills":["Computer Vision","Retail AI","Python","TensorFlow"]}
+    ],
+    "product_companies": [
+      {"name":"Flipkart (AI)","ats_strictness":"medium","preferred_skills":["Recommendation ML","Search AI","Python","Spark"]},
+      {"name":"Myntra (AI)","ats_strictness":"medium","preferred_skills":["Fashion AI","Computer Vision","NLP","Python"]}
+    ]
+  },
+  "devops_engineer": {
+    "mncs": [
+      {"name":"AWS (Amazon)","ats_strictness":"high","preferred_skills":["Kubernetes","Terraform","Go","Cloud Native","SRE"]},
+      {"name":"Microsoft Azure","ats_strictness":"high","preferred_skills":["Azure DevOps","Kubernetes","Terraform","AKS","Platform Eng"]},
+      {"name":"Google Cloud","ats_strictness":"high","preferred_skills":["GKE","Terraform","Go","SRE","Observability"]}
+    ],
+    "startups": [
+      {"name":"Harness","ats_strictness":"high","preferred_skills":["CI/CD","Kubernetes","Terraform","Cloud Cost","Developer Platform"]},
+      {"name":"Druva","ats_strictness":"medium","preferred_skills":["AWS","Go","Cloud Backup","Kubernetes","SaaS Platform"]},
+      {"name":"Netskope","ats_strictness":"medium","preferred_skills":["Cloud Security","Kubernetes","Python","SASE"]}
+    ],
+    "product_companies": [
+      {"name":"Thoughtworks","ats_strictness":"medium","preferred_skills":["DevOps","Cloud","Agile","Platform Engineering","IaC"]},
+      {"name":"ThoughtSpot","ats_strictness":"medium","preferred_skills":["AWS","Kubernetes","DataOps","Cloud Infrastructure"]}
+    ]
+  },
+  "cloud_engineer": {
+    "mncs": [
+      {"name":"AWS India","ats_strictness":"high","preferred_skills":["AWS Services","Cloud Architecture","Terraform","Cost Optimization"]},
+      {"name":"Azure India","ats_strictness":"high","preferred_skills":["Azure","ARM","Bicep","Landing Zones","Governance"]},
+      {"name":"Google Cloud India","ats_strictness":"high","preferred_skills":["GCP","BigQuery","GKE","Cloud Functions","Terraform"]}
+    ],
+    "startups": [
+      {"name":"Zscaler","ats_strictness":"high","preferred_skills":["Cloud Security","SASE","Zero Trust","AWS","Azure"]},
+      {"name":"Druva","ats_strictness":"medium","preferred_skills":["AWS","SaaS Infrastructure","Go","Multi-Cloud Backup"]},
+      {"name":"Delhivery (Tech)","ats_strictness":"medium","preferred_skills":["AWS","Kubernetes","Logistics Tech","Terraform"]}
+    ],
+    "product_companies": [
+      {"name":"Informatica","ats_strictness":"medium","preferred_skills":["Cloud Data","AWS","Azure","Data Integration","ETL"]},
+      {"name":"Nutanix","ats_strictness":"medium","preferred_skills":["Hybrid Cloud","Kubernetes","Hyperconverged","Cloud Platform"]}
+    ]
+  },
+  "cybersecurity": {
+    "mncs": [
+      {"name":"Palo Alto Networks","ats_strictness":"high","preferred_skills":["Network Security","SIEM","Threat Intel","Cloud Security"]},
+      {"name":"CrowdStrike","ats_strictness":"high","preferred_skills":["EDR","Threat Hunting","Malware Analysis","Python"]},
+      {"name":"Cisco Talos","ats_strictness":"high","preferred_skills":["Threat Intelligence","Malware Research","Reverse Engineering"]}
+    ],
+    "startups": [
+      {"name":"Safe Security (Lucideus)","ats_strictness":"medium","preferred_skills":["Risk Quantification","Security Analytics","CTEM"]},
+      {"name":"InstaSafe","ats_strictness":"medium","preferred_skills":["Zero Trust","SASE","Network Security","Cloud"]},
+      {"name":"Sequretek","ats_strictness":"medium","preferred_skills":["SOC","SIEM","Threat Detection","MDR"]}
+    ],
+    "product_companies": [
+      {"name":"IBM Security","ats_strictness":"medium","preferred_skills":["QRadar","SIEM","SOC","Compliance","GRC"]},
+      {"name":"Deloitte Cyber","ats_strictness":"high","preferred_skills":["Penetration Testing","GRC","Incident Response","Cloud Sec"]}
+    ]
+  },
+  "qa_engineer": {
+    "mncs": [
+      {"name":"Infosys (QE&T)","ats_strictness":"medium","preferred_skills":["Selenium","API Testing","Performance Testing","Agile"]},
+      {"name":"Cognizant (QE)","ats_strictness":"medium","preferred_skills":["Test Automation","Selenium","JIRA","Regression"]},
+      {"name":"Capgemini (Testing)","ats_strictness":"medium","preferred_skills":["Selenium","UFT","ALM","Test Management"]}
+    ],
+    "startups": [
+      {"name":"BrowserStack","ats_strictness":"medium","preferred_skills":["Automation Testing","Selenium","Cypress","Cross-Browser"]},
+      {"name":"LambdaTest","ats_strictness":"medium","preferred_skills":["Selenium","Cypress","Playwright","Cross-Browser Testing"]},
+      {"name":"Postman (QA)","ats_strictness":"medium","preferred_skills":["API Testing","Postman","Newman","Contract Testing"]}
+    ],
+    "product_companies": [
+      {"name":"Freshworks (QE)","ats_strictness":"low","preferred_skills":["Ruby","Selenium","SaaS Testing","Manual + Auto"]},
+      {"name":"Zoho (QE)","ats_strictness":"low","preferred_skills":["Manual Testing","Automation","B2B SaaS","Cross-Platform"]}
+    ]
+  },
+  "mobile_developer": {
+    "mncs": [
+      {"name":"Google (Android)","ats_strictness":"high","preferred_skills":["Kotlin","Jetpack Compose","Android Internals","Performance"]},
+      {"name":"Spotify","ats_strictness":"high","preferred_skills":["Kotlin","iOS","Cross-Platform","Audio Performance"]},
+      {"name":"LinkedIn (India)","ats_strictness":"high","preferred_skills":["iOS","Android","Swift","Kotlin","Professional Apps"]}
+    ],
+    "startups": [
+      {"name":"PhonePe","ats_strictness":"medium","preferred_skills":["Android","Kotlin","Fintech Mobile","Payment UX"]},
+      {"name":"Swiggy","ats_strictness":"medium","preferred_skills":["React Native","Flutter","Consumer Apps","Delivery Tracking"]},
+      {"name":"Meesho","ats_strictness":"medium","preferred_skills":["Android","Kotlin","Vernacular Mobile","Low-end Devices"]}
+    ],
+    "product_companies": [
+      {"name":"Lenskart","ats_strictness":"low","preferred_skills":["React Native","AR Try-On","Mobile Commerce","iOS Android"]},
+      {"name":"Paytm","ats_strictness":"medium","preferred_skills":["Android","iOS","Payments","Super App","Kotlin Swift"]}
+    ]
+  },
+  "product_manager": {
+    "mncs": [
+      {"name":"Google","ats_strictness":"high","preferred_skills":["Product Strategy","Data Analysis","Go-to-Market","Technical PM","OKR"]},
+      {"name":"Microsoft","ats_strictness":"high","preferred_skills":["Azure Products","Enterprise PM","Roadmap","Customer Research"]},
+      {"name":"Amazon","ats_strictness":"high","preferred_skills":["Working Backwards","Six Pager","AWS PM","Customer Obsession","Metrics"]}
+    ],
+    "startups": [
+      {"name":"Razorpay","ats_strictness":"medium","preferred_skills":["Fintech PM","Payments","API Products","B2B"]},
+      {"name":"CRED","ats_strictness":"high","preferred_skills":["Consumer PM","Design Thinking","Growth PM","Premium UX"]},
+      {"name":"Zepto","ats_strictness":"medium","preferred_skills":["Quick Commerce PM","Supply Chain PM","Growth","Consumer"]}
+    ],
+    "product_companies": [
+      {"name":"Swiggy","ats_strictness":"medium","preferred_skills":["Consumer PM","Logistics PM","Growth","Hyperlocal"]},
+      {"name":"Nykaa","ats_strictness":"medium","preferred_skills":["Beauty E-Commerce PM","D2C","Growth","Content Commerce"]}
+    ]
+  },
+  "business_analyst": {
+    "mncs": [
+      {"name":"Deloitte","ats_strictness":"high","preferred_skills":["Requirements","ERP","Process Mapping","UAT","Consulting"]},
+      {"name":"Accenture","ats_strictness":"medium","preferred_skills":["Business Analysis","SAP","Digital Transformation","Agile BA"]},
+      {"name":"Capgemini","ats_strictness":"medium","preferred_skills":["BPMN","Requirements","Agile","Functional Spec","Stakeholder"]}
+    ],
+    "startups": [
+      {"name":"Razorpay (BA)","ats_strictness":"medium","preferred_skills":["Fintech BA","SQL","Product Analysis","Payments Process"]},
+      {"name":"Urban Company (BA)","ats_strictness":"medium","preferred_skills":["Marketplace BA","SQL","Process Design","Operations"]},
+      {"name":"Policybazaar (BA)","ats_strictness":"low","preferred_skills":["Insurance BA","Data Analysis","Process Improvement"]}
+    ],
+    "product_companies": [
+      {"name":"SAP Labs","ats_strictness":"high","preferred_skills":["SAP Modules","Enterprise BA","ABAP","S4HANA"]},
+      {"name":"Infosys BPM","ats_strictness":"medium","preferred_skills":["Process BA","Operations","ERP","BPM Tools"]}
+    ]
+  },
+  "digital_marketing": {
+    "mncs": [
+      {"name":"Google India (Marketing)","ats_strictness":"high","preferred_skills":["Digital Marketing","AdTech","Analytics","GTM Strategy"]},
+      {"name":"Meta India","ats_strictness":"high","preferred_skills":["Facebook Ads","Instagram","Performance Marketing","Attribution"]},
+      {"name":"Dentsu India","ats_strictness":"medium","preferred_skills":["Integrated Digital","Programmatic","Media Planning","Analytics"]}
+    ],
+    "startups": [
+      {"name":"Swiggy","ats_strictness":"medium","preferred_skills":["Performance Marketing","Growth","Brand","CRM Marketing"]},
+      {"name":"Nykaa","ats_strictness":"medium","preferred_skills":["D2C Marketing","Influencer","Performance","Beauty Brand"]},
+      {"name":"Meesho","ats_strictness":"medium","preferred_skills":["Social Commerce","Performance","Regional Marketing","Low-CAC"]}
+    ],
+    "product_companies": [
+      {"name":"Zomato","ats_strictness":"medium","preferred_skills":["Growth Marketing","Content","Performance","Food Brand"]},
+      {"name":"upGrad","ats_strictness":"medium","preferred_skills":["EdTech Marketing","B2C Lead Gen","Performance","D2C"]}
+    ]
+  },
+  "seo_specialist": {
+    "mncs": [
+      {"name":"WPP India (Wunderman/Grey)","ats_strictness":"medium","preferred_skills":["Technical SEO","Content Strategy","Analytics","Client Reporting"]},
+      {"name":"Publicis Sapient","ats_strictness":"medium","preferred_skills":["Enterprise SEO","CMS","Site Migration","Technical SEO"]}
+    ],
+    "startups": [
+      {"name":"Healthkart","ats_strictness":"medium","preferred_skills":["E-Commerce SEO","Category Pages","Technical SEO","Ahrefs"]},
+      {"name":"PolicyBazaar","ats_strictness":"medium","preferred_skills":["Finance SEO","Content SEO","Technical SEO","High-Intent Keywords"]},
+      {"name":"Cars24","ats_strictness":"low","preferred_skills":["Local SEO","E-Commerce SEO","Automotive Keywords","Content"]},
+      {"name":"IndiaMART","ats_strictness":"low","preferred_skills":["B2B SEO","Category Optimization","Long-tail","Technical SEO"]}
+    ],
+    "product_companies": [
+      {"name":"Naukri.com","ats_strictness":"medium","preferred_skills":["Job Portal SEO","Structured Data","Crawl Optimization","Scale SEO"]},
+      {"name":"MakeMyTrip","ats_strictness":"medium","preferred_skills":["Travel SEO","International SEO","OTA","Schema Markup"]}
+    ]
+  },
+  "content_writer": {
+    "mncs": [
+      {"name":"HubSpot (India Content)","ats_strictness":"medium","preferred_skills":["B2B Content","SaaS Writing","SEO","Thought Leadership"]},
+      {"name":"Adobe (Content)","ats_strictness":"medium","preferred_skills":["Technical Content","Creative Cloud Writing","Documentation"]}
+    ],
+    "startups": [
+      {"name":"Josh Talks","ats_strictness":"low","preferred_skills":["Vernacular Content","Video Scripts","Social Content","Storytelling"]},
+      {"name":"Unacademy","ats_strictness":"low","preferred_skills":["EdTech Content","Academic Writing","Course Scripts","SEO"]},
+      {"name":"Lokal App","ats_strictness":"low","preferred_skills":["Hyperlocal Content","Regional Language","Journalism","Breaking News"]}
+    ],
+    "product_companies": [
+      {"name":"Internshala","ats_strictness":"low","preferred_skills":["Career Content","Blog Writing","Student-Focused","SEO"]},
+      {"name":"Shiprocket","ats_strictness":"low","preferred_skills":["E-Commerce Content","B2B Blog","Logistics Writing","Email Copy"]}
+    ]
+  },
+  "social_media_manager": {
+    "mncs": [
+      {"name":"Dentsu India (Social)","ats_strictness":"medium","preferred_skills":["Social Strategy","Community Mgmt","Paid Social","Analytics"]},
+      {"name":"Ogilvy Social.Lab","ats_strictness":"medium","preferred_skills":["Brand Social","Campaigns","Content Creation","Influencer"]}
+    ],
+    "startups": [
+      {"name":"boAt","ats_strictness":"low","preferred_skills":["Youth Brand","Instagram","Reels","Influencer Collab","D2C Social"]},
+      {"name":"Mamaearth","ats_strictness":"low","preferred_skills":["D2C Social","Sustainability Content","Influencer","UGC"]},
+      {"name":"Bombay Shaving Company","ats_strictness":"low","preferred_skills":["Grooming Brand","Instagram","Creative Content","Men's Lifestyle"]}
+    ],
+    "product_companies": [
+      {"name":"Nykaa","ats_strictness":"medium","preferred_skills":["Beauty Social","Instagram","YouTube","Creator Collabs","Campaign Mgmt"]},
+      {"name":"Myntra","ats_strictness":"medium","preferred_skills":["Fashion Social","Reel Strategy","Influencer Management","Brand Voice"]}
+    ]
+  },
+  "brand_marketing": {
+    "mncs": [
+      {"name":"HUL (Unilever)","ats_strictness":"high","preferred_skills":["Brand Management","FMCG","Consumer Research","P&L","ATL BTL"]},
+      {"name":"Procter & Gamble","ats_strictness":"high","preferred_skills":["Brand Strategy","Innovation","Consumer Insights","Market Share"]},
+      {"name":"Nestlé India","ats_strictness":"medium","preferred_skills":["FMCG Brand","Trade Marketing","Category Management","NRM"]}
+    ],
+    "startups": [
+      {"name":"boAt","ats_strictness":"low","preferred_skills":["Consumer Electronics Brand","Youth Marketing","D2C Growth"]},
+      {"name":"Mamaearth","ats_strictness":"low","preferred_skills":["D2C Brand Building","Natural Products","Influencer Brand"]},
+      {"name":"Lenskart","ats_strictness":"low","preferred_skills":["Omni-Channel Brand","Eyewear Marketing","Retail Brand"]}
+    ],
+    "product_companies": [
+      {"name":"Dabur India","ats_strictness":"medium","preferred_skills":["Ayurvedic Brand","Rural Marketing","FMCG","Trade Marketing"]},
+      {"name":"ITC","ats_strictness":"medium","preferred_skills":["FMCG Brand","Multi-Category","Rural","Sustainability Brand"]}
+    ]
+  },
+  "finance_analyst": {
+    "mncs": [
+      {"name":"Amazon (Finance)","ats_strictness":"high","preferred_skills":["FP&A","SQL","Excel","Business Analysis","OPEX CAPEX"]},
+      {"name":"Microsoft (Finance)","ats_strictness":"high","preferred_skills":["Power BI","FP&A","Azure Finance","Board Reporting"]},
+      {"name":"Unilever (Finance)","ats_strictness":"medium","preferred_skills":["FMCG Finance","P&L","Budgeting","SAP","IND AS"]}
+    ],
+    "startups": [
+      {"name":"Zepto (Finance)","ats_strictness":"medium","preferred_skills":["FP&A Startup","Unit Economics","Fundraise Support","Runway"]},
+      {"name":"Razorpay (Finance)","ats_strictness":"medium","preferred_skills":["Fintech FP&A","Revenue Analytics","Cohort","Excel"]},
+      {"name":"Navi (Finance)","ats_strictness":"medium","preferred_skills":["Fintech Finance","MIS","Credit Analytics","Reporting"]}
+    ],
+    "product_companies": [
+      {"name":"HDFC Bank (Finance)","ats_strictness":"high","preferred_skills":["Banking Finance","P&L","Regulatory Reporting","Cost Control"]},
+      {"name":"Maruti Suzuki (Finance)","ats_strictness":"medium","preferred_skills":["Automotive Finance","Costing","Budget","SAP FICO"]}
+    ]
+  },
+  "accountant": {
+    "mncs": [
+      {"name":"Deloitte (Audit)","ats_strictness":"high","preferred_skills":["Statutory Audit","IFRS","IND AS","Tax","Big4"]},
+      {"name":"EY (Assurance)","ats_strictness":"high","preferred_skills":["Audit","IFRS","Tax","Advisory","IND AS"]},
+      {"name":"KPMG (Audit)","ats_strictness":"high","preferred_skills":["Audit","Risk","Compliance","IND AS","Financial Reporting"]},
+      {"name":"PwC (Assurance)","ats_strictness":"high","preferred_skills":["Statutory Audit","Tax","IFRS","Financial Advisory"]}
+    ],
+    "startups": [
+      {"name":"Cleartax","ats_strictness":"low","preferred_skills":["GST","Tax Technology","SaaS Accounting","Fintech"]},
+      {"name":"Zoho Books","ats_strictness":"low","preferred_skills":["SME Accounting","GST","Bookkeeping","SaaS Finance"]}
+    ],
+    "product_companies": [
+      {"name":"HDFC Bank (Accounts)","ats_strictness":"high","preferred_skills":["Banking Accounts","RBI Reporting","GAAP","Reconciliation"]},
+      {"name":"Infosys (Finance)","ats_strictness":"medium","preferred_skills":["SAP FICO","Accounting","IFRS","Global Reporting"]}
+    ]
+  },
+  "investment_banking": {
+    "mncs": [
+      {"name":"Goldman Sachs","ats_strictness":"high","preferred_skills":["Financial Modeling","M&A","Bloomberg","Capital Markets","LBO"]},
+      {"name":"JP Morgan","ats_strictness":"high","preferred_skills":["IBD","Capital Markets","DCF","Excel","Deal Execution"]},
+      {"name":"Morgan Stanley","ats_strictness":"high","preferred_skills":["Equity","M&A","Valuation","LBO","Pitch Book"]},
+      {"name":"Bank of America","ats_strictness":"high","preferred_skills":["M&A","Leveraged Finance","PowerPoint","Excel","Modeling"]}
+    ],
+    "startups": [
+      {"name":"Avendus Capital","ats_strictness":"medium","preferred_skills":["Tech M&A","Growth Stage","Startup Advisory","India Deals"]},
+      {"name":"Kotak Investment Banking","ats_strictness":"medium","preferred_skills":["DCF","M&A India","IPO","Mid-Market Deals"]},
+      {"name":"MAPE Advisory","ats_strictness":"medium","preferred_skills":["M&A","Financial Modeling","India Mid-Market"]}
+    ],
+    "product_companies": [
+      {"name":"Deloitte (Deal Advisory)","ats_strictness":"high","preferred_skills":["M&A Due Diligence","Restructuring","Financial Advisory"]},
+      {"name":"EY (Transaction Advisory)","ats_strictness":"high","preferred_skills":["Buy-Side","Sell-Side","Due Diligence","Valuation"]}
+    ]
+  },
+  "risk_compliance": {
+    "mncs": [
+      {"name":"JP Morgan (Risk)","ats_strictness":"high","preferred_skills":["Market Risk","Basel III","VaR","Stress Testing","FRTB"]},
+      {"name":"HSBC (Compliance)","ats_strictness":"high","preferred_skills":["AML","KYC","Regulatory Framework","Compliance Program"]},
+      {"name":"Standard Chartered","ats_strictness":"high","preferred_skills":["Credit Risk","Operational Risk","ICAAP","SREP"]}
+    ],
+    "startups": [
+      {"name":"Navi (Risk)","ats_strictness":"medium","preferred_skills":["Credit Risk ML","Bureau Data","Fintech Compliance","Risk Models"]},
+      {"name":"Groww (Compliance)","ats_strictness":"medium","preferred_skills":["SEBI","MF Compliance","Regulatory Reporting","AML"]},
+      {"name":"slice (Risk)","ats_strictness":"medium","preferred_skills":["Credit Underwriting","Bureau","Fintech Risk","Scoring"]}
+    ],
+    "product_companies": [
+      {"name":"HDFC Bank (Risk)","ats_strictness":"high","preferred_skills":["Credit Risk","Basel III","Regulatory Reporting","Stress Test"]},
+      {"name":"ICICI Bank (Risk)","ats_strictness":"high","preferred_skills":["Credit Analytics","Market Risk","ALM","RAROC"]}
+    ]
+  },
+  "equity_research": {
+    "mncs": [
+      {"name":"Goldman Sachs (Research)","ats_strictness":"high","preferred_skills":["Equity Research","Bloomberg","Valuation","Sector Expertise","CFA"]},
+      {"name":"Morgan Stanley (Research)","ats_strictness":"high","preferred_skills":["Initiation Coverage","Modeling","Bloomberg","Sell-Side"]}
+    ],
+    "startups": [
+      {"name":"Motilal Oswal","ats_strictness":"medium","preferred_skills":["India Equity Research","Sector Coverage","Financial Modeling"]},
+      {"name":"Nuvama (Edelweiss)","ats_strictness":"medium","preferred_skills":["Equity Research","India Markets","Financial Modeling"]},
+      {"name":"Zerodha (Research)","ats_strictness":"low","preferred_skills":["Market Research","Trading Analytics","Retail Investor Content"]}
+    ],
+    "product_companies": [
+      {"name":"Kotak Securities","ats_strictness":"medium","preferred_skills":["Equity Research","Bloomberg","Trading","Derivatives"]}
+    ]
+  },
+  "ui_ux_designer": {
+    "mncs": [
+      {"name":"Google (UX)","ats_strictness":"high","preferred_skills":["UX Research","Design Systems","Material Design","Accessibility","Figma"]},
+      {"name":"Microsoft (Design)","ats_strictness":"high","preferred_skills":["Fluent Design","Figma","Accessibility","Enterprise UX","WinUI"]},
+      {"name":"Adobe (Design)","ats_strictness":"medium","preferred_skills":["Creative Cloud UX","Spectrum Design System","Figma","Research"]}
+    ],
+    "startups": [
+      {"name":"CRED","ats_strictness":"high","preferred_skills":["Premium UX","Motion Design","Brand Design","Figma","iOS Android"]},
+      {"name":"Razorpay (Design)","ats_strictness":"medium","preferred_skills":["Fintech UX","Design System","B2B SaaS Design","Figma"]},
+      {"name":"Urban Company","ats_strictness":"medium","preferred_skills":["Marketplace UX","Figma","Consumer Apps","User Research"]}
+    ],
+    "product_companies": [
+      {"name":"Flipkart (Design)","ats_strictness":"medium","preferred_skills":["E-Commerce UX","Design Ops","Figma","Research"]},
+      {"name":"Swiggy (Design)","ats_strictness":"medium","preferred_skills":["Consumer Apps","Motion","Figma","Food UX"]}
+    ]
+  },
+  "product_designer": {
+    "mncs": [
+      {"name":"Google (Product Design)","ats_strictness":"high","preferred_skills":["End-to-End Design","UX Research","Design Systems","0 to 1"]},
+      {"name":"Microsoft (Product Design)","ats_strictness":"high","preferred_skills":["Product Design","Figma","Inclusive Design","Enterprise Apps"]}
+    ],
+    "startups": [
+      {"name":"CRED","ats_strictness":"high","preferred_skills":["Premium Product Design","Motion","Systems Thinking","Consumer"]},
+      {"name":"Zepto","ats_strictness":"medium","preferred_skills":["Quick Commerce Design","Consumer Apps","Speed UX","Figma"]},
+      {"name":"Navi","ats_strictness":"medium","preferred_skills":["Fintech Product Design","Accessibility","0 to 1","Figma"]}
+    ],
+    "product_companies": [
+      {"name":"Lenskart","ats_strictness":"low","preferred_skills":["AR Try-On","Retail Product Design","Mobile Commerce","Figma"]}
+    ]
+  },
+  "graphic_designer": {
+    "mncs": [
+      {"name":"Ogilvy India","ats_strictness":"medium","preferred_skills":["Advertising Design","Brand","Photoshop","Illustrator","Campaigns"]},
+      {"name":"Dentsu India","ats_strictness":"medium","preferred_skills":["Digital Design","Brand Identity","Campaign Creative"]}
+    ],
+    "startups": [
+      {"name":"boAt","ats_strictness":"low","preferred_skills":["Product Packaging","Youth Lifestyle Design","Social Creative","Brand"]},
+      {"name":"Mamaearth","ats_strictness":"low","preferred_skills":["D2C Brand Design","Packaging","Natural Aesthetic","Social"]},
+      {"name":"Paper Boat","ats_strictness":"low","preferred_skills":["Nostalgic Brand Design","Packaging","Illustration","Print"]}
+    ],
+    "product_companies": [
+      {"name":"Nykaa (Creative)","ats_strictness":"medium","preferred_skills":["Beauty Brand Design","Campaign Creative","Typography","E-Comm"]},
+      {"name":"Myntra (Design)","ats_strictness":"medium","preferred_skills":["Fashion Creative","Campaign Design","Brand Storytelling"]}
+    ]
+  },
+  "corporate_law": {
+    "mncs": [
+      {"name":"AZB & Partners","ats_strictness":"high","preferred_skills":["Corporate M&A","PE Law","Capital Markets","Banking Law"]},
+      {"name":"Cyril Amarchand Mangaldas","ats_strictness":"high","preferred_skills":["M&A","Capital Markets","Disputes","IP"]},
+      {"name":"Shardul Amarchand Mangaldas","ats_strictness":"high","preferred_skills":["Dispute Resolution","M&A","Tax","PE"]},
+      {"name":"Khaitan & Co","ats_strictness":"high","preferred_skills":["Corporate","Tax","Employment","Regulatory"]}
+    ],
+    "startups": [
+      {"name":"Trilegal","ats_strictness":"high","preferred_skills":["M&A","PE","VC Law","Tech Law"]},
+      {"name":"IndusLaw","ats_strictness":"medium","preferred_skills":["Startup Legal","VC","Employment","Tech Contracts"]},
+      {"name":"Nishith Desai Associates","ats_strictness":"medium","preferred_skills":["International Tax","Tech Law","IP Strategy","India Entry"]}
+    ],
+    "product_companies": [
+      {"name":"Razorpay (Legal)","ats_strictness":"medium","preferred_skills":["Fintech Legal","RBI Compliance","Tech Contracts","Payments Law"]},
+      {"name":"Zomato (Legal)","ats_strictness":"medium","preferred_skills":["Tech Law","Compliance","Regulatory","M&A"]}
+    ]
+  },
+  "hr_recruiter": {
+    "mncs": [
+      {"name":"Randstad India","ats_strictness":"medium","preferred_skills":["Volume Hiring","RPO","Staffing","Talent Sourcing"]},
+      {"name":"ManpowerGroup","ats_strictness":"medium","preferred_skills":["Staffing Solutions","Workforce","Recruitment","Screening"]},
+      {"name":"TeamLease","ats_strictness":"low","preferred_skills":["Contract Staffing","Payroll","Volume Hiring","Blue-Collar"]}
+    ],
+    "startups": [
+      {"name":"Razorpay (HR)","ats_strictness":"medium","preferred_skills":["Tech Recruiting","Fintech Hiring","Employer Brand","Culture Fit"]},
+      {"name":"PhonePe (HR)","ats_strictness":"medium","preferred_skills":["Engineering Hiring","Volume + Niche","Fintech Talent"]},
+      {"name":"Cuemath (HR)","ats_strictness":"low","preferred_skills":["EdTech Hiring","Teacher Recruitment","Volume","Academic"]}
+    ],
+    "product_companies": [
+      {"name":"Swiggy (HR)","ats_strictness":"medium","preferred_skills":["Volume + Tech Hiring","Gig Workforce","Campus","Diversity"]},
+      {"name":"Meesho (HR)","ats_strictness":"medium","preferred_skills":["Remote Hiring","Vernacular","Diversity Hiring","Startup Culture"]}
+    ]
+  },
+  "talent_acquisition": {
+    "mncs": [
+      {"name":"Amazon (TA)","ats_strictness":"high","preferred_skills":["Hiring at Scale","Bar Raiser","Tech Hiring","Diversity Programs"]},
+      {"name":"Google (TA)","ats_strictness":"high","preferred_skills":["Technical Recruiting","Structured Interviews","Executive Search","Diversity"]},
+      {"name":"Microsoft (TA)","ats_strictness":"high","preferred_skills":["Engineering Hiring","Campus","Diversity","Global TA","LinkedIn"]}
+    ],
+    "startups": [
+      {"name":"CRED (TA)","ats_strictness":"high","preferred_skills":["Premium Talent","Niche Hiring","Brand Ambassadors","Sourcing"]},
+      {"name":"BrowserStack (TA)","ats_strictness":"medium","preferred_skills":["SaaS Tech Recruiting","Global Hiring","Employer Brand"]},
+      {"name":"Zepto (TA)","ats_strictness":"medium","preferred_skills":["Hypergrowth Hiring","Tech + Ops","Speed Hiring","Startup TA"]}
+    ],
+    "product_companies": [
+      {"name":"Flipkart (TA)","ats_strictness":"medium","preferred_skills":["Tech + Non-Tech","Scale","Campus","Diversity Programs"]},
+      {"name":"Swiggy (TA)","ats_strictness":"medium","preferred_skills":["Volume + Niche","Gig TA","Tech Hiring","Campus"]}
+    ]
+  },
+  "hr_business_partner": {
+    "mncs": [
+      {"name":"Amazon (HRBP)","ats_strictness":"high","preferred_skills":["Leadership Dev","OD","Scale","People Analytics","LOA"]},
+      {"name":"Google (HRBP)","ats_strictness":"high","preferred_skills":["HRBP","OKR","Culture","DEI","Re:Work"]},
+      {"name":"Microsoft (HRBP)","ats_strictness":"high","preferred_skills":["HRBP","Org Design","Transformation","Culture"]}
+    ],
+    "startups": [
+      {"name":"Flipkart (People)","ats_strictness":"medium","preferred_skills":["HRBP","Scale","Culture","Org Design"]},
+      {"name":"Swiggy (People)","ats_strictness":"medium","preferred_skills":["HRBP","Employee Relations","Org Design","Engagement"]},
+      {"name":"Razorpay (People)","ats_strictness":"medium","preferred_skills":["Fintech HRBP","Culture","People Analytics","OKR"]}
+    ],
+    "product_companies": [
+      {"name":"Darwinbox (HR)","ats_strictness":"medium","preferred_skills":["HR Tech HRBP","People Analytics","OKR","HRTech"]},
+      {"name":"Aon India (HR Consulting)","ats_strictness":"high","preferred_skills":["Total Rewards","OD","HR Strategy","Benchmarking"]}
+    ]
+  },
+  "sales_executive": {
+    "mncs": [
+      {"name":"Salesforce India","ats_strictness":"high","preferred_skills":["SaaS Sales","Enterprise CRM","Quota","MEDDIC","Solution Selling"]},
+      {"name":"SAP India","ats_strictness":"high","preferred_skills":["ERP Sales","Enterprise B2B","Solution Selling","Deal Management"]},
+      {"name":"Oracle India","ats_strictness":"high","preferred_skills":["Cloud Sales","Enterprise Database","B2B","Pipeline Management"]}
+    ],
+    "startups": [
+      {"name":"Freshworks","ats_strictness":"medium","preferred_skills":["SaaS Sales","SMB","Inbound","CRM Demo","Trial Conversion"]},
+      {"name":"Chargebee","ats_strictness":"medium","preferred_skills":["Subscription SaaS Sales","Enterprise","Global","MEDDIC"]},
+      {"name":"Clevertap","ats_strictness":"medium","preferred_skills":["MarTech Sales","Enterprise","SaaS Demo","Pipeline"]}
+    ],
+    "product_companies": [
+      {"name":"IndiaMART","ats_strictness":"low","preferred_skills":["B2B Marketplace","SME Sales","Field Sales","Tier 2 3 Cities"]},
+      {"name":"Justdial","ats_strictness":"low","preferred_skills":["Local Business Sales","Inside Sales","Field Sales","Ad Sales"]}
+    ]
+  },
+  "business_development": {
+    "mncs": [
+      {"name":"Google (Partnerships)","ats_strictness":"high","preferred_skills":["Strategic Partnerships","API Business","Platform BD","Enterprise"]},
+      {"name":"Amazon (BD)","ats_strictness":"high","preferred_skills":["Marketplace BD","Seller Acquisition","B2B Partnerships","Enterprise"]}
+    ],
+    "startups": [
+      {"name":"Razorpay (BD)","ats_strictness":"medium","preferred_skills":["Fintech Partnerships","Payment Integrations","API BD","Enterprise"]},
+      {"name":"Shiprocket (BD)","ats_strictness":"low","preferred_skills":["Logistics BD","E-Commerce Partnerships","SME Acquisition"]},
+      {"name":"Delhivery (BD)","ats_strictness":"medium","preferred_skills":["Logistics Partnerships","Enterprise BD","Supply Chain BD"]}
+    ],
+    "product_companies": [
+      {"name":"Naukri.com (BD)","ats_strictness":"medium","preferred_skills":["Recruitment BD","Corporate Sales","HR Product Sales","Enterprise"]},
+      {"name":"MakeMyTrip (BD)","ats_strictness":"medium","preferred_skills":["Travel BD","Hotel Partnerships","B2B Travel","Corporate"]}
+    ]
+  },
+  "operations_executive": {
+    "mncs": [
+      {"name":"Amazon (Operations)","ats_strictness":"high","preferred_skills":["Supply Chain","Lean","Last Mile","Operations Excellence","KAIZEN"]},
+      {"name":"Maersk India","ats_strictness":"medium","preferred_skills":["Logistics","Supply Chain","Container","Port Operations","SCM"]}
+    ],
+    "startups": [
+      {"name":"Zepto (Operations)","ats_strictness":"medium","preferred_skills":["Dark Store Ops","10-min Delivery","Supply Chain","Inventory"]},
+      {"name":"Delhivery","ats_strictness":"medium","preferred_skills":["Logistics Ops","Last Mile","Hub Operations","Network Planning"]},
+      {"name":"Porter","ats_strictness":"low","preferred_skills":["City Ops","Driver Ops","Last Mile","Intra-city Logistics"]}
+    ],
+    "product_companies": [
+      {"name":"Maruti Suzuki (Ops)","ats_strictness":"medium","preferred_skills":["Manufacturing Ops","Supply Chain","Lean","Six Sigma","KAIZEN"]},
+      {"name":"Tata Motors (Ops)","ats_strictness":"medium","preferred_skills":["Automotive Ops","Supply Chain","Manufacturing","Quality"]}
+    ]
+  },
+  "customer_support": {
+    "mncs": [
+      {"name":"Amazon (Customer Service)","ats_strictness":"medium","preferred_skills":["Customer Obsession","Escalation Handling","CRM","SLA","Chat Email"]},
+      {"name":"Concentrix","ats_strictness":"low","preferred_skills":["BPO","Voice Non-Voice","Customer Experience","KPIs","Queue Management"]}
+    ],
+    "startups": [
+      {"name":"Razorpay (Support)","ats_strictness":"medium","preferred_skills":["Merchant Support","Fintech Queries","Technical Support","SLA"]},
+      {"name":"Urban Company (Support)","ats_strictness":"low","preferred_skills":["Customer Experience","Partner Support","CX Design","CSAT"]},
+      {"name":"Zomato (Customer Experience)","ats_strictness":"low","preferred_skills":["Food Delivery CX","App Support","Social Listening","CSAT"]}
+    ],
+    "product_companies": [
+      {"name":"Freshworks (Support Tools)","ats_strictness":"low","preferred_skills":["Freshdesk Power User","Customer Success","SaaS Support","CX"]},
+      {"name":"MakeMyTrip (CX)","ats_strictness":"low","preferred_skills":["Travel CX","Booking Support","Escalation","CSAT","OTA Support"]}
+    ]
+  },
+  "consulting": {
+    "mncs": [
+      {"name":"McKinsey & Company","ats_strictness":"high","preferred_skills":["Strategy","MECE","Structured Thinking","Case Solving","Excel PPT"]},
+      {"name":"BCG (Boston Consulting Group)","ats_strictness":"high","preferred_skills":["BCG Matrix","Transformation","Case Analysis","Strategy"]},
+      {"name":"Bain & Company","ats_strictness":"high","preferred_skills":["PE Due Diligence","Results Delivery","Strategy","Case"]}
+    ],
+    "startups": [
+      {"name":"Kearney India","ats_strictness":"high","preferred_skills":["Ops Consulting","Supply Chain","Strategy","Cost Reduction"]},
+      {"name":"Alvarez & Marsal","ats_strictness":"medium","preferred_skills":["Restructuring","Turnaround","PE Portfolio","Performance Improvement"]},
+      {"name":"Roland Berger","ats_strictness":"medium","preferred_skills":["Strategy","Industry Expertise","Restructuring","GTM"]}
+    ],
+    "product_companies": [
+      {"name":"Deloitte Consulting","ats_strictness":"high","preferred_skills":["Digital Transformation","Strategy","Tech Consulting","Change Mgmt"]},
+      {"name":"Accenture Strategy","ats_strictness":"medium","preferred_skills":["Digital Strategy","AI Strategy","Cloud Transformation","Operating Model"]}
+    ]
+  },
+  "management_trainee": {
+    "mncs": [
+      {"name":"HUL (MT Program)","ats_strictness":"high","preferred_skills":["Sales","Marketing","Supply Chain","FMCG","Cross-Functional"]},
+      {"name":"P&G (MT/GBSS)","ats_strictness":"high","preferred_skills":["Finance","HR","Supply Chain","Brand","MBA Campus"]},
+      {"name":"ITC (MT)","ats_strictness":"high","preferred_skills":["FMCG","Sales","Agri Business","Manufacturing","Strategy"]}
+    ],
+    "startups": [
+      {"name":"Zepto (MT)","ats_strictness":"medium","preferred_skills":["Operations","Growth","Category","Cross-Functional","Startup"]},
+      {"name":"Razorpay (MT)","ats_strictness":"medium","preferred_skills":["Fintech","Product","BD","Operations","MBA Campus"]},
+      {"name":"Nykaa (MT)","ats_strictness":"medium","preferred_skills":["E-Commerce","Beauty","Category","Marketing","Finance"]}
+    ],
+    "product_companies": [
+      {"name":"Tata Administrative Services","ats_strictness":"high","preferred_skills":["Tata Group","Leadership","Cross-Vertical","Strategy","MBA"]},
+      {"name":"Mahindra Group (MAP)","ats_strictness":"high","preferred_skills":["Manufacturing","Auto","Farm","Finance","Leadership"]}
+    ]
+  },
+  "general_fresher": {
+    "mncs": [
+      {"name":"Infosys (InStep/Fresher)","ats_strictness":"low","preferred_skills":["Any Engineering","Training Program","Java","Python","SQL"]},
+      {"name":"TCS (NQT Hire)","ats_strictness":"low","preferred_skills":["NQT Score","Engineering","Cognitive","Programming","Any Domain"]},
+      {"name":"Wipro (Turbo Fresher)","ats_strictness":"low","preferred_skills":["Engineering","STEM","Communication","Aptitude","Any Tech"]}
+    ],
+    "startups": [
+      {"name":"Internshala (Internships)","ats_strictness":"low","preferred_skills":["Any Skill","Internship Projects","Remote Work","Enthusiasm"]},
+      {"name":"Unacademy (Fresher)","ats_strictness":"low","preferred_skills":["Teaching","Content","Operations","Marketing","Any Graduate"]},
+      {"name":"Delhivery (Fresher)","ats_strictness":"low","preferred_skills":["Operations","Logistics","Graduate","Excel","Communication"]}
+    ],
+    "product_companies": [
+      {"name":"Cognizant (GenC)","ats_strictness":"low","preferred_skills":["Engineering","Programming Basics","SQL","Any Domain","Fresher"]},
+      {"name":"Mphasis (Fresher)","ats_strictness":"low","preferred_skills":["Engineering","BFSI Domain","Java","SQL","Communication"]}
+    ]
+  },
+  "clinical_medicine": {
+    "mncs": [
+      {"name":"Apollo Hospitals","ats_strictness":"medium","preferred_skills":["Clinical Excellence","Patient Safety","Multi-Specialty","EHR"]},
+      {"name":"Fortis Healthcare","ats_strictness":"medium","preferred_skills":["ICU","Surgical Care","Patient Management","Clinical Protocols"]},
+      {"name":"Max Healthcare","ats_strictness":"medium","preferred_skills":["Oncology","Cardiology","Neurology","Robotic Surgery"]}
+    ],
+    "startups": [
+      {"name":"Pristyn Care","ats_strictness":"medium","preferred_skills":["Day Care Surgery","Minimal Invasive","Patient Outcomes","Clinical Ops"]},
+      {"name":"Practo (Clinical)","ats_strictness":"low","preferred_skills":["Teleconsultation","Digital Health","EHR","Patient Engagement"]},
+      {"name":"HealthifyMe (Medical)","ats_strictness":"low","preferred_skills":["Preventive Health","Nutrition","Digital Health","Lifestyle Medicine"]}
+    ],
+    "product_companies": [
+      {"name":"Narayana Health","ats_strictness":"medium","preferred_skills":["Cardiac Care","Affordable Healthcare","Quality Protocols","Research"]},
+      {"name":"Medanta","ats_strictness":"medium","preferred_skills":["Multi-Specialty","Research","Clinical Leadership","Teaching"]}
+    ]
+  },
+  "clinical_research": {
+    "mncs": [
+      {"name":"IQVIA","ats_strictness":"high","preferred_skills":["CRA","GCP","Phase II III","Pharmacovigilance","Site Monitoring"]},
+      {"name":"Parexel","ats_strictness":"high","preferred_skills":["Clinical Operations","GCP","Regulatory Submissions","CRO"]},
+      {"name":"Syneos Health","ats_strictness":"high","preferred_skills":["Clinical Trials","GCP","FSP","Site Management","Data"]},
+      {"name":"PPD (Thermo Fisher)","ats_strictness":"high","preferred_skills":["Clinical Data","GCP","Phase I IV","Central Labs"]}
+    ],
+    "startups": [
+      {"name":"Sun Pharma R&D","ats_strictness":"medium","preferred_skills":["Clinical Research","Regulatory","Drug Development","CDSCO"]},
+      {"name":"Dr Reddy's R&D","ats_strictness":"medium","preferred_skills":["Bioequivalence","GCP","Clinical Trials","Generic Drug"]},
+      {"name":"Cipla R&D","ats_strictness":"medium","preferred_skills":["Clinical Research India","Regulatory Affairs","Generics","Phase III"]}
+    ],
+    "product_companies": [
+      {"name":"Novartis India","ats_strictness":"high","preferred_skills":["Oncology Trials","GCP","Phase III","Medical Affairs"]},
+      {"name":"Pfizer India","ats_strictness":"high","preferred_skills":["Regulatory Affairs","Medical Affairs","Pharmacovigilance","Phase III"]}
+    ]
+  },
+  "blockchain": {
+    "mncs": [
+      {"name":"IBM Blockchain","ats_strictness":"medium","preferred_skills":["Hyperledger","Enterprise Blockchain","Supply Chain","DLT"]},
+      {"name":"Accenture Blockchain","ats_strictness":"medium","preferred_skills":["Ethereum","Hyperledger","Smart Contracts","DeFi Consulting"]}
+    ],
+    "startups": [
+      {"name":"Polygon","ats_strictness":"high","preferred_skills":["Solidity","Layer 2","EVM","DeFi","Smart Contracts","Rust"]},
+      {"name":"CoinDCX (Tech)","ats_strictness":"medium","preferred_skills":["Blockchain","Exchange Architecture","Smart Contracts","Crypto"]},
+      {"name":"Mudrex","ats_strictness":"medium","preferred_skills":["DeFi","Smart Contracts","API Crypto","Trading Algorithms"]}
+    ],
+    "product_companies": [
+      {"name":"WazirX (Tech)","ats_strictness":"medium","preferred_skills":["Crypto Exchange","Smart Contracts","Solidity","High Throughput"]},
+      {"name":"HashMove","ats_strictness":"low","preferred_skills":["Supply Chain Blockchain","Hyperledger","Smart Contracts","Logistics"]}
+    ]
+  },
+  "embedded_iot": {
+    "mncs": [
+      {"name":"Texas Instruments India","ats_strictness":"high","preferred_skills":["Embedded C","RTOS","DSP","Microcontroller","PCB Design"]},
+      {"name":"Qualcomm India","ats_strictness":"high","preferred_skills":["ARM Cortex","Embedded Linux","Firmware","5G","Snapdragon"]},
+      {"name":"Bosch India","ats_strictness":"medium","preferred_skills":["Automotive Embedded","AUTOSAR","CAN Bus","Functional Safety","C"]}
+    ],
+    "startups": [
+      {"name":"Ather Energy","ats_strictness":"medium","preferred_skills":["EV Embedded","BMS","CAN","RTOS","Firmware OTA"]},
+      {"name":"Flux Auto","ats_strictness":"medium","preferred_skills":["Autonomous Vehicles","ROS","Embedded Linux","Sensor Fusion"]},
+      {"name":"SilverLine IoT","ats_strictness":"low","preferred_skills":["IoT Firmware","MQTT","ESP32","AWS IoT","Python"]}
+    ],
+    "product_companies": [
+      {"name":"Wipro VLSI","ats_strictness":"medium","preferred_skills":["VLSI Design","FPGA","Embedded C","Verification","DFT"]},
+      {"name":"HCL Hardware","ats_strictness":"medium","preferred_skills":["Embedded Linux","Board Bring-Up","Yocto","Device Drivers"]}
+    ]
+  },
+  "health_informatics": {
+    "mncs": [
+      {"name":"Optum (UnitedHealth)","ats_strictness":"high","preferred_skills":["Health Analytics","HL7 FHIR","Epic","Population Health","SQL"]},
+      {"name":"Philips Healthcare","ats_strictness":"medium","preferred_skills":["DICOM","Radiology IT","Health AI","FHIR","MRI Informatics"]}
+    ],
+    "startups": [
+      {"name":"Innovaccer","ats_strictness":"medium","preferred_skills":["Health Data Platform","FHIR","Population Health","SQL","Python"]},
+      {"name":"Practo Health Cloud","ats_strictness":"medium","preferred_skills":["EHR","Health API","ABHA","Teleconsultation Platform"]},
+      {"name":"MediBuddy","ats_strictness":"low","preferred_skills":["Digital Health","EHR","Corporate Wellness","Health Data"]}
+    ],
+    "product_companies": [
+      {"name":"Cerner India (Oracle Health)","ats_strictness":"high","preferred_skills":["EHR Implementation","HL7","Clinical Informatics","CIS"]},
+      {"name":"Health Catalyst","ats_strictness":"medium","preferred_skills":["Healthcare Analytics","SQL","Data Warehouse","EDW"]}
+    ]
+  },
+  "pharmacy": {
+    "mncs": [
+      {"name":"Sun Pharmaceutical","ats_strictness":"medium","preferred_skills":["Drug Regulatory","CDSCO","Pharmacovigilance","Quality Pharma"]},
+      {"name":"Dr Reddy's Laboratories","ats_strictness":"medium","preferred_skills":["Generic Drugs","USFDA","GMP","Bioequivalence","Regulatory"]},
+      {"name":"Cipla","ats_strictness":"medium","preferred_skills":["Pharmaceutical","GMP","API","Drug Regulatory","Quality Control"]}
+    ],
+    "startups": [
+      {"name":"PharmEasy (Pharma)","ats_strictness":"low","preferred_skills":["Online Pharmacy","Supply Chain Pharma","Drug Sourcing","QC"]},
+      {"name":"1mg (Tata)","ats_strictness":"low","preferred_skills":["Digital Pharmacy","Drug Safety","Medical Content","Regulatory"]}
+    ],
+    "product_companies": [
+      {"name":"Lupin Pharmaceuticals","ats_strictness":"medium","preferred_skills":["Specialty Pharma","USFDA Filing","Drug Regulatory","R&D"]},
+      {"name":"Biocon","ats_strictness":"medium","preferred_skills":["Biosimilars","Biopharmaceuticals","Regulatory Affairs","Clinical"]}
+    ]
+  },
+  "nursing": {
+    "mncs": [
+      {"name":"Apollo Hospitals","ats_strictness":"medium","preferred_skills":["Critical Care Nursing","ICU","Patient Safety","JCI Standards"]},
+      {"name":"Aster DM Healthcare","ats_strictness":"medium","preferred_skills":["Multi-Specialty Nursing","OT","ICU","Emergency Care"]}
+    ],
+    "startups": [
+      {"name":"Portea Medical","ats_strictness":"low","preferred_skills":["Home Care Nursing","Patient Management","IV Therapy","Elder Care"]},
+      {"name":"Care24","ats_strictness":"low","preferred_skills":["Home Nursing","Post-Op Care","Wound Care","Chronic Disease"]}
+    ],
+    "product_companies": [
+      {"name":"Manipal Hospitals","ats_strictness":"medium","preferred_skills":["Nursing Excellence","Quality Care","Specialty Nursing","Teaching"]},
+      {"name":"Narayana Health","ats_strictness":"medium","preferred_skills":["Cardiac Nursing","ICU","High-Volume Care","Protocols"]}
+    ]
+  },
+  "litigation": {
+    "mncs": [
+      {"name":"AZB (Disputes)","ats_strictness":"high","preferred_skills":["Arbitration","High Court","Commercial Disputes","NCLT"]},
+      {"name":"Shardul Amarchand (Disputes)","ats_strictness":"high","preferred_skills":["International Arbitration","Commercial Disputes","ICC"]}
+    ],
+    "startups": [
+      {"name":"Lex Favios","ats_strictness":"medium","preferred_skills":["Commercial Disputes","Arbitration","High Court","Contract Disputes"]},
+      {"name":"Saikrishna & Associates","ats_strictness":"medium","preferred_skills":["IP Litigation","Technology Law","Court Proceedings"]}
+    ],
+    "product_companies": [
+      {"name":"Wipro Legal","ats_strictness":"medium","preferred_skills":["Commercial Litigation","Tech Disputes","Arbitration","IT Contracts"]},
+      {"name":"Tata Sons Legal","ats_strictness":"high","preferred_skills":["Corporate Litigation","Arbitration","Regulatory","Group Company"]}
+    ]
+  },
+  "ip_law": {
+    "mncs": [
+      {"name":"AZB (IP)","ats_strictness":"high","preferred_skills":["Patent Prosecution","Trademark","IP Strategy","Technology Transfer"]},
+      {"name":"Khaitan & Co (IP)","ats_strictness":"high","preferred_skills":["IP Portfolio","Trademark Litigation","Patent","Copyright"]}
+    ],
+    "startups": [
+      {"name":"Saikrishna & Associates","ats_strictness":"medium","preferred_skills":["IP Litigation","Technology Law","Patent","Brand Protection"]},
+      {"name":"K&S Partners","ats_strictness":"medium","preferred_skills":["Patent Prosecution","WIPO","Trademark","Biotech IP"]}
+    ],
+    "product_companies": [
+      {"name":"Infosys IP (In-House)","ats_strictness":"medium","preferred_skills":["Technology IP","Patent Filing","GDPR IP","Software Patents"]},
+      {"name":"Tata Group IP","ats_strictness":"medium","preferred_skills":["Group IP Strategy","Brand Protection","Patent Portfolio"]}
+    ]
+  },
+  "data_privacy_law": {
+    "mncs": [
+      {"name":"Nishith Desai Associates","ats_strictness":"medium","preferred_skills":["GDPR","DPDP Act","International Tax","Tech Law","India Entry"]},
+      {"name":"AZB (TMT)","ats_strictness":"high","preferred_skills":["Data Privacy","DPDP Act 2023","Tech Transactions","Regulatory"]}
+    ],
+    "startups": [
+      {"name":"Razorpay (Privacy)","ats_strictness":"medium","preferred_skills":["PCI DSS","RBI Data","DPDP","Fintech Privacy","DPO"]},
+      {"name":"Lexi Law (Legal Tech)","ats_strictness":"low","preferred_skills":["AI Regulation","Data Privacy","Contract Automation","LegalTech"]}
+    ],
+    "product_companies": [
+      {"name":"Infosys (Privacy)","ats_strictness":"medium","preferred_skills":["GDPR Implementation","DPO","Tech Contracts","Data Governance"]},
+      {"name":"Wipro (Privacy)","ats_strictness":"medium","preferred_skills":["GDPR","CCPA","Privacy Framework","DPA Agreements"]}
+    ]
+  },
+  "compensation_benefits": {
+    "mncs": [
+      {"name":"Aon India","ats_strictness":"high","preferred_skills":["Total Rewards","Compensation Benchmarking","Pay Equity","Aon Surveys"]},
+      {"name":"Mercer India","ats_strictness":"high","preferred_skills":["Mercer Benchmarking","Benefits Design","Executive Comp","Global Mobility"]}
+    ],
+    "startups": [
+      {"name":"Darwinbox (C&B)","ats_strictness":"medium","preferred_skills":["HRIS C&B","Payroll Automation","Grade Bands","ESOP"]},
+      {"name":"Keka HR (C&B)","ats_strictness":"medium","preferred_skills":["Payroll","PF ESI","CTC Structuring","Tax Benefits"]}
+    ],
+    "product_companies": [
+      {"name":"Amazon (C&B)","ats_strictness":"high","preferred_skills":["RSU","Total Comp","Benchmarking","Pay Philosophy","Equity"]},
+      {"name":"Microsoft (C&B)","ats_strictness":"high","preferred_skills":["Total Rewards","Executive Comp","Global Mobility","ESPP"]}
+    ]
+  },
+  "learning_development": {
+    "mncs": [
+      {"name":"Deloitte (L&D)","ats_strictness":"medium","preferred_skills":["Instructional Design","LMS","Leadership Dev","ADDIE","Kirkpatrick"]},
+      {"name":"Accenture (L&D)","ats_strictness":"medium","preferred_skills":["Digital Learning","LMS","Leadership Programs","Microlearning"]}
+    ],
+    "startups": [
+      {"name":"upGrad (Internal L&D)","ats_strictness":"low","preferred_skills":["EdTech L&D","Digital Learning","Manager Development","TNA"]},
+      {"name":"Unacademy (L&D)","ats_strictness":"low","preferred_skills":["Learning Design","EdTech","Content Creation","Educator Development"]}
+    ],
+    "product_companies": [
+      {"name":"Amazon (L&D)","ats_strictness":"high","preferred_skills":["Leadership Principles Training","LMS","Digital Learning","Global L&D"]},
+      {"name":"Google (L&D)","ats_strictness":"high","preferred_skills":["Google Academy","Leadership Dev","Peer Learning","L&D Analytics"]}
+    ]
+  }
+}

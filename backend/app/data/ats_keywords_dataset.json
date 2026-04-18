@@ -1,0 +1,137 @@
+{
+  "software_engineering": {
+    "must_have_keywords": ["python","java","javascript","sql","git","rest api","docker","object-oriented","data structures","algorithms","agile","unit testing","microservices","postgresql","system design","ci/cd","linux","api","debugging","github"],
+    "good_to_have": ["kubernetes","terraform","graphql","redis","kafka","elasticsearch","aws","azure","gcp","grpc","event-driven","distributed systems","websockets","cloud architecture","performance optimization"],
+    "action_verbs": ["developed","built","architected","deployed","optimized","implemented","automated","scaled","refactored","migrated","integrated","designed","debugged","launched","delivered"]
+  },
+  "frontend_development": {
+    "must_have_keywords": ["react","typescript","javascript","html5","css3","rest api","git","responsive design","state management","component","accessibility","webpack","ui","cross-browser","figma"],
+    "good_to_have": ["next.js","vue.js","angular","graphql","web performance","pwa","storybook","testing library","micro-frontends","server-side rendering","tailwind","svelte","redux","zustand"],
+    "action_verbs": ["built","developed","designed","optimized","shipped","implemented","refactored","collaborated","delivered","improved","created"]
+  },
+  "data_science": {
+    "must_have_keywords": ["python","machine learning","pandas","numpy","sql","statistics","scikit-learn","data visualization","feature engineering","model evaluation","jupyter","git","deep learning","nlp"],
+    "good_to_have": ["tensorflow","pytorch","xgboost","mlops","mlflow","spark","a/b testing","causal inference","llm","fine-tuning","reinforcement learning","computer vision","time series","databricks"],
+    "action_verbs": ["developed","built","trained","optimized","deployed","analyzed","modeled","improved","increased","reduced","automated","researched","published","delivered"]
+  },
+  "data_engineering": {
+    "must_have_keywords": ["apache spark","kafka","airflow","etl","data warehouse","python","sql","bigquery","snowflake","data pipeline","postgresql","dbt","git","linux"],
+    "good_to_have": ["databricks","delta lake","flink","data mesh","lakehouse","cdc","great expectations","data quality","orchestration","redshift","hive","presto","data governance"],
+    "action_verbs": ["built","designed","optimized","automated","migrated","reduced","improved","implemented","deployed","scaled","architected","delivered"]
+  },
+  "devops_cloud": {
+    "must_have_keywords": ["kubernetes","docker","terraform","aws","ci/cd","linux","bash","ansible","jenkins","github actions","monitoring","iam","vpc","helm","git","yaml"],
+    "good_to_have": ["istio","prometheus","grafana","elk stack","vault","chaos engineering","finops","gitops","argocd","crossplane","platform engineering","multi-cloud","sre","reliability"],
+    "action_verbs": ["deployed","automated","optimized","reduced","managed","architected","implemented","migrated","built","scaled","streamlined","monitored","delivered"]
+  },
+  "cybersecurity": {
+    "must_have_keywords": ["penetration testing","vulnerability assessment","siem","incident response","risk assessment","network security","owasp","linux","python","firewall","ids","ips","ethical hacking"],
+    "good_to_have": ["cissp","ceh","oscp","red teaming","malware analysis","forensics","threat hunting","zero trust","cloud security","sast","dast","reverse engineering","threat intelligence","soc"],
+    "action_verbs": ["identified","mitigated","assessed","implemented","responded","detected","analyzed","secured","hardened","investigated","remediated","designed"]
+  },
+  "mobile_development": {
+    "must_have_keywords": ["react native","flutter","kotlin","swift","android","ios","rest api","firebase","git","app store","mobile ui","state management","push notifications"],
+    "good_to_have": ["jetpack compose","swiftui","ci/cd mobile","app analytics","deep linking","in-app purchases","ble","offline first","performance mobile","accessibility mobile"],
+    "action_verbs": ["built","developed","shipped","optimized","designed","implemented","integrated","released","improved","delivered","launched","maintained"]
+  },
+  "product_management": {
+    "must_have_keywords": ["product roadmap","user stories","agile","okr","kpi","a/b testing","product analytics","stakeholder management","backlog","jira","go-to-market","wireframe","prd","scrum"],
+    "good_to_have": ["product-led growth","north star metric","cohort analysis","pricing strategy","market research","competitive analysis","revenue growth","product strategy","experimentation"],
+    "action_verbs": ["launched","led","defined","prioritized","drove","delivered","collaborated","built","shipped","improved","managed","grew","identified","executed"]
+  },
+  "qa_testing": {
+    "must_have_keywords": ["selenium","test automation","manual testing","test cases","regression testing","api testing","jira","bug tracking","agile testing","sql","postman","python"],
+    "good_to_have": ["cypress","playwright","performance testing","jmeter","security testing","mobile testing","appium","ci/cd testing","contract testing","chaos testing","testng","junit"],
+    "action_verbs": ["tested","automated","identified","reduced","improved","designed","executed","reported","validated","collaborated","built","maintained"]
+  },
+  "digital_marketing": {
+    "must_have_keywords": ["seo","google analytics","google ads","facebook ads","email marketing","a/b testing","campaign management","lead generation","landing page","ppc","conversion rate","crm","content marketing"],
+    "good_to_have": ["programmatic advertising","marketing automation","hubspot","salesforce marketing cloud","attribution modeling","ga4","youtube ads","linkedin ads","cro","growth hacking","customer journey"],
+    "action_verbs": ["launched","grew","drove","optimized","managed","created","executed","increased","generated","led","collaborated","built","delivered","achieved"]
+  },
+  "brand_marketing": {
+    "must_have_keywords": ["brand strategy","market research","consumer insights","campaign management","brand positioning","media planning","p&l","advertising","brand identity","competitive analysis","brand awareness"],
+    "good_to_have": ["brand architecture","neuromarketing","integrated marketing","trade marketing","category management","nps","brand audit","employer branding","brand valuation"],
+    "action_verbs": ["launched","led","grew","managed","developed","executed","built","increased","delivered","collaborated","drove","strategized","improved"]
+  },
+  "content_marketing": {
+    "must_have_keywords": ["seo","copywriting","content strategy","blog","keyword research","ahrefs","semrush","social media","content calendar","wordpress","email copywriting","editorial"],
+    "good_to_have": ["technical seo","link building","pillar content","video script","podcast","conversion copywriting","tone of voice","content analytics","content operations"],
+    "action_verbs": ["wrote","created","optimized","grew","increased","built","drove","managed","delivered","published","strategized","collaborated"]
+  },
+  "investment_banking": {
+    "must_have_keywords": ["financial modeling","dcf","m&a","due diligence","bloomberg","valuation","pitch book","capital markets","lbo","comparable company","excel","term sheet","ipo"],
+    "good_to_have": ["leveraged finance","equity offering","debt structuring","fairness opinion","merger model","accretion dilution","credit rating","spac","cross-border m&a","restructuring advisory","precedent transactions"],
+    "action_verbs": ["analyzed","modeled","structured","advised","closed","prepared","presented","evaluated","identified","negotiated","executed","delivered"]
+  },
+  "financial_analysis": {
+    "must_have_keywords": ["financial planning","budgeting","forecasting","excel","variance analysis","p&l","financial reporting","kpi","power bi","cost analysis","business planning","erp"],
+    "good_to_have": ["driver-based modeling","rolling forecasts","tableau","sap","hyperion","scenario planning","capital allocation","working capital","board reporting","xbrl"],
+    "action_verbs": ["analyzed","forecasted","modeled","prepared","identified","reduced","improved","presented","delivered","managed","advised","built"]
+  },
+  "accounting": {
+    "must_have_keywords": ["gaap","ifrs","audit","tax","gst","tds","accounts payable","accounts receivable","reconciliation","tally","sap fico","financial reporting","balance sheet","p&l"],
+    "good_to_have": ["ind as","transfer pricing","forensic accounting","fema","companies act","revenue recognition","lease accounting","ifc testing","statutory audit","internal audit"],
+    "action_verbs": ["audited","prepared","reviewed","reconciled","analyzed","reported","managed","identified","reduced","ensured","filed","advised"]
+  },
+  "risk_compliance": {
+    "must_have_keywords": ["risk management","credit risk","market risk","operational risk","basel iii","compliance","aml","kyc","regulatory reporting","risk framework","var","stress testing"],
+    "good_to_have": ["icaap","frtb","model risk","conduct risk","esg risk","liquidity risk","sebi compliance","rbi regulations","fatca","srep","raroc"],
+    "action_verbs": ["assessed","managed","implemented","identified","reduced","reported","ensured","advised","monitored","reviewed","tested","mitigated"]
+  },
+  "equity_research": {
+    "must_have_keywords": ["equity research","financial modeling","valuation","bloomberg","sector research","investment thesis","financial statements","cfa","stock analysis","target price"],
+    "good_to_have": ["buy-side","sell-side","asset allocation","portfolio construction","quantitative screening","options strategy","derivatives analysis","esg investing","factor models","alternative data"],
+    "action_verbs": ["analyzed","modeled","recommended","published","researched","identified","presented","built","delivered","evaluated","covered","initiated"]
+  },
+  "clinical_medicine": {
+    "must_have_keywords": ["patient care","clinical assessment","diagnosis","treatment","ehr","pharmacology","medical documentation","emergency care","anatomy","physiology","mbbs","clinical"],
+    "good_to_have": ["icu management","advanced life support","clinical research","radiology","evidence-based medicine","quality improvement","telemedicine","surgical","procedure","specialty"],
+    "action_verbs": ["diagnosed","treated","managed","monitored","administered","collaborated","documented","assessed","implemented","educated","coordinated","delivered"]
+  },
+  "nursing": {
+    "must_have_keywords": ["patient care","vital signs","medication administration","wound care","iv therapy","ehr","hipaa","infection control","emergency triage","nursing assessment"],
+    "good_to_have": ["icu nursing","ventilator management","critical care","charge nursing","quality improvement","advanced clinical assessment","specialty nursing","bls","acls"],
+    "action_verbs": ["monitored","administered","assessed","documented","educated","coordinated","managed","provided","facilitated","collaborated","delivered"]
+  },
+  "clinical_research": {
+    "must_have_keywords": ["clinical trials","gcp","ich e6","protocol monitoring","adverse event","crf","data management","regulatory submissions","informed consent","irb","fda"],
+    "good_to_have": ["pharmacovigilance","signal detection","cioms","meddra","sas","cdisc","21 cfr","ema guidelines","phase 1 2 3 4","medical writing","clinical database"],
+    "action_verbs": ["monitored","managed","reported","submitted","reviewed","analyzed","ensured","coordinated","drafted","trained","conducted","documented"]
+  },
+  "ui_ux_design": {
+    "must_have_keywords": ["figma","user research","wireframing","prototyping","design system","usability testing","typography","accessibility wcag","ux design","ui design","color theory","responsive"],
+    "good_to_have": ["interaction design","information architecture","design ops","service design","framer","design tokens","b2b saas design","research synthesis","design leadership"],
+    "action_verbs": ["designed","created","crafted","prototyped","researched","tested","iterated","delivered","led","built","improved","reimagined","shipped","collaborated"]
+  },
+  "graphic_design": {
+    "must_have_keywords": ["adobe photoshop","illustrator","indesign","typography","color theory","brand design","logo design","print design","layout","visual hierarchy"],
+    "good_to_have": ["packaging design","publication design","art direction","3d rendering","motion graphics","generative design","photo retouching"],
+    "action_verbs": ["designed","created","crafted","built","developed","delivered","collaborated","improved","launched","produced"]
+  },
+  "corporate_law": {
+    "must_have_keywords": ["corporate law","m&a","due diligence","contract drafting","companies act","sebi","shareholders agreement","term sheet","corporate governance","legal research"],
+    "good_to_have": ["cross-border m&a","private equity","venture capital","capital markets law","fema","competition law","securities law","restructuring","scheme of arrangement"],
+    "action_verbs": ["drafted","negotiated","advised","reviewed","researched","represented","filed","prepared","managed","analyzed","structured","closed"]
+  },
+  "litigation": {
+    "must_have_keywords": ["litigation","legal research","pleadings","court","civil procedure","criminal procedure","evidence act","case management","legal drafting","advocate"],
+    "good_to_have": ["arbitration","mediation","appellate","writ petition","nclt","nclat","tribunal","consumer forum","international arbitration","pil"],
+    "action_verbs": ["argued","drafted","researched","filed","represented","advised","prepared","managed","analyzed","defended","litigated"]
+  },
+  "talent_acquisition": {
+    "must_have_keywords": ["recruitment","talent acquisition","sourcing","linkedin recruiter","boolean search","job description","interview","offer management","ats","employer branding","campus hiring"],
+    "good_to_have": ["executive search","niche hiring","rpo","diversity hiring","hiring metrics","workforce planning","market mapping","headhunting","predictive hiring"],
+    "action_verbs": ["recruited","sourced","hired","managed","built","reduced","increased","partnered","designed","delivered","led","collaborated","achieved"]
+  },
+  "hr_business_partner": {
+    "must_have_keywords": ["hrbp","performance management","employee relations","okr","workforce planning","hr strategy","change management","succession planning","people analytics","org design"],
+    "good_to_have": ["culture transformation","executive coaching","hr transformation","employee experience","dei programs","hr tech implementation","people science","m&a hr integration"],
+    "action_verbs": ["partnered","led","implemented","designed","managed","facilitated","advised","built","drove","delivered","collaborated","improved","developed"]
+  },
+  "sales": {
+    "must_have_keywords": ["b2b sales","revenue","pipeline","crm","salesforce","account management","lead generation","quota","deal closure","negotiation","cold calling","enterprise sales"],
+    "good_to_have": ["meddic","challenger sale","value selling","revops","sales enablement","abm","strategic account planning","partner sales","channel sales","solution selling"],
+    "action_verbs": ["closed","generated","grew","exceeded","developed","built","negotiated","secured","prospected","converted","retained","expanded","led","achieved"]
+  }
+}

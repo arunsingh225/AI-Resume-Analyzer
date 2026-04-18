@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ai-resume-analyzer-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    rootDir: backend
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:///./resume_analyzer.db
+      - key: CORS_ORIGINS
+        value: https://ai-resume-analyzer.vercel.app
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+    healthCheckPath: /health
