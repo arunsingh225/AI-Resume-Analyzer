@@ -14,10 +14,6 @@ passlib[bcrypt]>=1.7.4
 scikit-learn>=1.5.0
 numpy>=1.26.0
 
-# AI / NLP
-sentence-transformers>=2.7.0
-spacy>=3.7.0
-
 # Production
 slowapi>=0.1.9
 
