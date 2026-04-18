@@ -4,7 +4,7 @@ services:
     runtime: python
     region: oregon
     plan: free
-    buildCommand: pip install -r requirements.txt
+    buildCommand: chmod +x build.sh && ./build.sh
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     rootDir: backend
     envVars:
@@ -13,7 +13,7 @@ services:
       - key: DATABASE_URL
         value: sqlite:///./resume_analyzer.db
       - key: CORS_ORIGINS
-        value: https://ai-resume-analyzer.vercel.app
+        value: "*"
       - key: PYTHON_VERSION
         value: "3.11.0"
     healthCheckPath: /health

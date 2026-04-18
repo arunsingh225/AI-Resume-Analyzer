@@ -7,6 +7,7 @@ from functools import lru_cache
 from typing import List
 
 from pydantic_settings import BaseSettings
+from pydantic import field_validator
 
 
 class Settings(BaseSettings):
@@ -27,6 +28,13 @@ class Settings(BaseSettings):
         "http://localhost:3000",
         "http://127.0.0.1:5173",
     ]
+
+    @field_validator("cors_origins", mode="before")
+    @classmethod
+    def parse_cors(cls, v):
+        if isinstance(v, str):
+            return [s.strip() for s in v.split(",") if s.strip()]
+        return v
 
     # ── AI Feature Flags ──
     enable_semantic_matching: bool = True
