@@ -1,6 +1,6 @@
 # 🤖 AI Resume Analyzer
 
-[![CI](https://github.com/YOUR_USERNAME/ai-resume-analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/ai-resume-analyzer/actions)
+[![CI](https://github.com/arunsingh225/AI-Resume-Analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/arunsingh225/AI-Resume-Analyzer/actions)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://python.org)
 [![React 18](https://img.shields.io/badge/react-18-61DAFB.svg)](https://react.dev)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
