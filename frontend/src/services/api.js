@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getToken } from './auth'
+import { getToken, getRefreshToken, setToken, setRefreshToken, clearAllAuth } from './auth'
 
 const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
@@ -12,17 +12,71 @@ api.interceptors.request.use((config) => {
   return config
 })
 
-// On 401, clear token and redirect to login
+// Auto-refresh on 401
+let isRefreshing = false
+let failedQueue = []
+
+const processQueue = (error, token = null) => {
+  failedQueue.forEach(prom => {
+    if (error) prom.reject(error)
+    else prom.resolve(token)
+  })
+  failedQueue = []
+}
+
 api.interceptors.response.use(
   (r) => r,
-  (err) => {
-    if (err.response?.status === 401) {
-      localStorage.removeItem('ra_token')
-      localStorage.removeItem('ra_user')
-      if (!window.location.pathname.includes('/login')) {
-        window.location.href = '/login'
+  async (err) => {
+    const originalRequest = err.config
+
+    // If 401 and we haven't already retried
+    if (err.response?.status === 401 && !originalRequest._retry) {
+      const refreshToken = getRefreshToken()
+
+      // No refresh token — redirect to login
+      if (!refreshToken) {
+        clearAllAuth()
+        if (!window.location.pathname.includes('/login')) {
+          window.location.href = '/login'
+        }
+        return Promise.reject(err)
+      }
+
+      // If already refreshing, queue this request
+      if (isRefreshing) {
+        return new Promise((resolve, reject) => {
+          failedQueue.push({ resolve, reject })
+        }).then(token => {
+          originalRequest.headers.Authorization = `Bearer ${token}`
+          return api(originalRequest)
+        })
+      }
+
+      originalRequest._retry = true
+      isRefreshing = true
+
+      try {
+        const res = await axios.post(`${BASE}/auth/refresh`, {
+          refresh_token: refreshToken
+        })
+        const { access_token, refresh_token } = res.data
+        setToken(access_token)
+        setRefreshToken(refresh_token)
+        processQueue(null, access_token)
+        originalRequest.headers.Authorization = `Bearer ${access_token}`
+        return api(originalRequest)
+      } catch (refreshErr) {
+        processQueue(refreshErr, null)
+        clearAllAuth()
+        if (!window.location.pathname.includes('/login')) {
+          window.location.href = '/login'
+        }
+        return Promise.reject(refreshErr)
+      } finally {
+        isRefreshing = false
       }
     }
+
     return Promise.reject(err)
   }
 )
@@ -75,4 +129,3 @@ export const getAnalysisDetail = (id) =>
 
 export const deleteAnalysis = (id) =>
   api.delete(`/api/history/${id}`).then(r => r.data)
-

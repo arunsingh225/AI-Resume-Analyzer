@@ -1,3 +1,13 @@
+"""
+Auth Router — email signup/login, Google OAuth mock, OTP phone auth.
+
+Security hardened:
+  - OTP is never returned in API responses
+  - Access tokens expire in 15 minutes
+  - Refresh tokens expire in 7 days
+  - Password policy enforced on signup
+  - Rate-limited auth endpoints
+"""
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, EmailStr
@@ -5,6 +15,7 @@ from typing import Optional
 from sqlalchemy.orm import Session
 import re as _re
 import os
+import logging
 
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -15,7 +26,11 @@ from app.services.auth_service import (
     create_user_email, create_user_google, create_user_phone,
     verify_password, generate_otp, save_otp, verify_otp,
 )
-from app.utils.auth_utils import create_access_token, get_current_user
+from app.utils.auth_utils import (
+    create_access_token, create_refresh_token, decode_token, get_current_user,
+)
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 limiter = Limiter(
@@ -58,10 +73,17 @@ class VerifyOTPRequest(BaseModel):
     otp:   str
     name:  Optional[str] = ""
 
+class RefreshRequest(BaseModel):
+    refresh_token: str
 
-def user_response(user: User, token: str) -> dict:
+
+def _token_response(user: User, access_token: str, refresh_token: str) -> dict:
+    """Standardized auth response with both tokens."""
     return {
-        "token": token,
+        "access_token": access_token,
+        "refresh_token": refresh_token,
+        "token_type": "bearer",
+        "expires_in": 900,  # 15 minutes in seconds
         "user": {
             "id":         user.id,
             "name":       user.name or "",
@@ -80,9 +102,11 @@ def signup(request: Request, body: SignupRequest, db: Session = Depends(get_db))
     if get_user_by_email(db, body.email):
         raise HTTPException(400, "Email already registered. Please log in.")
     _validate_password(body.password)
-    user  = create_user_email(db, body.name, body.email, body.password)
-    token = create_access_token(user.id, user.email)
-    return user_response(user, token)
+    user = create_user_email(db, body.name, body.email, body.password)
+    logger.info("User signup: user_id=%s email=%s", user.id, body.email)
+    access  = create_access_token(user.id, user.email)
+    refresh = create_refresh_token(user.id)
+    return _token_response(user, access, refresh)
 
 
 # ── Email Login ──────────────────────────────────────────────────────
@@ -93,9 +117,27 @@ def login(request: Request, body: LoginRequest, db: Session = Depends(get_db)):
     if not user or not user.password:
         raise HTTPException(401, "No account found with this email.")
     if not verify_password(body.password, user.password):
+        logger.warning("Failed login attempt: email=%s", body.email)
         raise HTTPException(401, "Incorrect password.")
-    token = create_access_token(user.id, user.email)
-    return user_response(user, token)
+    logger.info("User login: user_id=%s", user.id)
+    access  = create_access_token(user.id, user.email)
+    refresh = create_refresh_token(user.id)
+    return _token_response(user, access, refresh)
+
+
+# ── Refresh Token ────────────────────────────────────────────────────
+@router.post("/refresh")
+def refresh_token(body: RefreshRequest, db: Session = Depends(get_db)):
+    """Exchange a valid refresh token for a new access + refresh token pair."""
+    payload = decode_token(body.refresh_token, expected_type="refresh")
+    user_id = payload.get("sub")
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user or not user.is_active:
+        raise HTTPException(401, "User not found or inactive")
+    logger.info("Token refresh: user_id=%s", user.id)
+    access  = create_access_token(user.id, user.email)
+    refresh = create_refresh_token(user.id)
+    return _token_response(user, access, refresh)
 
 
 # ── Google Login (mock — no OAuth server needed) ─────────────────────
@@ -105,25 +147,24 @@ def google_login(body: GoogleLoginRequest, db: Session = Depends(get_db)):
     Frontend passes name + email from Google's ID token (or mock data).
     We create/fetch the user and return our own JWT.
     """
-    user  = create_user_google(db, body.name, body.email, body.avatar_url or "")
-    token = create_access_token(user.id, user.email)
-    return user_response(user, token)
+    user = create_user_google(db, body.name, body.email, body.avatar_url or "")
+    access  = create_access_token(user.id, user.email)
+    refresh = create_refresh_token(user.id)
+    return _token_response(user, access, refresh)
 
 
 # ── Send OTP ─────────────────────────────────────────────────────────
 @router.post("/send-otp")
-def send_otp(body: SendOTPRequest, db: Session = Depends(get_db)):
+@limiter.limit("3/minute")
+def send_otp(request: Request, body: SendOTPRequest, db: Session = Depends(get_db)):
     phone = body.phone.strip()
     if len(phone) < 10:
         raise HTTPException(400, "Invalid phone number.")
     otp = generate_otp()
     save_otp(db, phone, otp)
     # In production: send via Twilio / MSG91
-    # For mock/demo: return OTP in response (remove in prod)
-    return {
-        "message": f"OTP sent to {phone}",
-        "otp_demo": otp,          # ← remove this line in production
-    }
+    logger.info("OTP generated for phone=%s (not logging OTP value)", phone)
+    return {"message": f"OTP sent to {phone}"}
 
 
 # ── Verify OTP ───────────────────────────────────────────────────────
@@ -137,8 +178,9 @@ def verify_otp_endpoint(body: VerifyOTPRequest, db: Session = Depends(get_db)):
     if not user:
         user = create_user_phone(db, phone, body.name)
 
-    token = create_access_token(user.id, user.email)
-    return user_response(user, token)
+    access  = create_access_token(user.id, user.email)
+    refresh = create_refresh_token(user.id)
+    return _token_response(user, access, refresh)
 
 
 # ── Get Current User ─────────────────────────────────────────────────
@@ -158,5 +200,7 @@ def get_me(current_user: User = Depends(get_current_user)):
 # ── Logout ───────────────────────────────────────────────────────────
 @router.post("/logout")
 def logout(current_user: User = Depends(get_current_user)):
-    # JWT is stateless — client just deletes the token
+    # JWT is stateless — client deletes tokens.
+    # For full revocation, add token to a blacklist (Redis) in future.
+    logger.info("User logout: user_id=%s", current_user.id)
     return {"message": "Logged out successfully"}

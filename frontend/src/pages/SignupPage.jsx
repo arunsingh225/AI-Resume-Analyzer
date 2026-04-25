@@ -28,7 +28,7 @@ export default function SignupPage() {
     setLoading(true)
     try {
       const r = await authAPI.signup(form)
-      saveAuth(r.data.token, r.data.user)
+      saveAuth(r.data)
       navigate('/', { replace: true })
     } catch (err) {
       setError(err?.response?.data?.detail || 'Signup failed')
@@ -43,7 +43,7 @@ export default function SignupPage() {
         email:      `google_${Date.now()}@gmail.com`,
         avatar_url: '',
       })
-      saveAuth(r.data.token, r.data.user)
+      saveAuth(r.data)
       navigate('/', { replace: true })
     } catch (err) {
       setError(err?.response?.data?.detail || 'Google signup failed')

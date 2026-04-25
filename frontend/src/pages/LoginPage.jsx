@@ -36,7 +36,7 @@ export default function LoginPage() {
   const [error,    setError]    = useState('')
 
   const finish = (data) => {
-    saveAuth(data.token, data.user)
+    saveAuth(data)
     navigate('/', { replace: true })
   }
 
@@ -69,8 +69,7 @@ export default function LoginPage() {
     if (phone.length < 10) { setError('Enter a valid phone number'); return }
     setError(''); setLoading(true)
     try {
-      const r = await authAPI.sendOTP(phone)
-      setDemoOtp(r.data.otp_demo || '')
+      await authAPI.sendOTP(phone)
       setOtpSent(true)
     } catch (err) {
       setError(err?.response?.data?.detail || 'Failed to send OTP')
@@ -188,12 +187,7 @@ export default function LoginPage() {
                   <label className="text-xs font-semibold text-ink-muted block mb-1.5">Enter OTP</label>
                   <input value={otp} onChange={e => setOtp(e.target.value)}
                     placeholder="6-digit OTP" maxLength={6} className={INPUT_CLS} required />
-                  {demoOtp && (
-                    <p className="text-[11px] text-ink-faint mt-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200">
-                      Demo OTP: <strong className="text-ink-secondary font-mono">{demoOtp}</strong>
-                      <span className="text-ink-faint ml-1">(remove in production)</span>
-                    </p>
-                  )}
+
                 </div>
                 <button type="submit" disabled={loading} className={BTN_PRIMARY + ' disabled:opacity-60'}>
                   {loading ? <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : null}

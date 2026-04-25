@@ -1,12 +1,18 @@
 """
-Semantic Matcher — uses sentence-transformers for meaning-based JD matching.
-Falls back gracefully if the model isn't installed.
+Semantic Matcher — hybrid JD matching with TF-IDF + optional AI embeddings.
 
-Model: all-MiniLM-L6-v2 (80MB, runs on CPU in <1s)
-Cost: $0 (runs locally)
+Production behavior:
+  - Uses TF-IDF (scikit-learn) as the primary matching engine — fast, reliable, zero extra deps.
+  - Optionally blends in sentence-transformer embeddings when available for higher accuracy.
+  - Falls back gracefully if sentence-transformers is not installed.
+
+Model (when available): all-MiniLM-L6-v2 (80MB, runs on CPU in <1s, $0 cost)
 """
+import logging
 import numpy as np
 from typing import Optional, Tuple
+
+logger = logging.getLogger(__name__)
 
 _MODEL = None
 _MODEL_LOADED = False
@@ -20,14 +26,19 @@ def _load_model():
     try:
         from sentence_transformers import SentenceTransformer
         _MODEL = SentenceTransformer('all-MiniLM-L6-v2')
-    except (ImportError, Exception):
+        logger.info("Sentence-transformer model loaded successfully")
+    except ImportError:
+        logger.info("sentence-transformers not installed — using TF-IDF only (this is normal for free-tier deployments)")
+        _MODEL = None
+    except Exception as e:
+        logger.warning("Failed to load sentence-transformer model: %s", str(e))
         _MODEL = None
     _MODEL_LOADED = True
     return _MODEL
 
 
 def is_available() -> bool:
-    """Check if semantic matching is available."""
+    """Check if semantic (embedding-based) matching is available."""
     return _load_model() is not None
 
 
@@ -56,12 +67,17 @@ def enhanced_jd_match(
     """
     Blend semantic similarity with TF-IDF for a more accurate match.
     Returns (blended_score_0_to_1, method_used).
+
+    method_used will be:
+      - "semantic+tfidf" when sentence-transformers is available
+      - "tfidf" when using TF-IDF only (default on free-tier)
     """
     sem_score = semantic_similarity(resume_text, jd_text)
 
     if sem_score is not None:
         # Blend: 60% semantic + 40% TF-IDF (semantic is more accurate)
         blended = 0.60 * sem_score + 0.40 * tfidf_score
+        logger.debug("JD match: semantic=%.4f tfidf=%.4f blended=%.4f", sem_score, tfidf_score, blended)
         return round(blended, 4), "semantic+tfidf"
     else:
-        return tfidf_score, "tfidf_only"
+        return tfidf_score, "tfidf"

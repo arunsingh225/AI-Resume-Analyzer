@@ -1,5 +1,10 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
-import { authAPI, getToken, setToken, setUser, getUser, clearToken, clearUser } from '../services/auth'
+import {
+  authAPI,
+  getToken, setToken, clearToken,
+  setRefreshToken, clearRefreshToken,
+  setUser, getUser, clearUser, clearAllAuth,
+} from '../services/auth'
 
 const AuthContext = createContext(null)
 
@@ -12,19 +17,22 @@ export function AuthProvider({ children }) {
     if (!getToken()) { setLoading(false); return }
     authAPI.getMe()
       .then(r => { setUserState(r.data); setUser(r.data) })
-      .catch(() => { clearToken(); clearUser(); setUserState(null) })
+      .catch(() => { clearAllAuth(); setUserState(null) })
       .finally(() => setLoading(false))
   }, [])
 
-  const saveAuth = useCallback((token, userData) => {
-    setToken(token)
-    setUser(userData)
-    setUserState(userData)
+  const saveAuth = useCallback((responseData) => {
+    // responseData has { access_token, refresh_token, user }
+    setToken(responseData.access_token)
+    setRefreshToken(responseData.refresh_token)
+    setUser(responseData.user)
+    setUserState(responseData.user)
   }, [])
 
   const logout = useCallback(async () => {
     try { await authAPI.logout() } catch {}
-    clearToken(); clearUser(); setUserState(null)
+    clearAllAuth()
+    setUserState(null)
   }, [])
 
   return (

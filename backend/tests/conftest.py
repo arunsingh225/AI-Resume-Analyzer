@@ -53,20 +53,20 @@ def client(db_session):
 
 @pytest.fixture
 def auth_token(client):
-    """Create a test user and return a JWT token."""
+    """Create a test user and return a JWT access token."""
     r = client.post("/auth/signup", json={
         "name": "Test User",
         "email": "testuser@example.com",
         "password": "TestPass123"
     })
     if r.status_code == 200:
-        return r.json().get("token")
+        return r.json().get("access_token")
     # User might already exist — try login
     r = client.post("/auth/login", json={
         "email": "testuser@example.com",
         "password": "TestPass123"
     })
-    return r.json().get("token")
+    return r.json().get("access_token")
 
 
 @pytest.fixture

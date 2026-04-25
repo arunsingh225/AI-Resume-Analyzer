@@ -27,7 +27,8 @@ class TestAuthAPI:
         })
         assert r.status_code == 200
         data = r.json()
-        assert "token" in data
+        assert "access_token" in data
+        assert "refresh_token" in data
         assert "user" in data
 
     def test_signup_duplicate_email(self, client):
@@ -61,7 +62,7 @@ class TestAuthAPI:
             "email": email, "password": "CorrectPass1"
         })
         assert r.status_code == 200
-        assert "token" in r.json()
+        assert "access_token" in r.json()
 
     def test_login_wrong_password(self, client):
         import uuid

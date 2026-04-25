@@ -13,7 +13,9 @@ class Settings(BaseSettings):
     # ── Auth ──
     jwt_secret: str = "CHANGE_IN_PRODUCTION_REQUIRED"
     jwt_algorithm: str = "HS256"
-    jwt_expire_days: int = 30
+    # DEPRECATED: jwt_expire_days is no longer used.
+    # Access tokens now expire in 15 min (see auth_utils.py).
+    # Refresh tokens expire in 7 days.
 
     # ── Database ──
     database_url: str = "sqlite:///./resume_analyzer.db"
@@ -38,6 +40,9 @@ class Settings(BaseSettings):
     rate_limit_auth: str = "5/minute"
     rate_limit_analyze: str = "10/minute"
 
+    # ── Logging ──
+    log_level: str = "INFO"
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
@@ -48,4 +53,3 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     """Cached singleton — reads .env only once per process."""
     return Settings()
-
