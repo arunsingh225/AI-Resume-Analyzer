@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine, Column, String, DateTime, Boolean, Float, Text, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import DeclarativeBase, sessionmaker, relationship
 import datetime
 import uuid
 import os
@@ -18,7 +17,11 @@ engine = create_engine(
     echo=False,
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
+
+
+class Base(DeclarativeBase):
+    """Modern SQLAlchemy 2.x declarative base."""
+    pass
 
 
 # ── User model ──────────────────────────────────────────────────────

@@ -2,6 +2,7 @@
 AI Resume Analyzer — FastAPI Application Entry Point.
 
 Production-hardened with:
+  - Modern lifespan context manager (no deprecated on_event)
   - Structured JSON logging
   - Request-ID tracing middleware
   - Security headers middleware
@@ -9,6 +10,7 @@ Production-hardened with:
   - Health check endpoints (/health, /ready, /live)
 """
 import logging
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -27,12 +29,28 @@ logger = logging.getLogger(__name__)
 
 settings = get_settings()
 
+
+# ── Lifespan — modern replacement for on_event("startup"/"shutdown") ─
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Startup and shutdown logic for the application."""
+    # ── Startup ──
+    create_tables()
+    logger.info("Database tables initialized")
+    logger.info("CORS origins: %s", settings.cors_origins_list)
+    logger.info("AI Resume Analyzer v4.0.0 started successfully")
+    yield
+    # ── Shutdown ──
+    logger.info("AI Resume Analyzer shutting down gracefully")
+
+
 app = FastAPI(
     title="AI Resume Analyzer API",
     description="Production SaaS — Auth + ATS + JD Match + Improvement",
     version="4.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
+    lifespan=lifespan,
 )
 
 # ── Middleware (order matters — outermost first) ────────────────────
@@ -54,14 +72,6 @@ async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
         status_code=429,
         content={"detail": "Too many requests. Please try again later."}
     )
-
-# ── Create DB tables on startup ─────────────────────────────────────
-@app.on_event("startup")
-def startup():
-    create_tables()
-    logger.info("Database tables initialized")
-    logger.info("CORS origins: %s", settings.cors_origins_list)
-    logger.info("AI Resume Analyzer v4.0.0 started successfully")
 
 # ── Register routers ────────────────────────────────────────────────
 app.include_router(auth.router,     prefix="/auth",         tags=["Auth"])

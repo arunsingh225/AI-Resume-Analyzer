@@ -7,15 +7,19 @@ from functools import lru_cache
 from typing import List
 
 from pydantic_settings import BaseSettings
+from pydantic import ConfigDict
 
 
 class Settings(BaseSettings):
+    model_config = ConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
+
     # ── Auth ──
     jwt_secret: str = "CHANGE_IN_PRODUCTION_REQUIRED"
     jwt_algorithm: str = "HS256"
-    # DEPRECATED: jwt_expire_days is no longer used.
-    # Access tokens now expire in 15 min (see auth_utils.py).
-    # Refresh tokens expire in 7 days.
 
     # ── Database ──
     database_url: str = "sqlite:///./resume_analyzer.db"
@@ -42,11 +46,6 @@ class Settings(BaseSettings):
 
     # ── Logging ──
     log_level: str = "INFO"
-
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        extra = "ignore"
 
 
 @lru_cache()
