@@ -52,7 +52,7 @@ export default function Overview() {
   ]
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 stagger-enter">
 
       {/* ── Hero glass card ── */}
       <div className="glass" style={{ padding: 0, overflow: 'hidden' }}>
@@ -61,7 +61,7 @@ export default function Overview() {
 
         <div className="p-6 flex flex-col sm:flex-row items-center gap-6">
           {/* Ring */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 score-ring-glow">
             <ATSRing score={ats.total} />
           </div>
 
@@ -96,9 +96,9 @@ export default function Overview() {
           { label: 'Best Match',   value: `${topJob?.match_percent || 0}%`, sub: topJob?.role || '—',                        color: '#4B5570' },
           { label: 'Experience',   value: `${d.years_experience}y`,         sub: levelLabel(d.experience_level),             color: '#9E6F1A' },
         ].map(({ label, value, sub, color }) => (
-          <div key={label} className="stat-card">
+          <div key={label} className="stat-card stat-card-premium card-hover">
             <p className="text-[11px] font-semibold text-ink-faint uppercase tracking-wide mb-2">{label}</p>
-            <p className="text-2xl font-display font-700 mb-0.5" style={{ color }}>{value}</p>
+            <p className="text-2xl font-display font-700 mb-0.5 count-up" style={{ color }}>{value}</p>
             <p className="text-xs text-ink-muted truncate">{sub}</p>
           </div>
         ))}
@@ -108,7 +108,7 @@ export default function Overview() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
         {/* ATS breakdown */}
-        <div className="card p-5">
+        <div className="card card-hover p-5">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-display font-600 text-ink-primary text-sm">ATS Breakdown</h3>
             <button onClick={() => navigate('/dashboard/ats')}
@@ -132,7 +132,7 @@ export default function Overview() {
         </div>
 
         {/* Job matches */}
-        <div className="card p-5">
+        <div className="card card-hover p-5">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-display font-600 text-ink-primary text-sm">Top Job Matches</h3>
             <button onClick={() => navigate('/dashboard/jobs')}
@@ -161,11 +161,11 @@ export default function Overview() {
 
       {/* ── Visual Charts ── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="card p-5">
+        <div className="card card-hover p-5">
           <h3 className="font-display font-600 text-ink-primary text-sm mb-3">ATS Score Radar</h3>
           <ATSRadarChart ats={ats} />
         </div>
-        <div className="card p-5">
+        <div className="card card-hover p-5">
           <h3 className="font-display font-600 text-ink-primary text-sm mb-3">Skill Distribution</h3>
           <SkillBarChart
             found={d.skill_analysis?.found_core || d.skill_analysis?.found || []}

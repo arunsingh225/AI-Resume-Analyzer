@@ -113,8 +113,8 @@ export default function HomePage() {
           <span className="font-display font-700 text-base text-ink-primary tracking-tight">ResumeAI</span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="badge badge-sage text-[10px] tracking-wide">v2.0</span>
-          <span className="text-ink-muted text-sm hidden sm:block">40+ Field Domains</span>
+          <span className="badge badge-sage badge-shine text-[10px] tracking-wide">v4.0</span>
+          <span className="text-ink-muted text-sm hidden sm:block">53+ Field Domains</span>
         </div>
       </nav>
 
@@ -125,7 +125,7 @@ export default function HomePage() {
         <div className="flex-1 max-w-lg text-center lg:text-left animate-slide-up">
           <div className="inline-flex items-center gap-2 bg-stone-100/80 text-stone-600 text-xs font-semibold px-3 py-1.5 rounded-full border border-stone-200 mb-6">
             <Cpu size={11} />
-            AI-powered · MNC-grade ATS · Exact field detection
+            AI-powered · MNC-grade ATS · 53 field domains
           </div>
           <h1 className="font-display text-5xl lg:text-6xl font-800 text-ink-primary mb-5 leading-[1.05] text-balance">
             Know exactly<br />
@@ -142,7 +142,7 @@ export default function HomePage() {
               { icon: BarChart3, label: 'ATS Scoring' },
               { icon: BookOpen,  label: 'Skill Gaps' },
               { icon: FileText,  label: 'PDF & DOCX' },
-              { icon: CheckCircle2, label: '40+ Fields' },
+              { icon: CheckCircle2, label: '53+ Fields' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} className="flex items-center gap-1.5 text-xs font-medium text-ink-muted bg-surface-card/70 border border-surface-border px-3 py-1.5 rounded-lg">
                 <Icon size={12} className="text-stone-400" />{label}
@@ -306,7 +306,7 @@ export default function HomePage() {
       </main>
 
       <footer className="relative z-10 text-center py-4 text-[11px] text-ink-faint">
-        ResumeAI v2.0 · FastAPI backend · PDF & DOCX · 40+ exact field domains
+        ResumeAI v4.0 · FastAPI + React · Dual-Token Auth · 53 field domains · 645 companies
       </footer>
     </div>
   )

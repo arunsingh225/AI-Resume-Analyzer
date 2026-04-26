@@ -121,7 +121,7 @@ export default function DashboardPage() {
             const isActive = currentPath === path || (path === '' && currentPath === '')
             return (
               <button key={id} onClick={() => { navigate(`/dashboard/${path}`); setOpen(false) }}
-                className={`nav-item w-full text-left text-sm mb-0.5 ${isActive ? 'active' : ''}`}>
+                className={`nav-item relative w-full text-left text-sm mb-0.5 ${isActive ? 'active' : ''}`}>
                 <Icon size={15} className="flex-shrink-0" />
                 <span className="flex-1">{label}</span>
                 {badge && <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-stone-200 text-stone-600">{badge}</span>}
@@ -174,7 +174,7 @@ export default function DashboardPage() {
             </button>
 
             {userMenu && (
-              <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl border border-stone-200 bg-white shadow-card-lg z-50 overflow-hidden"
+              <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl border border-stone-200 bg-white shadow-card-lg z-50 overflow-hidden dropdown-enter"
                 onClick={() => setUserMenu(false)}>
                 <div className="px-4 py-3 border-b border-stone-100">
                   <p className="text-sm font-semibold text-ink-primary truncate">{user?.name || 'User'}</p>
