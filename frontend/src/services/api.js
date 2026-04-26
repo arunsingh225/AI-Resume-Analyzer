@@ -30,7 +30,9 @@ api.interceptors.response.use(
     const originalRequest = err.config
 
     // If 401 and we haven't already retried
-    if (err.response?.status === 401 && !originalRequest._retry) {
+    // Skip refresh for auth endpoints (they handle their own auth)
+    const isAuthEndpoint = originalRequest.url?.includes('/auth/')
+    if (err.response?.status === 401 && !originalRequest._retry && !isAuthEndpoint) {
       const refreshToken = getRefreshToken()
 
       // No refresh token — redirect to login

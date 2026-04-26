@@ -6,7 +6,8 @@ export default function ThemeToggle() {
     if (typeof window === 'undefined') return false
     const saved = localStorage.getItem('ra_theme')
     if (saved) return saved === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    // Default to LIGHT theme — never auto-detect system dark mode
+    return false
   })
 
   useEffect(() => {

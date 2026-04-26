@@ -30,9 +30,11 @@ export function AuthProvider({ children }) {
   }, [])
 
   const logout = useCallback(async () => {
-    try { await authAPI.logout() } catch {}
+    // Clear local state FIRST — this ensures logout always works
     clearAllAuth()
     setUserState(null)
+    // API call is best-effort (may fail if token expired — that's ok)
+    try { await authAPI.logout() } catch {}
   }, [])
 
   return (
