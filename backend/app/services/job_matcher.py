@@ -267,16 +267,16 @@ def get_company_recommendations(field_key: str, level: str) -> dict:
         "mncs": [
             {"name": c["name"], "ats_strictness": c.get("ats_strictness", "medium"),
              "preferred_skills": c.get("preferred_skills", [])}
-            for c in field_companies.get("mncs", [])[:6]
+            for c in field_companies.get("mncs", [])[:8]
         ],
         "startups": [
             {"name": c["name"], "ats_strictness": c.get("ats_strictness", "medium"),
              "preferred_skills": c.get("preferred_skills", [])}
-            for c in field_companies.get("startups", [])[:6]
+            for c in field_companies.get("startups", [])[:8]
         ],
         "product_companies": [
             {"name": c["name"], "ats_strictness": c.get("ats_strictness", "medium"),
              "preferred_skills": c.get("preferred_skills", [])}
-            for c in field_companies.get("product_companies", [])[:4]
+            for c in field_companies.get("product_companies", [])[:6]
         ],
     }
