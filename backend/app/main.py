@@ -53,35 +53,28 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# ── CORS — handle wildcard vs credentials conflict ─────────────────
-# CORS spec: allow_origins=["*"] + allow_credentials=True is FORBIDDEN
-# by browsers (causes net::ERR_FAILED). Must use explicit origins with credentials.
-_cors_origins = settings.cors_origins_list
-
-# Always include the known Vercel deployment URL
-_KNOWN_ORIGINS = [
+# ── CORS — always use explicit origins (never wildcard) ─────────────────
+# IMPORTANT: allow_origins=["*"] + allow_credentials=True is FORBIDDEN by
+# the CORS spec and causes net::ERR_FAILED in browsers. We always use
+# explicit origins so credentials (Authorization headers) work correctly.
+#
+# These are ALWAYS allowed regardless of CORS_ORIGINS env var:
+_ALWAYS_ALLOWED = [
     "https://ai-resume-analyzer-tawny-theta.vercel.app",
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
 ]
-
-if "*" in _cors_origins:
-    # Wildcard: allow all origins but disable credentials
-    # (credentials still work via Bearer token in Authorization header)
-    _allow_origins = ["*"]
-    _allow_credentials = False
-else:
-    # Explicit origins: merge with known defaults, enable credentials
-    _allow_origins = list(set(_cors_origins + _KNOWN_ORIGINS))
-    _allow_credentials = True
+# Merge env-var origins (filter out wildcard) with hardcoded list
+_env_origins = [o for o in settings.cors_origins_list if o != "*"]
+_final_origins = list(set(_ALWAYS_ALLOWED + _env_origins))
 
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(RequestIDMiddleware)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=_allow_origins,
-    allow_credentials=_allow_credentials,
+    allow_origins=_final_origins,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
