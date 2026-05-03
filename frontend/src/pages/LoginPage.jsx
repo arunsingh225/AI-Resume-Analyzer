@@ -38,7 +38,7 @@ export default function LoginPage() {
 
   const finish = (data) => {
     saveAuth(data)
-    navigate('/', { replace: true })
+    window.location.href = '/'
   }
 
   // Show "server waking up" hint after 5 seconds of loading

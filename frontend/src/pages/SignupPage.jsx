@@ -37,7 +37,7 @@ export default function SignupPage() {
     try {
       const r = await withSlowHint(() => authAPI.signup(form))()
       saveAuth(r.data)
-      navigate('/', { replace: true })
+      window.location.href = '/'
     } catch (err) {
       setError(err?.response?.data?.detail || 'Signup failed')
     } finally { setLoading(false) }
@@ -51,7 +51,7 @@ export default function SignupPage() {
         authAPI.googleLogin({ credential: credentialResponse.credential })
       )()
       saveAuth(r.data)
-      navigate('/', { replace: true })
+      window.location.href = '/'
     } catch (err) {
       setError(err?.response?.data?.detail || 'Google signup failed')
     } finally { setLoading(false) }
