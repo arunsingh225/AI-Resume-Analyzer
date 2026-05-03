@@ -8,11 +8,18 @@ Production-hardened with:
   - Security headers middleware
   - Rate limiting with per-user support
   - Health check endpoints (/health, /ready, /live)
+
+CORS note:
+  add_middleware() builds a LIFO stack — the LAST call wraps everything.
+  CORSMiddleware MUST be added last so it is the outermost layer and
+  handles OPTIONS preflights before BaseHTTPMiddleware instances can
+  interfere with response headers.
 """
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse, Response
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from slowapi.errors import RateLimitExceeded
 
@@ -28,13 +35,17 @@ logger = logging.getLogger(__name__)
 
 settings = get_settings()
 
-# ── Allowed CORS origins — hardcoded + env var (wildcard excluded) ──
-_CORS_ORIGINS = set([
+# ── CORS — explicit origins only, never wildcard ─────────────────────
+# RULE: allow_origins=["*"] + allow_credentials=True is forbidden by the
+# CORS spec and causes net::ERR_FAILED in browsers. We ALWAYS use an
+# explicit list. The Vercel URL is hardcoded so it works even when the
+# CORS_ORIGINS env var on Render is set to "*".
+_CORS_ORIGINS = list(set([
     "https://ai-resume-analyzer-tawny-theta.vercel.app",
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
-] + [o for o in settings.cors_origins_list if o != "*"])
+] + [o for o in settings.cors_origins_list if o != "*"]))
 
 
 # ── Lifespan ─────────────────────────────────────────────────────────
@@ -43,7 +54,7 @@ async def lifespan(app: FastAPI):
     create_tables()
     logger.info("Database tables initialized")
     logger.info("CORS origins: %s", _CORS_ORIGINS)
-    logger.info("AI Resume Analyzer v4.0.0 started successfully")
+    logger.info("AI Resume Analyzer v4.0.2 started")
     yield
     logger.info("AI Resume Analyzer shutting down gracefully")
 
@@ -51,46 +62,31 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="AI Resume Analyzer API",
     description="Production SaaS — Auth + ATS + JD Match + Improvement",
-    version="4.0.0",
+    version="4.0.2",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
 )
 
-# ── Manual CORS middleware ────────────────────────────────────────────
-# We use a raw @app.middleware("http") instead of CORSMiddleware because
-# CORSMiddleware was not sending Access-Control-Allow-Origin headers on
-# Render (due to CORS_ORIGINS="*" env var conflicting with credentials).
-# This approach bypasses all middleware ordering issues.
-@app.middleware("http")
-async def cors_middleware(request: Request, call_next):
-    origin = request.headers.get("origin", "")
+# ── Middleware stack (LIFO — last added = outermost = first to run) ──
+#
+#  Execution order for requests:
+#    CORSMiddleware  →  RequestIDMiddleware  →  SecurityHeadersMiddleware  →  routes
+#
+#  CORSMiddleware is a pure ASGI middleware (not BaseHTTPMiddleware).
+#  It MUST be outermost so:
+#    1) It handles OPTIONS preflights before any other middleware runs.
+#    2) BaseHTTPMiddleware instances can't strip its response headers.
 
-    # Handle CORS preflight (OPTIONS) — must respond before route handler
-    if request.method == "OPTIONS":
-        response = Response(status_code=200)
-        if origin in _CORS_ORIGINS:
-            response.headers["Access-Control-Allow-Origin"] = origin
-            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-            response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Request-ID"
-            response.headers["Access-Control-Allow-Credentials"] = "true"
-            response.headers["Access-Control-Max-Age"] = "3600"
-        return response
-
-    # Handle actual requests
-    response = await call_next(request)
-
-    if origin in _CORS_ORIGINS:
-        response.headers["Access-Control-Allow-Origin"] = origin
-        response.headers["Access-Control-Allow-Credentials"] = "true"
-        response.headers["Vary"] = "Origin"
-
-    return response
-
-
-# ── Security + RequestID middleware ──────────────────────────────────
-app.add_middleware(SecurityHeadersMiddleware)
-app.add_middleware(RequestIDMiddleware)
+app.add_middleware(SecurityHeadersMiddleware)   # innermost  (added 1st)
+app.add_middleware(RequestIDMiddleware)          # middle     (added 2nd)
+app.add_middleware(                             # outermost  (added 3rd = LAST)
+    CORSMiddleware,
+    allow_origins=_CORS_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ── Rate limit error handler ────────────────────────────────────────
 @app.exception_handler(RateLimitExceeded)
@@ -116,13 +112,13 @@ app.include_router(admin.router,    prefix="/api/admin",    tags=["Admin"])
 # ── Health check endpoints ──────────────────────────────────────────
 @app.get("/")
 def root():
-    return {"status": "AI Resume Analyzer v4.0.0", "docs": "/docs"}
+    return {"status": "AI Resume Analyzer v4.0.2", "docs": "/docs"}
 
 
 @app.get("/health")
 def health():
     """Basic health check — is the process alive?"""
-    return {"status": "healthy", "version": "4.0.1"}   # bumped to confirm deploy
+    return {"status": "healthy", "version": "4.0.2"}   # bumped to confirm deploy
 
 
 @app.get("/ready")
