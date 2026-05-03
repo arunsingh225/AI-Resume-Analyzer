@@ -53,13 +53,35 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# ── Middleware (order matters — outermost first) ────────────────────
+# ── CORS — handle wildcard vs credentials conflict ─────────────────
+# CORS spec: allow_origins=["*"] + allow_credentials=True is FORBIDDEN
+# by browsers (causes net::ERR_FAILED). Must use explicit origins with credentials.
+_cors_origins = settings.cors_origins_list
+
+# Always include the known Vercel deployment URL
+_KNOWN_ORIGINS = [
+    "https://ai-resume-analyzer-tawny-theta.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:5173",
+]
+
+if "*" in _cors_origins:
+    # Wildcard: allow all origins but disable credentials
+    # (credentials still work via Bearer token in Authorization header)
+    _allow_origins = ["*"]
+    _allow_credentials = False
+else:
+    # Explicit origins: merge with known defaults, enable credentials
+    _allow_origins = list(set(_cors_origins + _KNOWN_ORIGINS))
+    _allow_credentials = True
+
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(RequestIDMiddleware)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins_list,
-    allow_credentials=True,
+    allow_origins=_allow_origins,
+    allow_credentials=_allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
