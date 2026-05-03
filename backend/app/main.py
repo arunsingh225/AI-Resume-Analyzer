@@ -17,7 +17,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from slowapi.errors import RateLimitExceeded
 
-from app.routers import resume, analysis, report, auth, jd_match, improve, history, feedback
+from app.routers import resume, analysis, report, auth, jd_match, improve, history, feedback, admin
 from app.database import create_tables, engine
 from app.config import get_settings
 from app.utils.logger import setup_logging
@@ -82,6 +82,7 @@ app.include_router(jd_match.router, prefix="/api/jd",       tags=["JD Match"])
 app.include_router(improve.router,  prefix="/api/improve",  tags=["Improve"])
 app.include_router(history.router,  prefix="/api/history",  tags=["History"])
 app.include_router(feedback.router, prefix="/api/feedback", tags=["Feedback"])
+app.include_router(admin.router,    prefix="/api/admin",    tags=["Admin"])
 
 
 # ── Health check endpoints ──────────────────────────────────────────

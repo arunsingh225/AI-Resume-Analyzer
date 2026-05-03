@@ -3,7 +3,8 @@ import { useNavigate, Routes, Route, Navigate, useLocation } from 'react-router-
 import {
   LayoutDashboard, Target, Layers, Sparkles, FileSearch,
   Briefcase, Building2, Map, BookOpen, TrendingUp, Wand2,
-  Download, Upload, Menu, X, Scan, ChevronRight, LogOut, User, Clock
+  Download, Upload, Menu, X, Scan, ChevronRight, LogOut, User, Clock,
+  BarChart3, PenLine
 } from 'lucide-react'
 import { useResume } from '../App'
 import { useAuth } from '../hooks/useAuth'
@@ -22,6 +23,8 @@ import StrengthsWeaknesses from '../components/StrengthsWeaknesses'
 import ReportDownloader    from '../components/ReportDownloader'
 import JDMatchPanel        from '../components/JDMatchPanel'
 import ResumeImprover      from '../components/ResumeImprover'
+import ResumeBuilder       from '../components/ResumeBuilder'
+import AdminStats          from '../components/AdminStats'
 import FeedbackWidget      from '../components/ui/FeedbackWidget'
 import ThemeToggle         from '../components/ui/ThemeToggle'
 import HistoryPage         from './HistoryPage'
@@ -39,10 +42,12 @@ const NAV = [
   { id: 'strengths',  label: 'Strengths',       Icon: TrendingUp,      path: 'strengths' },
   null, // divider
   { id: 'jd',         label: 'JD Match',        Icon: Target,          path: 'jd', badge: 'AI' },
-  { id: 'improve',    label: 'Improve Resume',  Icon: Wand2,           path: 'improve' },
-  { id: 'history',    label: 'History',          Icon: Clock,           path: 'history' },
+  { id: 'improve',    label: 'Improve Resume',  Icon: Wand2,       path: 'improve' },
+  { id: 'builder',    label: 'Resume Builder',  Icon: PenLine,     path: 'builder', badge: 'NEW' },
+  { id: 'history',    label: 'History',         Icon: Clock,       path: 'history' },
   null, // divider
-  { id: 'report',     label: 'Download Report', Icon: Download,        path: 'report' },
+  { id: 'report',     label: 'Download Report', Icon: Download,    path: 'report' },
+  { id: 'admin',      label: 'Platform Stats',  Icon: BarChart3,   path: 'admin' },
 ]
 
 function ScorePill({ score }) {
@@ -206,8 +211,10 @@ export default function DashboardPage() {
               <Route path="strengths"element={<StrengthsWeaknesses />} />
               <Route path="jd"       element={<JDMatchPanel />} />
               <Route path="improve"  element={<ResumeImprover />} />
+              <Route path="builder"  element={<ResumeBuilder />} />
               <Route path="history"  element={<HistoryPage />} />
               <Route path="report"   element={<ReportDownloader />} />
+              <Route path="admin"    element={<AdminStats />} />
             </Routes>
           </div>
         </main>
