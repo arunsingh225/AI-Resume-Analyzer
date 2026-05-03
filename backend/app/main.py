@@ -17,7 +17,7 @@ CORS note:
 """
 import logging
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response as FastAPIResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from sqlalchemy import text
@@ -54,7 +54,7 @@ async def lifespan(app: FastAPI):
     create_tables()
     logger.info("Database tables initialized")
     logger.info("CORS origins: %s", _CORS_ORIGINS)
-    logger.info("AI Resume Analyzer v4.0.3 started")
+    logger.info("AI Resume Analyzer v4.0.4 started")
     yield
     logger.info("AI Resume Analyzer shutting down gracefully")
 
@@ -62,7 +62,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="AI Resume Analyzer API",
     description="Production SaaS — Auth + ATS + JD Match + Improvement",
-    version="4.0.3",
+    version="4.0.4",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
@@ -109,16 +109,33 @@ app.include_router(feedback.router, prefix="/api/feedback", tags=["Feedback"])
 app.include_router(admin.router,    prefix="/api/admin",    tags=["Admin"])
 
 
+# ── Catch-all OPTIONS preflight handler ──────────────────────────────
+# Belt-and-suspenders: if CORSMiddleware fails to handle OPTIONS for any
+# reason (Render proxy, Starlette bug), this explicit route catches it.
+@app.options("/{full_path:path}")
+async def preflight_handler(request: Request, full_path: str):
+    origin = request.headers.get("origin", "")
+    headers = {
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Request-ID",
+        "Access-Control-Max-Age": "3600",
+    }
+    if origin in _CORS_ORIGINS:
+        headers["Access-Control-Allow-Origin"] = origin
+        headers["Access-Control-Allow-Credentials"] = "true"
+    return FastAPIResponse(status_code=200, headers=headers)
+
+
 # ── Health check endpoints ──────────────────────────────────────────
 @app.get("/")
 def root():
-    return {"status": "AI Resume Analyzer v4.0.3", "docs": "/docs"}
+    return {"status": "AI Resume Analyzer v4.0.4", "docs": "/docs"}
 
 
 @app.get("/health")
 def health():
     """Basic health check — is the process alive?"""
-    return {"status": "healthy", "version": "4.0.3"}   # bumped to confirm deploy
+    return {"status": "healthy", "version": "4.0.4"}   # bumped to confirm deploy
 
 
 @app.get("/ready")
