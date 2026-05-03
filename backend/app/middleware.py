@@ -1,55 +1,81 @@
 """
-Security & observability middleware for FastAPI.
+Security & observability middleware for FastAPI — Pure ASGI.
+
+IMPORTANT: These are pure ASGI middleware, NOT BaseHTTPMiddleware subclasses.
+BaseHTTPMiddleware is known to break CORSMiddleware in Starlette by wrapping
+responses in StreamingResponse, which strips CORS headers.
+See: https://github.com/encode/starlette/issues/1591
 
 Includes:
   - Request-ID injection (X-Request-ID header on every response)
-  - Security headers (CSP, HSTS, X-Content-Type, Referrer-Policy)
+  - Security headers (HSTS, X-Content-Type, Referrer-Policy)
   - Request logging with timing
 """
 import uuid
 import time
 import logging
-from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.requests import Request
-from starlette.responses import Response
+from starlette.types import ASGIApp, Receive, Scope, Send
+from starlette.datastructures import MutableHeaders
 
 logger = logging.getLogger(__name__)
 
 
-class RequestIDMiddleware(BaseHTTPMiddleware):
-    """Inject a unique X-Request-ID into every request/response for tracing."""
+class RequestIDMiddleware:
+    """Pure ASGI middleware: inject X-Request-ID into every response."""
 
-    async def dispatch(self, request: Request, call_next):
-        request_id = request.headers.get("X-Request-ID", str(uuid.uuid4())[:8])
-        request.state.request_id = request_id
+    def __init__(self, app: ASGIApp):
+        self.app = app
+
+    async def __call__(self, scope: Scope, receive: Receive, send: Send):
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+
+        # Extract or generate request ID
+        request_headers = dict(scope.get("headers", []))
+        request_id = request_headers.get(b"x-request-id", b"").decode() or str(uuid.uuid4())[:8]
 
         start = time.perf_counter()
-        response: Response = await call_next(request)
-        elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
 
-        response.headers["X-Request-ID"] = request_id
+        async def send_wrapper(message):
+            if message["type"] == "http.response.start":
+                headers = MutableHeaders(scope=message)
+                headers.append("X-Request-ID", request_id)
+                elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
+                logger.info(
+                    "%s %s → %s (%sms)",
+                    scope["method"],
+                    scope["path"],
+                    message.get("status", "?"),
+                    elapsed_ms,
+                )
+            await send(message)
 
-        logger.info(
-            "%s %s → %s (%sms)",
-            request.method,
-            request.url.path,
-            response.status_code,
-            elapsed_ms,
-        )
-
-        return response
+        await self.app(scope, receive, send_wrapper)
 
 
-class SecurityHeadersMiddleware(BaseHTTPMiddleware):
-    """Add production security headers to every response."""
+class SecurityHeadersMiddleware:
+    """Pure ASGI middleware: add security headers to every response."""
 
-    async def dispatch(self, request: Request, call_next):
-        response: Response = await call_next(request)
-        response.headers["X-Content-Type-Options"] = "nosniff"
-        response.headers["X-Frame-Options"] = "DENY"
-        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
-        response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
-        # HSTS — only enable on HTTPS deployments
-        if request.url.scheme == "https":
-            response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
-        return response
+    def __init__(self, app: ASGIApp):
+        self.app = app
+
+    async def __call__(self, scope: Scope, receive: Receive, send: Send):
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+
+        is_https = scope.get("scheme") == "https"
+
+        async def send_wrapper(message):
+            if message["type"] == "http.response.start":
+                headers = MutableHeaders(scope=message)
+                headers.append("X-Content-Type-Options", "nosniff")
+                headers.append("X-Frame-Options", "DENY")
+                headers.append("Referrer-Policy", "strict-origin-when-cross-origin")
+                headers.append("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+                if is_https:
+                    headers.append("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
+            await send(message)
+
+        await self.app(scope, receive, send_wrapper)
