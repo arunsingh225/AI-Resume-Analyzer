@@ -18,6 +18,13 @@ def clean_text(text: str) -> str:
     text = re.sub(r'[^\w\s\.\+\#\&/\-\•\*\–\—:,;@()]', ' ', text)
     text = re.sub(r'[ \t]{2,}', ' ', text)
     text = re.sub(r'\n{3,}', '\n\n', text)
+    # Insert newline before ALL-CAPS headings that pdfplumber glues to content
+    # e.g., "...some textPROFESSIONAL SUMMARY" → "...some text\nPROFESSIONAL SUMMARY"
+    text = re.sub(
+        r'(?<=[a-z0-9\.\)])([A-Z]{2,}(?:\s+[A-Z]+)*(?:\s*(?:\&|AND)\s*[A-Z]+)*)\s*\n',
+        r'\n\1\n',
+        text
+    )
     return text.strip()
 
 

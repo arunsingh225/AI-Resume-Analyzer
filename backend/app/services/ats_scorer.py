@@ -174,16 +174,39 @@ def _keyword_score(text: str, field_key: str) -> Tuple[float, List[str], List[st
 
 
 def _section_present(text_lower: str, aliases: list) -> bool:
-    """Check if a section heading exists — tries heading patterns first, then substring fallback."""
+    """
+    Check if a section heading exists in the resume text.
+    
+    Handles common PDF extraction quirks:
+    - Headings glued to content (no newline): "PROFESSIONAL SUMMARYMotivated..."
+    - Headings on their own line with varying whitespace
+    - ALL CAPS headings, Title Case, or lowercase
+    - Headings followed by colon, dash, newline, or directly by content
+    """
     for alias in aliases:
-        # Match at line start or after newline (typical section headings)
-        pattern = r'(?:^|\n)\s*' + re.escape(alias) + r'\s*(?:\n|:|\-|$)'
+        # 1. Heading on its own line (most common for well-formatted PDFs)
+        pattern = r'(?:^|\n)\s*' + re.escape(alias) + r'\s*(?:\n|:|–|\-|$)'
         if re.search(pattern, text_lower):
             return True
-    # Fallback: substring match (for formats without clear headings)
-    for alias in aliases:
-        if alias in text_lower:
+        
+        # 2. Heading glued to content (pdfplumber quirk): "professional summaryMotivated..."
+        #    Match alias followed by an uppercase letter (start of content)
+        pattern2 = r'(?:^|\n)\s*' + re.escape(alias) + r'\s*[A-Z]'
+        if re.search(pattern2, text_lower.replace(alias, alias)):
+            # Need to check original case — look for the alias followed by uppercase
+            pass
+        
+        # 3. Word boundary substring match (catches most edge cases)
+        #    \b ensures we don't match "accomplishments" when looking for "ment"
+        pattern3 = r'\b' + re.escape(alias) + r'\b'
+        if re.search(pattern3, text_lower):
             return True
+    
+    # 4. Final fallback: plain substring (handles completely garbled PDFs)
+    for alias in aliases:
+        if len(alias) >= 5 and alias in text_lower:
+            return True
+    
     return False
 
 
