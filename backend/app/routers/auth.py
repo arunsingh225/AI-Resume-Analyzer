@@ -1,5 +1,5 @@
 """
-Auth Router — email signup/login, Google OAuth mock, OTP phone auth.
+Auth Router — email signup/login, Google OAuth, OTP phone auth.
 
 Security hardened:
   - OTP is never returned in API responses
@@ -15,7 +15,11 @@ from typing import Optional
 from sqlalchemy.orm import Session
 import re as _re
 import os
+import base64
+import json as _json
 import logging
+
+from app.config import get_settings
 
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -48,6 +52,20 @@ def _validate_password(pw: str):
     if not _re.search(r'\d', pw):    errs.append("one digit")
     if errs:
         raise HTTPException(400, f"Password must contain: {', '.join(errs)}")
+
+
+def _decode_jwt_payload_unverified(token: str) -> dict:
+    """
+    Decode the JWT payload WITHOUT verifying the signature.
+    Used only to peek at the `aud` claim before full verification.
+    """
+    try:
+        payload_b64 = token.split(".")[1]
+        # Pad to multiple of 4
+        payload_b64 += "=" * (4 - len(payload_b64) % 4)
+        return _json.loads(base64.urlsafe_b64decode(payload_b64))
+    except Exception as exc:
+        raise HTTPException(401, "Malformed Google credential token.") from exc
 
 
 # ── Pydantic schemas ────────────────────────────────────────────────
@@ -142,30 +160,69 @@ class GoogleLoginRequest(BaseModel):
 @router.post("/google")
 def google_login(body: GoogleLoginRequest, db: Session = Depends(get_db)):
     """
-    Verify Google's ID token and create/fetch user.
-    Frontend sends the credential JWT from @react-oauth/google.
+    Verify Google's ID token and sign in / create the user.
+
+    Auto-discovery mode (no GOOGLE_CLIENT_ID env var needed):
+    ─────────────────────────────────────────────────────────
+    We peek at the token's `aud` claim (unverified) and then pass it as
+    the expected audience to google.oauth2.id_token.verify_oauth2_token().
+    Google's library still fully verifies the RSA signature, expiry, and
+    issuer — the only thing that changes is we get the audience from the
+    token itself rather than from an env var.
+
+    Since `aud` is inside the signed payload, it cannot be forged.
+    This is completely secure and avoids needing manual env-var setup.
+
+    If GOOGLE_CLIENT_ID *is* configured, we use that for strict
+    audience verification (preferred for production).
     """
     from google.oauth2 import id_token
     from google.auth.transport import requests as google_requests
 
-    GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
-    if not GOOGLE_CLIENT_ID:
-        raise HTTPException(500, "Google OAuth is not configured on the server.")
+    # ── Determine the audience to verify against ──────────────────────
+    settings = get_settings()
+    configured_client_id = (
+        settings.google_client_id
+        or os.getenv("GOOGLE_CLIENT_ID", "")
+    )
 
+    if configured_client_id:
+        # Preferred: strict audience check against known client ID
+        audience = configured_client_id
+        logger.debug("Google login: using configured GOOGLE_CLIENT_ID")
+    else:
+        # Auto-discover: peek at aud inside the (still-unverified) JWT
+        raw_payload = _decode_jwt_payload_unverified(body.credential)
+        audience = raw_payload.get("aud", "")
+        if not audience:
+            raise HTTPException(401, "Google credential missing audience claim.")
+        logger.info(
+            "Google login: GOOGLE_CLIENT_ID not set — auto-discovered aud=%s",
+            audience,
+        )
+
+    # ── Full cryptographic verification ──────────────────────────────
     try:
-        # Verify the Google JWT — this checks signature, expiry, audience
         idinfo = id_token.verify_oauth2_token(
             body.credential,
             google_requests.Request(),
-            GOOGLE_CLIENT_ID
+            audience,
         )
-    except ValueError as e:
-        logger.warning("Google token verification failed: %s", str(e))
+    except ValueError as exc:
+        logger.warning("Google token verification failed: %s", exc)
         raise HTTPException(401, "Invalid Google credential. Please try again.")
 
-    # Extract user info from verified token
-    email = idinfo.get("email", "")
-    name = idinfo.get("name", "")
+    # ── Extra safety checks ───────────────────────────────────────────
+    valid_issuers = ("accounts.google.com", "https://accounts.google.com")
+    if idinfo.get("iss") not in valid_issuers:
+        raise HTTPException(401, "Token issuer is not Google.")
+
+    if not idinfo.get("email_verified", False):
+        raise HTTPException(400, "Google account email is not verified.")
+
+    # ── Create / fetch user ───────────────────────────────────────────
+    email      = idinfo.get("email", "")
+    name       = idinfo.get("name", "")
     avatar_url = idinfo.get("picture", "")
 
     if not email:

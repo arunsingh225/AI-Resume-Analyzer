@@ -16,4 +16,8 @@ services:
         value: "*"
       - key: PYTHON_VERSION
         value: "3.11.0"
-    healthCheckPath: /health
+      # ── Google OAuth ──────────────────────────────────────────────────
+      # Set this in the Render dashboard → your service → Environment tab
+      # Value: your OAuth 2.0 Client ID from https://console.cloud.google.com/apis/credentials
+      - key: GOOGLE_CLIENT_ID
+        sync: false

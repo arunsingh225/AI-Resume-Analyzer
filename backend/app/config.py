@@ -40,6 +40,9 @@ class Settings(BaseSettings):
     enable_llm_rewrite: bool = False
     openai_api_key: str = ""
 
+    # ── Google OAuth ──
+    google_client_id: str = ""
+
     # ── Rate Limiting ──
     rate_limit_auth: str = "5/minute"
     rate_limit_analyze: str = "10/minute"

@@ -84,7 +84,7 @@ export default function DashboardPage() {
   const d = result
 
   const handleNew    = () => { setResult(null); navigate('/') }
-  const handleLogout = async () => { await logout(); window.location.href = '/login' }
+  const handleLogout = () => { logout(); window.location.href = '/login' }
 
   const currentPath = location.pathname.replace('/dashboard', '').replace(/^\//, '')
 
