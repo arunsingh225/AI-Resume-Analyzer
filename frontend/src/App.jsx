@@ -30,7 +30,17 @@ function ProtectedRoute({ children }) {
 
 function PublicRoute({ children }) {
   const { isLoggedIn, loading } = useAuth()
-  if (loading) return null
+  // Show spinner instead of null — prevents blank white screen during auth check
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center" style={{ background: '#EDECEA' }}>
+      <div className="flex gap-2">
+        {[0,1,2].map(i => (
+          <div key={i} className="w-3 h-3 rounded-full bg-stone-400 animate-bounce"
+            style={{ animationDelay: `${i*0.15}s` }} />
+        ))}
+      </div>
+    </div>
+  )
   return isLoggedIn ? <Navigate to="/" replace /> : children
 }
 
