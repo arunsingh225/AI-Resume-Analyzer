@@ -3,7 +3,7 @@ import api from './api'
 export const authAPI = {
   signup:    (data) => api.post('/auth/signup', data),
   login:     (data) => api.post('/auth/login', data),
-  googleLogin:(data)=> api.post('/auth/google', data),
+  googleLogin:(data)=> api.post('/auth/google', data),  // sends { credential: <google_jwt> }
   sendOTP:   (phone)=> api.post('/auth/send-otp', { phone }),
   verifyOTP: (data) => api.post('/auth/verify-otp', data),
   refresh:   (refreshToken) => api.post('/auth/refresh', { refresh_token: refreshToken }),

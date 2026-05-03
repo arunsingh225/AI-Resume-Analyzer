@@ -60,11 +60,6 @@ class LoginRequest(BaseModel):
     email:    EmailStr
     password: str
 
-class GoogleLoginRequest(BaseModel):
-    name:       str
-    email:      EmailStr
-    avatar_url: Optional[str] = ""
-
 class SendOTPRequest(BaseModel):
     phone: str          # e.g. "+919876543210"
 
@@ -140,14 +135,44 @@ def refresh_token(body: RefreshRequest, db: Session = Depends(get_db)):
     return _token_response(user, access, refresh)
 
 
-# ── Google Login (mock — no OAuth server needed) ─────────────────────
+# ── Google Login (Real OAuth — verifies Google JWT) ──────────────────
+class GoogleLoginRequest(BaseModel):
+    credential: str  # Google's JWT ID token from frontend
+
 @router.post("/google")
 def google_login(body: GoogleLoginRequest, db: Session = Depends(get_db)):
     """
-    Frontend passes name + email from Google's ID token (or mock data).
-    We create/fetch the user and return our own JWT.
+    Verify Google's ID token and create/fetch user.
+    Frontend sends the credential JWT from @react-oauth/google.
     """
-    user = create_user_google(db, body.name, body.email, body.avatar_url or "")
+    from google.oauth2 import id_token
+    from google.auth.transport import requests as google_requests
+
+    GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
+    if not GOOGLE_CLIENT_ID:
+        raise HTTPException(500, "Google OAuth is not configured on the server.")
+
+    try:
+        # Verify the Google JWT — this checks signature, expiry, audience
+        idinfo = id_token.verify_oauth2_token(
+            body.credential,
+            google_requests.Request(),
+            GOOGLE_CLIENT_ID
+        )
+    except ValueError as e:
+        logger.warning("Google token verification failed: %s", str(e))
+        raise HTTPException(401, "Invalid Google credential. Please try again.")
+
+    # Extract user info from verified token
+    email = idinfo.get("email", "")
+    name = idinfo.get("name", "")
+    avatar_url = idinfo.get("picture", "")
+
+    if not email:
+        raise HTTPException(400, "Google account has no email address.")
+
+    user = create_user_google(db, name, email, avatar_url)
+    logger.info("Google login: user_id=%s email=%s", user.id, email)
     access  = create_access_token(user.id, user.email)
     refresh = create_refresh_token(user.id)
     return _token_response(user, access, refresh)
