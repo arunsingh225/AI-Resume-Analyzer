@@ -12,8 +12,7 @@ Production-hardened with:
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from sqlalchemy import text
 from slowapi.errors import RateLimitExceeded
 
@@ -29,18 +28,23 @@ logger = logging.getLogger(__name__)
 
 settings = get_settings()
 
+# ── Allowed CORS origins — hardcoded + env var (wildcard excluded) ──
+_CORS_ORIGINS = set([
+    "https://ai-resume-analyzer-tawny-theta.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:5173",
+] + [o for o in settings.cors_origins_list if o != "*"])
 
-# ── Lifespan — modern replacement for on_event("startup"/"shutdown") ─
+
+# ── Lifespan ─────────────────────────────────────────────────────────
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Startup and shutdown logic for the application."""
-    # ── Startup ──
     create_tables()
     logger.info("Database tables initialized")
-    logger.info("CORS origins: %s", settings.cors_origins_list)
+    logger.info("CORS origins: %s", _CORS_ORIGINS)
     logger.info("AI Resume Analyzer v4.0.0 started successfully")
     yield
-    # ── Shutdown ──
     logger.info("AI Resume Analyzer shutting down gracefully")
 
 
@@ -53,31 +57,40 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# ── CORS — always use explicit origins (never wildcard) ─────────────────
-# IMPORTANT: allow_origins=["*"] + allow_credentials=True is FORBIDDEN by
-# the CORS spec and causes net::ERR_FAILED in browsers. We always use
-# explicit origins so credentials (Authorization headers) work correctly.
-#
-# These are ALWAYS allowed regardless of CORS_ORIGINS env var:
-_ALWAYS_ALLOWED = [
-    "https://ai-resume-analyzer-tawny-theta.vercel.app",
-    "http://localhost:5173",
-    "http://localhost:3000",
-    "http://127.0.0.1:5173",
-]
-# Merge env-var origins (filter out wildcard) with hardcoded list
-_env_origins = [o for o in settings.cors_origins_list if o != "*"]
-_final_origins = list(set(_ALWAYS_ALLOWED + _env_origins))
+# ── Manual CORS middleware ────────────────────────────────────────────
+# We use a raw @app.middleware("http") instead of CORSMiddleware because
+# CORSMiddleware was not sending Access-Control-Allow-Origin headers on
+# Render (due to CORS_ORIGINS="*" env var conflicting with credentials).
+# This approach bypasses all middleware ordering issues.
+@app.middleware("http")
+async def cors_middleware(request: Request, call_next):
+    origin = request.headers.get("origin", "")
 
+    # Handle CORS preflight (OPTIONS) — must respond before route handler
+    if request.method == "OPTIONS":
+        response = Response(status_code=200)
+        if origin in _CORS_ORIGINS:
+            response.headers["Access-Control-Allow-Origin"] = origin
+            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+            response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Request-ID"
+            response.headers["Access-Control-Allow-Credentials"] = "true"
+            response.headers["Access-Control-Max-Age"] = "3600"
+        return response
+
+    # Handle actual requests
+    response = await call_next(request)
+
+    if origin in _CORS_ORIGINS:
+        response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Access-Control-Allow-Credentials"] = "true"
+        response.headers["Vary"] = "Origin"
+
+    return response
+
+
+# ── Security + RequestID middleware ──────────────────────────────────
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(RequestIDMiddleware)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=_final_origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # ── Rate limit error handler ────────────────────────────────────────
 @app.exception_handler(RateLimitExceeded)
@@ -109,7 +122,7 @@ def root():
 @app.get("/health")
 def health():
     """Basic health check — is the process alive?"""
-    return {"status": "healthy", "version": "4.0.0"}
+    return {"status": "healthy", "version": "4.0.1"}   # bumped to confirm deploy
 
 
 @app.get("/ready")
