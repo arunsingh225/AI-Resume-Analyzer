@@ -2,23 +2,14 @@
 AI Resume Analyzer — FastAPI Application Entry Point.
 
 Production-hardened with:
-  - Modern lifespan context manager (no deprecated on_event)
-  - Structured JSON logging
-  - Request-ID tracing middleware
-  - Security headers middleware
+  - Custom pure ASGI CORS middleware (replaces broken CORSMiddleware)
+  - Pure ASGI Request-ID and Security headers middleware
   - Rate limiting with per-user support
   - Health check endpoints (/health, /ready, /live)
-
-CORS note:
-  add_middleware() builds a LIFO stack — the LAST call wraps everything.
-  CORSMiddleware MUST be added last so it is the outermost layer and
-  handles OPTIONS preflights before BaseHTTPMiddleware instances can
-  interfere with response headers.
 """
 import logging
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request, Response as FastAPIResponse
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from slowapi.errors import RateLimitExceeded
@@ -27,7 +18,7 @@ from app.routers import resume, analysis, report, auth, jd_match, improve, histo
 from app.database import create_tables, engine
 from app.config import get_settings
 from app.utils.logger import setup_logging
-from app.middleware import RequestIDMiddleware, SecurityHeadersMiddleware
+from app.middleware import CORSMiddlewareManual, RequestIDMiddleware, SecurityHeadersMiddleware
 
 # ── Initialize logging ──────────────────────────────────────────────
 setup_logging(level="INFO")
@@ -35,17 +26,8 @@ logger = logging.getLogger(__name__)
 
 settings = get_settings()
 
-# ── CORS — explicit origins only, never wildcard ─────────────────────
-# RULE: allow_origins=["*"] + allow_credentials=True is forbidden by the
-# CORS spec and causes net::ERR_FAILED in browsers. We ALWAYS use an
-# explicit list. The Vercel URL is hardcoded so it works even when the
-# CORS_ORIGINS env var on Render is set to "*".
-_CORS_ORIGINS = list(set([
-    "https://ai-resume-analyzer-tawny-theta.vercel.app",
-    "http://localhost:5173",
-    "http://localhost:3000",
-    "http://127.0.0.1:5173",
-] + [o for o in settings.cors_origins_list if o != "*"]))
+# ── Extra CORS origins from env var (excluding wildcard) ─────────────
+_extra_origins = {o for o in settings.cors_origins_list if o != "*"}
 
 
 # ── Lifespan ─────────────────────────────────────────────────────────
@@ -53,8 +35,7 @@ _CORS_ORIGINS = list(set([
 async def lifespan(app: FastAPI):
     create_tables()
     logger.info("Database tables initialized")
-    logger.info("CORS origins: %s", _CORS_ORIGINS)
-    logger.info("AI Resume Analyzer v4.0.4 started")
+    logger.info("AI Resume Analyzer v4.1.0 started")
     yield
     logger.info("AI Resume Analyzer shutting down gracefully")
 
@@ -62,7 +43,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="AI Resume Analyzer API",
     description="Production SaaS — Auth + ATS + JD Match + Improvement",
-    version="4.0.4",
+    version="4.1.0",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
@@ -70,23 +51,19 @@ app = FastAPI(
 
 # ── Middleware stack (LIFO — last added = outermost = first to run) ──
 #
-#  Execution order for requests:
-#    CORSMiddleware  →  RequestIDMiddleware  →  SecurityHeadersMiddleware  →  routes
+#  Request flow:
+#    CORSMiddlewareManual → RequestIDMiddleware → SecurityHeadersMiddleware → routes
 #
-#  CORSMiddleware is a pure ASGI middleware (not BaseHTTPMiddleware).
-#  It MUST be outermost so:
-#    1) It handles OPTIONS preflights before any other middleware runs.
-#    2) BaseHTTPMiddleware instances can't strip its response headers.
+#  ALL middleware are pure ASGI (no BaseHTTPMiddleware).
+#  CORSMiddlewareManual MUST be outermost to handle OPTIONS preflights
+#  before any other middleware runs.
+#
+#  We do NOT use Starlette's CORSMiddleware — it fails to send CORS
+#  headers on Render.com when combined with other middleware.
 
-app.add_middleware(SecurityHeadersMiddleware)   # innermost  (added 1st)
-app.add_middleware(RequestIDMiddleware)          # middle     (added 2nd)
-app.add_middleware(                             # outermost  (added 3rd = LAST)
-    CORSMiddleware,
-    allow_origins=_CORS_ORIGINS,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app.add_middleware(SecurityHeadersMiddleware)                          # innermost  (1st)
+app.add_middleware(RequestIDMiddleware)                                # middle     (2nd)
+app.add_middleware(CORSMiddlewareManual, extra_origins=_extra_origins) # outermost  (3rd)
 
 # ── Rate limit error handler ────────────────────────────────────────
 @app.exception_handler(RateLimitExceeded)
@@ -109,33 +86,16 @@ app.include_router(feedback.router, prefix="/api/feedback", tags=["Feedback"])
 app.include_router(admin.router,    prefix="/api/admin",    tags=["Admin"])
 
 
-# ── Catch-all OPTIONS preflight handler ──────────────────────────────
-# Belt-and-suspenders: if CORSMiddleware fails to handle OPTIONS for any
-# reason (Render proxy, Starlette bug), this explicit route catches it.
-@app.options("/{full_path:path}")
-async def preflight_handler(request: Request, full_path: str):
-    origin = request.headers.get("origin", "")
-    headers = {
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Request-ID",
-        "Access-Control-Max-Age": "3600",
-    }
-    if origin in _CORS_ORIGINS:
-        headers["Access-Control-Allow-Origin"] = origin
-        headers["Access-Control-Allow-Credentials"] = "true"
-    return FastAPIResponse(status_code=200, headers=headers)
-
-
 # ── Health check endpoints ──────────────────────────────────────────
 @app.get("/")
 def root():
-    return {"status": "AI Resume Analyzer v4.0.4", "docs": "/docs"}
+    return {"status": "AI Resume Analyzer v4.1.0", "docs": "/docs"}
 
 
 @app.get("/health")
 def health():
     """Basic health check — is the process alive?"""
-    return {"status": "healthy", "version": "4.0.4"}   # bumped to confirm deploy
+    return {"status": "healthy", "version": "4.1.0"}
 
 
 @app.get("/ready")
