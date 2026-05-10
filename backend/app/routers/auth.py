@@ -19,6 +19,18 @@ import base64
 import json as _json
 import logging
 
+# Google OAuth — import at module level so import errors are visible at startup
+try:
+    from google.oauth2 import id_token as _google_id_token
+    from google.auth.transport import requests as _google_requests
+    _GOOGLE_AUTH_AVAILABLE = True
+except ImportError as _e:
+    _GOOGLE_AUTH_AVAILABLE = False
+    _google_id_token = None
+    _google_requests = None
+    import warnings
+    warnings.warn(f"google-auth not available: {_e}")
+
 from app.config import get_settings
 
 from slowapi import Limiter
@@ -161,78 +173,70 @@ class GoogleLoginRequest(BaseModel):
 def google_login(body: GoogleLoginRequest, db: Session = Depends(get_db)):
     """
     Verify Google's ID token and sign in / create the user.
-
-    Auto-discovery mode (no GOOGLE_CLIENT_ID env var needed):
-    ─────────────────────────────────────────────────────────
-    We peek at the token's `aud` claim (unverified) and then pass it as
-    the expected audience to google.oauth2.id_token.verify_oauth2_token().
-    Google's library still fully verifies the RSA signature, expiry, and
-    issuer — the only thing that changes is we get the audience from the
-    token itself rather than from an env var.
-
-    Since `aud` is inside the signed payload, it cannot be forged.
-    This is completely secure and avoids needing manual env-var setup.
-
-    If GOOGLE_CLIENT_ID *is* configured, we use that for strict
-    audience verification (preferred for production).
+    Auto-discovers Client ID from the token's own `aud` claim when
+    GOOGLE_CLIENT_ID env var is not set — fully secure since `aud` is
+    inside Google's RSA-signed payload.
     """
-    from google.oauth2 import id_token
-    from google.auth.transport import requests as google_requests
+    # ── Guard: google-auth library must be available ──────────────────
+    if not _GOOGLE_AUTH_AVAILABLE:
+        logger.error("google-auth package not installed on this server")
+        raise HTTPException(503, "Google login unavailable: server misconfiguration.")
 
-    # ── Determine the audience to verify against ──────────────────────
-    settings = get_settings()
-    configured_client_id = (
-        settings.google_client_id
-        or os.getenv("GOOGLE_CLIENT_ID", "")
-    )
-
-    if configured_client_id:
-        # Preferred: strict audience check against known client ID
-        audience = configured_client_id
-        logger.debug("Google login: using configured GOOGLE_CLIENT_ID")
-    else:
-        # Auto-discover: peek at aud inside the (still-unverified) JWT
-        raw_payload = _decode_jwt_payload_unverified(body.credential)
-        audience = raw_payload.get("aud", "")
-        if not audience:
-            raise HTTPException(401, "Google credential missing audience claim.")
-        logger.info(
-            "Google login: GOOGLE_CLIENT_ID not set — auto-discovered aud=%s",
-            audience,
-        )
-
-    # ── Full cryptographic verification ──────────────────────────────
     try:
-        idinfo = id_token.verify_oauth2_token(
-            body.credential,
-            google_requests.Request(),
-            audience,
+        # ── Determine audience ────────────────────────────────────────
+        settings = get_settings()
+        configured_client_id = (
+            settings.google_client_id
+            or os.getenv("GOOGLE_CLIENT_ID", "")
         )
-    except ValueError as exc:
-        logger.warning("Google token verification failed: %s", exc)
-        raise HTTPException(401, "Invalid Google credential. Please try again.")
 
-    # ── Extra safety checks ───────────────────────────────────────────
-    valid_issuers = ("accounts.google.com", "https://accounts.google.com")
-    if idinfo.get("iss") not in valid_issuers:
-        raise HTTPException(401, "Token issuer is not Google.")
+        if configured_client_id:
+            audience = configured_client_id
+            logger.debug("Google login: using configured GOOGLE_CLIENT_ID")
+        else:
+            raw_payload = _decode_jwt_payload_unverified(body.credential)
+            audience = raw_payload.get("aud", "")
+            if not audience:
+                raise HTTPException(401, "Google credential missing audience claim.")
+            logger.info("Google login: auto-discovered aud=%s", audience)
 
-    if not idinfo.get("email_verified", False):
-        raise HTTPException(400, "Google account email is not verified.")
+        # ── Full cryptographic verification ───────────────────────────
+        try:
+            idinfo = _google_id_token.verify_oauth2_token(
+                body.credential,
+                _google_requests.Request(),
+                audience,
+            )
+        except ValueError as exc:
+            logger.warning("Google token verification failed: %s", exc)
+            raise HTTPException(401, "Invalid Google credential. Please try again.")
 
-    # ── Create / fetch user ───────────────────────────────────────────
-    email      = idinfo.get("email", "")
-    name       = idinfo.get("name", "")
-    avatar_url = idinfo.get("picture", "")
+        # ── Safety checks ─────────────────────────────────────────────
+        valid_issuers = ("accounts.google.com", "https://accounts.google.com")
+        if idinfo.get("iss") not in valid_issuers:
+            raise HTTPException(401, "Token issuer is not Google.")
+        if not idinfo.get("email_verified", False):
+            raise HTTPException(400, "Google account email is not verified.")
 
-    if not email:
-        raise HTTPException(400, "Google account has no email address.")
+        # ── Create / fetch user ───────────────────────────────────────
+        email      = idinfo.get("email", "")
+        name       = idinfo.get("name", "")
+        avatar_url = idinfo.get("picture", "")
 
-    user = create_user_google(db, name, email, avatar_url)
-    logger.info("Google login: user_id=%s email=%s", user.id, email)
-    access  = create_access_token(user.id, user.email)
-    refresh = create_refresh_token(user.id)
-    return _token_response(user, access, refresh)
+        if not email:
+            raise HTTPException(400, "Google account has no email address.")
+
+        user = create_user_google(db, name, email, avatar_url)
+        logger.info("Google login: user_id=%s email=%s", user.id, email)
+        access  = create_access_token(user.id, user.email)
+        refresh = create_refresh_token(user.id)
+        return _token_response(user, access, refresh)
+
+    except HTTPException:
+        raise   # re-raise HTTP exceptions as-is (they have correct status codes)
+    except Exception as exc:
+        logger.exception("Unexpected error in google_login: %s", exc)
+        raise HTTPException(500, "Google login failed due to a server error. Please try again.")
 
 
 # ── Send OTP ─────────────────────────────────────────────────────────

@@ -35,7 +35,7 @@ _extra_origins = {o for o in settings.cors_origins_list if o != "*"}
 async def lifespan(app: FastAPI):
     create_tables()
     logger.info("Database tables initialized")
-    logger.info("AI Resume Analyzer v4.1.0 started")
+    logger.info("AI Resume Analyzer v4.1.1 started")
     yield
     logger.info("AI Resume Analyzer shutting down gracefully")
 
@@ -43,7 +43,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="AI Resume Analyzer API",
     description="Production SaaS — Auth + ATS + JD Match + Improvement",
-    version="4.1.0",
+    version="4.1.1",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
@@ -65,7 +65,7 @@ app.add_middleware(SecurityHeadersMiddleware)                          # innermo
 app.add_middleware(RequestIDMiddleware)                                # middle     (2nd)
 app.add_middleware(CORSMiddlewareManual, extra_origins=_extra_origins) # outermost  (3rd)
 
-# ── Rate limit error handler ────────────────────────────────────────
+# ── Global error handlers ───────────────────────────────────────────
 @app.exception_handler(RateLimitExceeded)
 async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
     logger.warning("Rate limit exceeded: %s %s", request.method, request.url.path)
@@ -73,6 +73,21 @@ async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
         status_code=429,
         content={"detail": "Too many requests. Please try again later."}
     )
+
+
+@app.exception_handler(Exception)
+async def global_error_handler(request: Request, exc: Exception):
+    """Catch-all: converts unhandled exceptions to JSONResponse so that
+    our CORSMiddlewareManual's send_wrapper can inject CORS headers.
+    Without this, Starlette's ServerErrorMiddleware sends a plain-text 500
+    via raw ASGI send, bypassing all middleware — no CORS headers."""
+    logger.exception("Unhandled exception on %s %s: %s",
+                     request.method, request.url.path, exc)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error. Please try again."}
+    )
+
 
 # ── Register routers ────────────────────────────────────────────────
 app.include_router(auth.router,     prefix="/auth",         tags=["Auth"])
@@ -89,13 +104,13 @@ app.include_router(admin.router,    prefix="/api/admin",    tags=["Admin"])
 # ── Health check endpoints ──────────────────────────────────────────
 @app.get("/")
 def root():
-    return {"status": "AI Resume Analyzer v4.1.0", "docs": "/docs"}
+    return {"status": "AI Resume Analyzer v4.1.1", "docs": "/docs"}
 
 
 @app.get("/health")
 def health():
     """Basic health check — is the process alive?"""
-    return {"status": "healthy", "version": "4.1.0"}
+    return {"status": "healthy", "version": "4.1.1"}
 
 
 @app.get("/ready")
