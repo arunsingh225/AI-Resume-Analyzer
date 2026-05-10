@@ -35,7 +35,7 @@ _extra_origins = {o for o in settings.cors_origins_list if o != "*"}
 async def lifespan(app: FastAPI):
     create_tables()
     logger.info("Database tables initialized")
-    logger.info("AI Resume Analyzer v4.1.2 started")
+    logger.info("AI Resume Analyzer v4.1.3 started")
     yield
     logger.info("AI Resume Analyzer shutting down gracefully")
 
@@ -43,7 +43,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="AI Resume Analyzer API",
     description="Production SaaS — Auth + ATS + JD Match + Improvement",
-    version="4.1.2",
+    version="4.1.3",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
@@ -104,13 +104,13 @@ app.include_router(admin.router,    prefix="/api/admin",    tags=["Admin"])
 # ── Health check endpoints ──────────────────────────────────────────
 @app.get("/")
 def root():
-    return {"status": "AI Resume Analyzer v4.1.2", "docs": "/docs"}
+    return {"status": "AI Resume Analyzer v4.1.3", "docs": "/docs"}
 
 
 @app.get("/health")
 def health():
     """Basic health check — is the process alive?"""
-    return {"status": "healthy", "version": "4.1.2"}
+    return {"status": "healthy", "version": "4.1.3"}
 
 
 @app.get("/ready")
