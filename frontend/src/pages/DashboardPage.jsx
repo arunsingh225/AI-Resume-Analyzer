@@ -179,14 +179,14 @@ export default function DashboardPage() {
             </button>
 
             {userMenu && (
-              <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl border border-stone-200 bg-white shadow-card-lg z-50 overflow-hidden dropdown-enter"
-                onClick={() => setUserMenu(false)}>
+              <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl border border-stone-200 bg-white shadow-card-lg z-50 overflow-hidden dropdown-enter">
                 <div className="px-4 py-3 border-b border-stone-100">
                   <p className="text-sm font-semibold text-ink-primary truncate">{user?.name || 'User'}</p>
                   <p className="text-xs text-ink-muted truncate">{user?.email || user?.phone || ''}</p>
                   <span className="text-[10px] text-ink-faint">Provider: {user?.provider}</span>
                 </div>
-                <button onClick={handleLogout}
+                <button
+                  onClick={(e) => { e.stopPropagation(); handleLogout() }}
                   className="w-full flex items-center gap-2.5 px-4 py-3 text-sm text-warm-rose hover:bg-warm-rose-bg transition-colors">
                   <LogOut size={14} /> Sign out
                 </button>
