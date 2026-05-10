@@ -14,9 +14,9 @@ function CompanyItem({ co }) {
     <div className="p-3.5 rounded-xl border transition-all hover:shadow-card"
       style={{ background: '#FAFAF9', borderColor: '#E7E5E4' }}>
       <div className="flex items-start justify-between gap-2 mb-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: info.dot }} />
-          <span className="text-sm font-semibold text-ink-primary">{co.name}</span>
+          <span className="text-sm font-semibold text-ink-primary truncate">{co.name}</span>
         </div>
         <span
           className="text-[10px] font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
@@ -32,7 +32,18 @@ function CompanyItem({ co }) {
           ))}
         </div>
       )}
-      <p className="text-[11px] text-ink-muted leading-snug">{info.tip}</p>
+      <p className="text-[11px] text-ink-muted leading-snug mb-2.5">{info.tip}</p>
+      {co.apply_link && (
+        <a
+          href={co.apply_link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-lg transition-colors"
+          style={{ background: info.bg, color: info.dot, border: `1px solid ${info.border}` }}
+        >
+          Apply →
+        </a>
+      )}
     </div>
   )
 }
