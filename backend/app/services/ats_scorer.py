@@ -239,11 +239,11 @@ def _section_score(text: str, field_key: str) -> Tuple[float, List[dict]]:
         if present:
             earned += weight
         results.append({
-            "name":        section.replace("_", " ").title(),
+            "name":        "Professional Summary" if section == "summary" else section.replace("_", " ").title(),
             "present":     present,
             "score":       100.0 if present else 0.0,
             "feedback":    FEEDBACK.get(section, ""),
-            "suggestions": [] if present else [f"Add a '{section.replace('_',' ').title()}' section."],
+            "suggestions": [] if present else [f"Add a 'Professional Summary' section." if section == "summary" else f"Add a '{section.replace('_',' ').title()}' section."],
         })
 
     score = round((earned / max(total, 1)) * 100, 2)

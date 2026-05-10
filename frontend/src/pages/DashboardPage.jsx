@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useNavigate, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import {
   LayoutDashboard, Target, Layers, Sparkles, FileSearch,
@@ -86,6 +86,21 @@ export default function DashboardPage() {
   const handleNew    = () => { setResult(null); navigate('/') }
   const handleLogout = () => { logout(); window.location.href = '/login' }
 
+  // Click-outside handler for user menu — avoids z-index battles
+  // (backdrop-filter on header creates a new stacking context at z-20,
+  //  so a fixed overlay at z-40 sits ON TOP of the dropdown)
+  const menuRef = useRef(null)
+  useEffect(() => {
+    if (!userMenu) return
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setUserMenu(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [userMenu])
+
   const currentPath = location.pathname.replace('/dashboard', '').replace(/^\//, '')
 
   return (
@@ -169,7 +184,7 @@ export default function DashboardPage() {
 
           {/* Theme toggle + User menu */}
           <ThemeToggle />
-          <div className="relative">
+          <div className="relative" ref={menuRef}>
             <button onClick={() => setUserMenu(m => !m)}
               className="flex items-center gap-2 px-2 py-1.5 rounded-xl hover:bg-stone-100 transition-colors">
               <UserAvatar user={user} />
@@ -186,7 +201,7 @@ export default function DashboardPage() {
                   <span className="text-[10px] text-ink-faint">Provider: {user?.provider}</span>
                 </div>
                 <button
-                  onClick={(e) => { e.stopPropagation(); handleLogout() }}
+                  onMouseDown={(e) => { e.preventDefault(); handleLogout() }}
                   className="w-full flex items-center gap-2.5 px-4 py-3 text-sm text-warm-rose hover:bg-warm-rose-bg transition-colors">
                   <LogOut size={14} /> Sign out
                 </button>
@@ -219,9 +234,6 @@ export default function DashboardPage() {
           </div>
         </main>
       </div>
-
-      {/* Click outside to close user menu */}
-      {userMenu && <div className="fixed inset-0 z-40" onClick={() => setUserMenu(false)} />}
 
       {/* Floating feedback widget */}
       <FeedbackWidget analysisId={d?.analysis_id} page="dashboard" />

@@ -73,6 +73,39 @@ def get_fresher_tips(level: str, field_key: str, domain: str) -> list:
     tips = FRESHER_TIPS.get(field_key, FRESHER_TIPS.get(domain, FRESHER_TIPS.get("technical", [])))
     return tips
 
+
+# ── Certificate vs Resume guard ──────────────────────────────────────────────
+_CERT_PHRASES = [
+    "this is to certify", "hereby certifies", "has successfully completed",
+    "is awarded", "certificate of completion", "certificate of achievement",
+    "certificate of participation", "certify that", "this certifies",
+    "course completion", "training certificate", "in recognition of",
+    "has completed the course", "has successfully passed",
+    "director of training", "authorized signatory", "proudly presents",
+    "letter of completion", "program completion", "has fulfilled",
+    "upon successful completion",
+]
+
+def _is_certificate(text: str) -> bool:
+    """Return True if the document looks like a certificate rather than a resume."""
+    tl = text.lower().strip()
+    word_count = len(tl.split())
+
+    # Very short text — definitely not a resume
+    if word_count < 60:
+        return True
+
+    cert_hits = sum(1 for p in _CERT_PHRASES if p in tl)
+
+    # Two or more certificate phrases → almost certainly a certificate
+    if cert_hits >= 2:
+        return True
+    # One certificate phrase + short document
+    if cert_hits >= 1 and word_count < 250:
+        return True
+
+    return False
+
 @router.post("/analyze")
 async def analyze(
     file: UploadFile = File(...),
@@ -103,6 +136,14 @@ async def analyze(
         text, meta = extract_from_pdf(raw) if is_pdf else extract_from_docx(raw)
     except ValueError as e:
         raise HTTPException(422, str(e))
+
+    # ── Reject certificates / awards — they are not resumes ──────────────
+    if _is_certificate(text):
+        raise HTTPException(
+            422,
+            "This looks like a certificate or award document, not a resume. "
+            "Please upload your resume/CV in PDF or DOCX format."
+        )
 
     field_key, domain, confidence, _ = detect_field(text)
     level  = meta["experience_level"]
