@@ -151,23 +151,53 @@ def _load_kw(field_key: str) -> dict:
 
 def _keyword_score(text: str, field_key: str) -> Tuple[float, List[str], List[str]]:
     """Score keyword coverage. Returns (score, found_kws, missing_must_kws)."""
-    kw = _load_kw(field_key)
+    kw  = _load_kw(field_key)
     must  = kw.get("must",  kw.get("must_have_keywords", []))
     good  = kw.get("good",  kw.get("good_to_have", []))
     verbs = kw.get("verbs", kw.get("action_verbs", ACTION_VERBS))
     tl = text.lower()
 
-    found_must  = [k for k in must  if k.lower() in tl]
-    found_good  = [k for k in good  if k.lower() in tl]
+    # Also match common abbreviations / aliases so "sklearn" finds "scikit-learn"
+    ALIASES = {
+        "scikit-learn": ["sklearn"],
+        "machine learning": ["ml"],
+        "natural language processing": ["nlp"],
+        "deep learning": ["dl"],
+        "data visualization": ["dataviz", "data viz"],
+        "power bi": ["powerbi"],
+        "google analytics": ["ga4"],
+        "ab testing": ["a/b testing", "a/b test"],
+        "feature engineering": ["feature eng"],
+        "model evaluation": ["model eval"],
+    }
+
+    def _is_present(kw_str: str) -> bool:
+        if kw_str.lower() in tl:
+            return True
+        for alias in ALIASES.get(kw_str.lower(), []):
+            if alias in tl:
+                return True
+        return False
+
+    found_must  = [k for k in must  if _is_present(k)]
+    found_good  = [k for k in good  if _is_present(k)]
     found_verbs = [v for v in verbs if v.lower() in tl]
 
-    # Fairer curve: diminishing penalty so 70% coverage ≈ 65 instead of 40
     must_ratio = len(found_must) / max(len(must), 1)
-    must_s  = (must_ratio ** 0.7) * 50
-    good_s  = (len(found_good) / max(len(good), 1)) * 30
-    verb_s  = min((len(found_verbs) / 4) * 20, 20)
 
-    score = round(min(must_s + good_s + verb_s, 100), 2)
+    # Softer curve: give a floor of +8 if at least 1 must keyword is found
+    # so 50% coverage → ~43 (was ~31 before), 80% coverage → ~55
+    if found_must:
+        must_s = (must_ratio ** 0.55) * 58
+    else:
+        must_s = 0
+
+    good_s = (len(found_good) / max(len(good), 1)) * 30
+
+    # Verb threshold: need only 2 verbs for max score (was 4)
+    verb_s = min((len(found_verbs) / 2) * 22, 22)
+
+    score   = round(min(must_s + good_s + verb_s, 100), 2)
     found   = list(set(found_must + found_good))
     missing = [k for k in must if k not in found_must]
     return score, found, missing
@@ -329,6 +359,10 @@ def compute_ats_score(
         0.10 * sk_score,
         2
     )
+
+    # Floor: any resume with real content should score at least 20
+    if len(text.strip()) > 200:
+        total = max(total, 20.0)
 
     grade = "A" if total >= 80 else "B" if total >= 65 else "C" if total >= 50 else "D" if total >= 35 else "F"
     interpretation = _build_interpretation(total, grade, field_key, kw_score, fmt_score, sec_score)

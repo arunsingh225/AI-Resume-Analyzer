@@ -188,16 +188,16 @@ def check_formatting(text: str) -> Dict:
     score = 0
     checks = {}
 
-    checks["has_email"] = bool(re.search(r'[\w\.\+]+@[\w\.\-]+\.\w+', text))
-    checks["has_phone"] = bool(re.search(r'(\+?\d[\d\s\-]{7,16}\d)', text))
+    checks["has_email"]    = bool(re.search(r'[\w\.\+]+@[\w\.\-]+\.\w+', text))
+    checks["has_phone"]    = bool(re.search(r'(\+?\d[\d\s\-]{7,16}\d)', text))
     checks["has_linkedin"] = bool(re.search(r'linkedin\.com', tl))
     checks["has_github_or_portfolio"] = bool(re.search(r'github\.com|gitlab\.com|dribbble\.com|behance\.net|portfolio', tl))
-    checks["has_professional_links"] = checks["has_linkedin"] or checks["has_github_or_portfolio"]
-    checks["has_bullets"] = bool(re.search(r'[•\-\*]\s+\w', text))
-    checks["has_action_verbs"] = sum(1 for v in ACTION_VERBS if v in tl) >= 4
-    checks["has_dates"] = bool(re.search(r'\b(20\d{2}|19\d{2})\b', text))
+    checks["has_professional_links"]  = checks["has_linkedin"] or checks["has_github_or_portfolio"]
+    checks["has_bullets"]  = bool(re.search(r'[•\-\*]\s+\w', text))
+    checks["has_action_verbs"] = sum(1 for v in ACTION_VERBS if v in tl) >= 2   # was 4
+    checks["has_dates"]    = bool(re.search(r'\b(20\d{2}|19\d{2})\b', text))
     checks["has_quantified"] = bool(re.search(r'\d+\s*(%|percent|million|billion|lakh|crore|\bk\b|users|clients|projects)', tl))
-    checks["clean_chars"] = len(re.findall(r'[^\x00-\x7F]', text)) < 30
+    checks["clean_chars"]  = len(re.findall(r'[^\x00-\x7F]', text)) < 30
     checks["reasonable_length"] = 200 < len(text.split()) < 1200
 
     weights = {
@@ -211,3 +211,4 @@ def check_formatting(text: str) -> Dict:
     }
     score = sum(weights[k] for k, v in checks.items() if v)
     return {"score": min(score, 100), "checks": checks}
+
