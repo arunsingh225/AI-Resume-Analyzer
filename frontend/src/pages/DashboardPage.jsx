@@ -30,24 +30,24 @@ import ThemeToggle         from '../components/ui/ThemeToggle'
 import HistoryPage         from './HistoryPage'
 
 const NAV = [
-  { id: 'overview',   label: 'Overview',       Icon: LayoutDashboard, path: '' },
-  { id: 'ats',        label: 'ATS Score',       Icon: Target,          path: 'ats' },
-  { id: 'sections',   label: 'Sections',        Icon: Layers,          path: 'sections' },
-  { id: 'skills',     label: 'Skills',          Icon: Sparkles,        path: 'skills' },
-  { id: 'keywords',   label: 'Keywords',        Icon: FileSearch,      path: 'keywords' },
-  { id: 'jobs',       label: 'Job Matches',     Icon: Briefcase,       path: 'jobs' },
-  { id: 'companies',  label: 'Companies',       Icon: Building2,       path: 'companies' },
-  { id: 'roadmap',    label: 'Roadmap',         Icon: Map,             path: 'roadmap' },
-  { id: 'courses',    label: 'Courses',         Icon: BookOpen,        path: 'courses' },
-  { id: 'strengths',  label: 'Strengths',       Icon: TrendingUp,      path: 'strengths' },
-  null, // divider
-  { id: 'jd',         label: 'JD Match',        Icon: Target,          path: 'jd', badge: 'AI' },
-  { id: 'improve',    label: 'Improve Resume',  Icon: Wand2,       path: 'improve' },
-  { id: 'builder',    label: 'Resume Builder',  Icon: PenLine,     path: 'builder', badge: 'NEW' },
-  { id: 'history',    label: 'History',         Icon: Clock,       path: 'history' },
-  null, // divider
-  { id: 'report',     label: 'Download Report', Icon: Download,    path: 'report' },
-  { id: 'admin',      label: 'Platform Stats',  Icon: BarChart3,   path: 'admin' },
+  { id: 'overview',   label: 'Overview',        Icon: LayoutDashboard, path: '' },
+  { id: 'ats',        label: 'ATS Score',        Icon: Target,          path: 'ats' },
+  { id: 'sections',   label: 'Sections',         Icon: Layers,          path: 'sections' },
+  { id: 'skills',     label: 'Skills',           Icon: Sparkles,        path: 'skills' },
+  { id: 'keywords',   label: 'Keywords',         Icon: FileSearch,      path: 'keywords' },
+  { id: 'jobs',       label: 'Job Matches',      Icon: Briefcase,       path: 'jobs' },
+  { id: 'companies',  label: 'Companies',        Icon: Building2,       path: 'companies' },
+  { id: 'roadmap',    label: 'Roadmap',          Icon: Map,             path: 'roadmap' },
+  { id: 'courses',    label: 'Courses',          Icon: BookOpen,        path: 'courses' },
+  { id: 'strengths',  label: 'Strengths',        Icon: TrendingUp,      path: 'strengths' },
+  null,
+  { id: 'jd',         label: 'JD Match',         Icon: Target,          path: 'jd',      badge: 'AI' },
+  { id: 'improve',    label: 'Improve Resume',   Icon: Wand2,           path: 'improve' },
+  { id: 'builder',    label: 'Resume Builder',   Icon: PenLine,         path: 'builder', badge: 'NEW' },
+  { id: 'history',    label: 'History',          Icon: Clock,           path: 'history' },
+  null,
+  { id: 'report',     label: 'Download Report',  Icon: Download,        path: 'report' },
+  // Admin item is injected dynamically below based on isAdmin
 ]
 
 function ScorePill({ score }) {
@@ -74,7 +74,7 @@ function UserAvatar({ user }) {
 
 export default function DashboardPage() {
   const { result, setResult } = useResume()
-  const { user, logout }      = useAuth()
+  const { user, logout, isAdmin } = useAuth()
   const navigate  = useNavigate()
   const location  = useLocation()
   const [open, setOpen]         = useState(false)
@@ -82,6 +82,12 @@ export default function DashboardPage() {
 
   if (!result) return <Navigate to="/" />
   const d = result
+
+  // Build nav dynamically — inject Admin Dashboard only for admin users
+  const nav = [
+    ...NAV,
+    ...(isAdmin ? [{ id: 'admin', label: 'Admin Dashboard', Icon: BarChart3, path: 'admin', badge: '🔑' }] : []),
+  ]
 
   const handleNew    = () => { setResult(null); navigate('/') }
   const handleLogout = () => { logout(); window.location.href = '/login' }
@@ -135,7 +141,7 @@ export default function DashboardPage() {
 
         {/* Nav */}
         <nav className="flex-1 px-2 py-3 overflow-y-auto scrollbar-thin">
-          {NAV.map((item, idx) => {
+          {nav.map((item, idx) => {
             if (!item) return <div key={idx} className="my-2 border-t border-stone-200/60" />
             const { id, label, Icon, path, badge } = item
             const isActive = currentPath === path || (path === '' && currentPath === '')

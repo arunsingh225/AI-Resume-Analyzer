@@ -38,7 +38,7 @@ export default function AdminStats() {
 
   if (loading) return (
     <div className="space-y-5">
-      <h2 className="font-display text-2xl font-700 text-ink-primary">Platform Stats</h2>
+      <h2 className="font-display text-2xl font-700 text-ink-primary">Admin Dashboard</h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {[...Array(4)].map((_, i) => (
           <div key={i} className="card p-5 h-28 shimmer-bg" />
@@ -62,8 +62,11 @@ export default function AdminStats() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="font-display text-2xl font-700 text-ink-primary">Platform Stats</h2>
-          <p className="text-ink-muted text-sm mt-1">Live usage metrics for ResumeAI</p>
+          <div className="flex items-center gap-2 mb-0.5">
+            <h2 className="font-display text-2xl font-700 text-ink-primary">Admin Dashboard</h2>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 border border-amber-200">🔑 Admin Only</span>
+          </div>
+          <p className="text-ink-muted text-sm">Live usage metrics for ResumeAI</p>
         </div>
         <button onClick={load} className="btn-ghost text-xs py-2 px-3 flex items-center gap-1.5">
           <RefreshCw size={13} /> Refresh

@@ -8,11 +8,13 @@ import {
 
 const AuthContext = createContext(null)
 
+// Admin email whitelist — only these users see the Admin Dashboard nav item
+const ADMIN_EMAILS = ['arish22516@gmail.com']
+
 export function AuthProvider({ children }) {
   const [user,    setUserState] = useState(getUser)
-  const [loading, setLoading]   = useState(!!getToken())   // true only if token exists
+  const [loading, setLoading]   = useState(!!getToken())
 
-  // Verify token on mount
   useEffect(() => {
     if (!getToken()) { setLoading(false); return }
     authAPI.getMe()
@@ -22,7 +24,6 @@ export function AuthProvider({ children }) {
   }, [])
 
   const saveAuth = useCallback((responseData) => {
-    // responseData has { access_token, refresh_token, user }
     setToken(responseData.access_token)
     setRefreshToken(responseData.refresh_token)
     setUser(responseData.user)
@@ -30,15 +31,15 @@ export function AuthProvider({ children }) {
   }, [])
 
   const logout = useCallback(() => {
-    // 1. Clear local state & storage SYNCHRONOUSLY — always works
     clearAllAuth()
     setUserState(null)
-    // 2. Notify server best-effort — fire-and-forget, never blocks logout
     authAPI.logout().catch(() => {})
   }, [])
 
+  const isAdmin = ADMIN_EMAILS.includes(user?.email)
+
   return (
-    <AuthContext.Provider value={{ user, loading, saveAuth, logout, isLoggedIn: !!user }}>
+    <AuthContext.Provider value={{ user, loading, saveAuth, logout, isLoggedIn: !!user, isAdmin }}>
       {children}
     </AuthContext.Provider>
   )
