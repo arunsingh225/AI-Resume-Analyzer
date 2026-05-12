@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import { useResume } from '../App'
 
 const TABS = [
-  { id: 'found',    label: 'Found',          chipClass: 'chip-found' },
-  { id: 'missing',  label: 'Missing Core',   chipClass: 'chip-missing' },
-  { id: 'advanced', label: 'Advanced Gap',   chipClass: 'chip-adv' },
-  { id: 'dup',      label: 'Duplicates',     chipClass: 'chip-dup' },
+  { id: 'found',    label: 'Found',        chipClass: 'chip-found' },
+  { id: 'missing',  label: 'Missing Core', chipClass: 'chip-missing' },
+  { id: 'advanced', label: 'Advanced Gap', chipClass: 'chip-adv' },
 ]
 
 export default function SkillsPanel() {
@@ -17,17 +16,13 @@ export default function SkillsPanel() {
     found:    s.found,
     missing:  s.missing,
     advanced: s.advanced_missing,
-    dup:      s.duplicates,
-  }
-  const chipMap = {
-    found: 'chip-found', missing: 'chip-missing', advanced: 'chip-adv', dup: 'chip-dup',
   }
 
   const stats = [
-    { label: 'Found',      value: s.found.length,            color: 'text-status-green', bgColor: 'bg-status-green-bg' },
-    { label: 'Missing',    value: s.missing.length,          color: 'text-status-red',   bgColor: 'bg-status-red-bg' },
-    { label: 'Adv. Gap',   value: s.advanced_missing.length, color: 'text-status-purple', bgColor: 'bg-status-purple-bg' },
-    { label: 'Duplicates', value: s.duplicates.length,        color: 'text-status-amber', bgColor: 'bg-status-amber-bg' },
+    { label: 'Found',       value: s.found.length,            color: 'text-status-green',  bgColor: 'bg-status-green-bg' },
+    { label: 'Missing',     value: s.missing.length,          color: 'text-status-red',    bgColor: 'bg-status-red-bg' },
+    { label: 'Adv. Gap',    value: s.advanced_missing.length, color: 'text-status-purple', bgColor: 'bg-status-purple-bg' },
+    { label: 'Soft Skills', value: s.found_soft?.length || 0, color: 'text-status-amber',  bgColor: 'bg-status-amber-bg' },
   ]
 
   return (
@@ -69,11 +64,13 @@ export default function SkillsPanel() {
         <div className="flex flex-wrap gap-2 min-h-[80px]">
           {(dataMap[tab] || []).length === 0 ? (
             <div className="text-ink-muted text-sm py-4">
-              {tab === 'dup' ? '✓ No duplicate skills detected — well organized!' : 'None in this category.'}
+              {tab === 'missing'  ? '✓ All core skills found — great match!' :
+               tab === 'advanced' ? '✓ No advanced skill gaps detected.' :
+               'None in this category.'}
             </div>
           ) : (
             (dataMap[tab] || []).map((skill, i) => (
-              <span key={i} className={`skill-chip ${chipMap[tab]}`}>{skill}</span>
+              <span key={i} className={`skill-chip ${TABS.find(t => t.id === tab)?.chipClass}`}>{skill}</span>
             ))
           )}
         </div>

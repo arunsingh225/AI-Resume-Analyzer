@@ -314,9 +314,8 @@ def analyze_skills(text: str, field_key: str) -> dict:
     for canonical_name, synonyms in core_skills_dict .items():
         if _skill_present(text_norm, synonyms):
             found_core.append(canonical_name)
-            # Duplicate detection: >1 occurrence of any synonym variant
-            if _count_occurrences(text_norm, synonyms) > 1:
-                duplicates.append(canonical_name)
+            # NOTE: Duplicate detection removed — skills naturally appear in
+            # Skills section, Projects, and Summary. That is NOT a duplicate.
         else:
             missing_core.append(canonical_name)
 
