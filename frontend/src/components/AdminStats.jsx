@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Users, FileSearch, TrendingUp, BarChart3, Award, RefreshCw } from 'lucide-react'
+import { Users, FileSearch, TrendingUp, BarChart3, Award, RefreshCw, ExternalLink } from 'lucide-react'
 import api from '../services/api'
 
 const GRADE_COLOR = { A:'#4E7245', B:'#4B5570', C:'#9E6F1A', D:'#9B3A3A', F:'#6B1A1A' }
+
+const PROVIDER_ICON = { google: '🔵', phone: '📱', email: '📧' }
 
 function StatCard({ icon: Icon, label, value, sub, color = '#57534E' }) {
   return (
@@ -30,7 +32,7 @@ export default function AdminStats() {
       const r = await api.get('/api/admin/stats')
       setStats(r.data)
     } catch (e) {
-      setError('Could not load stats. Make sure you are signed in.')
+      setError('Could not load stats. Make sure you are signed in as admin.')
     } finally { setLoading(false) }
   }
 
@@ -52,7 +54,6 @@ export default function AdminStats() {
   )
 
   const { users, analyses } = stats
-
   const gradeOrder = ['A','B','C','D','F']
   const gradeTotal = Object.values(analyses.grade_distribution).reduce((a, b) => a + b, 0)
 
@@ -77,10 +78,10 @@ export default function AdminStats() {
       <div>
         <p className="text-xs font-bold text-ink-faint uppercase tracking-widest mb-3">👥 Users</p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          <StatCard icon={Users}      label="Total Users"   value={users.total}       sub="All time"    color="#4E7245" />
-          <StatCard icon={TrendingUp} label="New Today"     value={users.today}       sub="Last 24 hrs" color="#4B5570" />
-          <StatCard icon={TrendingUp} label="This Week"     value={users.this_week}   sub="Last 7 days" color="#9E6F1A" />
-          <StatCard icon={Users}      label="Google Users"  value={users.by_provider?.google || 0} sub="OAuth signups" color="#EA4335" />
+          <StatCard icon={Users}      label="Total Users"  value={users.total}       sub="All time"    color="#4E7245" />
+          <StatCard icon={TrendingUp} label="New Today"    value={users.today}       sub="Last 24 hrs" color="#4B5570" />
+          <StatCard icon={TrendingUp} label="This Week"    value={users.this_week}   sub="Last 7 days" color="#9E6F1A" />
+          <StatCard icon={Users}      label="Google Users" value={users.by_provider?.google || 0} sub="OAuth signups" color="#EA4335" />
         </div>
       </div>
 
@@ -145,7 +146,7 @@ export default function AdminStats() {
                           style={{ width: `${pct}%`, background: GRADE_COLOR[grade] }} />
                       </div>
                     </div>
-                    <span className="text-xs text-ink-muted w-12 text-right">{count} ({pct}%)</span>
+                    <span className="text-xs text-ink-muted w-16 text-right">{count} ({pct}%)</span>
                   </div>
                 )
               })}
@@ -160,9 +161,7 @@ export default function AdminStats() {
         <div className="flex gap-4 flex-wrap">
           {Object.entries(users.by_provider).map(([provider, count]) => (
             <div key={provider} className="flex items-center gap-2 bg-stone-50 border border-stone-200 px-4 py-2.5 rounded-xl">
-              <span className="text-lg">
-                {provider === 'google' ? '🔵' : provider === 'phone' ? '📱' : '📧'}
-              </span>
+              <span className="text-lg">{PROVIDER_ICON[provider] || '👤'}</span>
               <div>
                 <p className="text-sm font-bold text-ink-primary">{count}</p>
                 <p className="text-[10px] text-ink-muted capitalize">{provider}</p>
@@ -173,6 +172,55 @@ export default function AdminStats() {
             <p className="text-sm text-ink-muted">No signup data yet</p>
           )}
         </div>
+      </div>
+
+      {/* ── Recent Users Table ── */}
+      <div className="card p-5">
+        <h3 className="font-display font-600 text-ink-primary text-sm mb-4">
+          👤 Recent Users
+          <span className="ml-2 text-xs text-ink-faint font-normal">(last 20)</span>
+        </h3>
+        {(!users.recent || users.recent.length === 0) ? (
+          <p className="text-sm text-ink-muted">No users yet</p>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-stone-100">
+                  <th className="text-left py-2 px-2 text-[10px] font-bold text-ink-faint uppercase tracking-wide">#</th>
+                  <th className="text-left py-2 px-2 text-[10px] font-bold text-ink-faint uppercase tracking-wide">Name</th>
+                  <th className="text-left py-2 px-2 text-[10px] font-bold text-ink-faint uppercase tracking-wide">Email</th>
+                  <th className="text-left py-2 px-2 text-[10px] font-bold text-ink-faint uppercase tracking-wide">Provider</th>
+                  <th className="text-left py-2 px-2 text-[10px] font-bold text-ink-faint uppercase tracking-wide">Joined</th>
+                </tr>
+              </thead>
+              <tbody>
+                {users.recent.map((u, i) => (
+                  <tr key={u.id} className="border-b border-stone-50 hover:bg-stone-50/60 transition-colors">
+                    <td className="py-2.5 px-2 text-ink-faint text-xs">{i + 1}</td>
+                    <td className="py-2.5 px-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-stone-200 flex items-center justify-center text-[10px] font-bold text-stone-600 flex-shrink-0">
+                          {(u.name || u.email || 'U').slice(0, 1).toUpperCase()}
+                        </div>
+                        <span className="font-medium text-ink-primary truncate max-w-[120px]">
+                          {u.name || <span className="text-ink-faint italic">—</span>}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-2.5 px-2 text-ink-muted text-xs truncate max-w-[160px]">{u.email}</td>
+                    <td className="py-2.5 px-2">
+                      <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 font-medium">
+                        {PROVIDER_ICON[u.provider] || '👤'} {u.provider}
+                      </span>
+                    </td>
+                    <td className="py-2.5 px-2 text-ink-faint text-xs whitespace-nowrap">{u.joined}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
 
     </div>

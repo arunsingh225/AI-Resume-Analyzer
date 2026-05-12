@@ -4,7 +4,7 @@ Only accessible with a valid JWT (any logged-in user can view public stats).
 """
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from sqlalchemy import func, text
+from sqlalchemy import func
 import datetime
 
 from app.database import get_db, User, Analysis
@@ -22,9 +22,9 @@ def get_stats(db: Session = Depends(get_db), current_user: User = Depends(get_cu
     week_ago = now - datetime.timedelta(days=7)
 
     # ── User stats ──
-    total_users      = db.query(func.count(User.id)).scalar() or 0
-    users_today      = db.query(func.count(User.id)).filter(User.created_at >= day_ago).scalar() or 0
-    users_this_week  = db.query(func.count(User.id)).filter(User.created_at >= week_ago).scalar() or 0
+    total_users     = db.query(func.count(User.id)).scalar() or 0
+    users_today     = db.query(func.count(User.id)).filter(User.created_at >= day_ago).scalar() or 0
+    users_this_week = db.query(func.count(User.id)).filter(User.created_at >= week_ago).scalar() or 0
 
     # ── Provider breakdown ──
     providers_raw = (
@@ -34,11 +34,29 @@ def get_stats(db: Session = Depends(get_db), current_user: User = Depends(get_cu
     )
     providers = {p: c for p, c in providers_raw}
 
+    # ── Recent users list (last 20, newest first) ──
+    recent_raw = (
+        db.query(User.id, User.name, User.email, User.provider, User.created_at)
+        .order_by(User.created_at.desc())
+        .limit(20)
+        .all()
+    )
+    recent_users = [
+        {
+            "id":       str(u.id),
+            "name":     u.name or "",
+            "email":    u.email or "",
+            "provider": u.provider or "email",
+            "joined":   u.created_at.strftime("%d %b %Y") if u.created_at else "",
+        }
+        for u in recent_raw
+    ]
+
     # ── Analysis stats ──
-    total_analyses   = db.query(func.count(Analysis.id)).scalar() or 0
-    analyses_today   = db.query(func.count(Analysis.id)).filter(Analysis.created_at >= day_ago).scalar() or 0
-    analyses_week    = db.query(func.count(Analysis.id)).filter(Analysis.created_at >= week_ago).scalar() or 0
-    avg_ats          = db.query(func.avg(Analysis.ats_score)).scalar()
+    total_analyses  = db.query(func.count(Analysis.id)).scalar() or 0
+    analyses_today  = db.query(func.count(Analysis.id)).filter(Analysis.created_at >= day_ago).scalar() or 0
+    analyses_week   = db.query(func.count(Analysis.id)).filter(Analysis.created_at >= week_ago).scalar() or 0
+    avg_ats         = db.query(func.avg(Analysis.ats_score)).scalar()
 
     # ── Top fields ──
     top_fields_raw = (
@@ -62,17 +80,18 @@ def get_stats(db: Session = Depends(get_db), current_user: User = Depends(get_cu
 
     return {
         "users": {
-            "total":      total_users,
-            "today":      users_today,
-            "this_week":  users_this_week,
+            "total":       total_users,
+            "today":       users_today,
+            "this_week":   users_this_week,
             "by_provider": providers,
+            "recent":      recent_users,
         },
         "analyses": {
-            "total":      total_analyses,
-            "today":      analyses_today,
-            "this_week":  analyses_week,
-            "avg_ats_score": round(avg_ats, 1) if avg_ats else 0,
-            "top_fields": top_fields,
+            "total":              total_analyses,
+            "today":              analyses_today,
+            "this_week":          analyses_week,
+            "avg_ats_score":      round(avg_ats, 1) if avg_ats else 0,
+            "top_fields":         top_fields,
             "grade_distribution": grades,
         },
     }
