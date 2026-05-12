@@ -4,7 +4,7 @@ import {
   LayoutDashboard, Target, Layers, Sparkles, FileSearch,
   Briefcase, Building2, Map, BookOpen, TrendingUp, Wand2,
   Download, Upload, Menu, X, Scan, ChevronRight, LogOut, User, Clock,
-  BarChart3, PenLine
+  BarChart3, PenLine, MoreHorizontal
 } from 'lucide-react'
 import { useResume } from '../App'
 import { useAuth } from '../hooks/useAuth'
@@ -211,7 +211,7 @@ export default function DashboardPage() {
         </header>
 
         {/* Content */}
-        <main className="flex-1 p-4 lg:p-6 overflow-auto scrollbar-thin">
+        <main className="flex-1 p-4 lg:p-6 pb-20 lg:pb-6 overflow-auto scrollbar-thin">
           <div className="page-enter max-w-5xl">
             <Routes>
               <Route index           element={<Overview />} />
@@ -237,6 +237,48 @@ export default function DashboardPage() {
 
       {/* Floating feedback widget */}
       <FeedbackWidget analysisId={d?.analysis_id} page="dashboard" />
+
+      {/* ── Mobile bottom nav bar ───────────────────────────────────────── */}
+      <MobileBottomNav currentPath={currentPath} navigate={navigate} onMore={() => setOpen(true)} />
     </div>
+  )
+}
+
+// ── Bottom nav shown only on mobile (lg:hidden) ───────────────────────────
+const BOTTOM_NAV = [
+  { id: 'overview',  label: 'Overview',  Icon: LayoutDashboard, path: '' },
+  { id: 'skills',    label: 'Skills',    Icon: Sparkles,        path: 'skills' },
+  { id: 'jobs',      label: 'Jobs',      Icon: Briefcase,       path: 'jobs' },
+  { id: 'companies', label: 'Companies', Icon: Building2,       path: 'companies' },
+  { id: 'more',      label: 'More',      Icon: MoreHorizontal,  path: null },
+]
+
+function MobileBottomNav({ currentPath, navigate, onMore }) {
+  return (
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-30 flex items-center justify-around px-1 py-1"
+      style={{
+        background: 'rgba(255,255,255,0.95)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderTop: '1px solid rgba(231,229,228,0.80)',
+        boxShadow: '0 -4px 24px rgba(0,0,0,0.06)',
+        paddingBottom: 'env(safe-area-inset-bottom, 8px)',
+      }}>
+      {BOTTOM_NAV.map(({ id, label, Icon, path }) => {
+        const isActive = path !== null && (currentPath === path || (path === '' && currentPath === ''))
+        const handleClick = () => path === null ? onMore() : navigate(`/dashboard/${path}`)
+        return (
+          <button key={id} onClick={handleClick}
+            className="flex flex-col items-center gap-0.5 px-3 py-2 rounded-xl transition-all min-w-[56px]"
+            style={{
+              color: isActive ? '#1A1917' : '#A8A29E',
+              background: isActive ? 'rgba(0,0,0,0.06)' : 'transparent',
+            }}>
+            <Icon size={20} strokeWidth={isActive ? 2.2 : 1.7} />
+            <span style={{ fontSize: '10px', fontWeight: isActive ? 700 : 500, lineHeight: 1 }}>{label}</span>
+          </button>
+        )
+      })}
+    </nav>
   )
 }
