@@ -84,12 +84,12 @@ export default function FeedbackWidget({ analysisId = null, page = null }) {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-20 right-4 lg:bottom-6 lg:right-6 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full 
+        className="fixed bottom-24 right-4 lg:bottom-6 lg:right-6 z-50 flex items-center gap-2 px-3 py-2 rounded-full 
           bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-card-lg
           hover:shadow-xl hover:border-stone-300 transition-all duration-200
-          text-sm font-medium text-ink-secondary group"
+          text-xs font-medium text-ink-secondary group"
       >
-        <MessageSquare size={16} className="text-stone-400 group-hover:text-sage-600 transition-colors" />
+        <MessageSquare size={14} className="text-stone-400 group-hover:text-sage-600 transition-colors" />
         Feedback
       </button>
     )
@@ -98,7 +98,7 @@ export default function FeedbackWidget({ analysisId = null, page = null }) {
   // ── Submitted state ──
   if (submitted) {
     return (
-      <div className="fixed bottom-20 right-4 lg:bottom-6 lg:right-6 z-50 w-80 p-6 rounded-2xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-card-lg animate-slide-up text-center">
+      <div className="fixed bottom-24 right-4 lg:bottom-6 lg:right-6 z-50 w-80 p-6 rounded-2xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-card-lg animate-slide-up text-center">
         <div className="w-12 h-12 rounded-full bg-warm-sage-bg flex items-center justify-center mx-auto mb-3">
           <CheckCircle2 size={24} className="text-sage-600" />
         </div>
@@ -110,7 +110,7 @@ export default function FeedbackWidget({ analysisId = null, page = null }) {
 
   // ── Feedback form ──
   return (
-    <div className="fixed bottom-20 right-4 lg:bottom-6 lg:right-6 z-50 w-[calc(100vw-2rem)] max-w-[340px] rounded-2xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-card-lg animate-slide-up overflow-hidden">
+    <div className="fixed bottom-24 right-4 lg:bottom-6 lg:right-6 z-50 w-[calc(100vw-2rem)] max-w-[340px] rounded-2xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-card-lg animate-slide-up overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-5 pt-4 pb-2">
         <h3 className="font-display font-700 text-ink-primary text-sm">Share Your Feedback</h3>

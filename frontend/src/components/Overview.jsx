@@ -17,6 +17,7 @@ function scoreBg(v) {
 
 function ATSRing({ score }) {
   const color  = scoreColor(score)
+  const display = Math.round(score)          // show 70, not 70.14
   const offset = C - (score / 100) * C
   return (
     <svg width="152" height="152" viewBox="0 0 152 152">
@@ -27,9 +28,9 @@ function ATSRing({ score }) {
         strokeDasharray={C} strokeDashoffset={offset}
         className="ats-ring-circle"
       />
-      <text x="76" y="70" textAnchor="middle" dominantBaseline="middle"
+      <text x="76" y="68" textAnchor="middle" dominantBaseline="middle"
         fontSize="32" fontWeight="700" fill="#1A1917" fontFamily="Syne,sans-serif"
-      >{score}</text>
+      >{display}</text>
       <text x="76" y="91" textAnchor="middle" dominantBaseline="middle"
         fontSize="11" fill="#78716C" fontFamily="DM Sans,sans-serif"
       >/ 100</text>
@@ -73,7 +74,9 @@ export default function Overview() {
               <span className="badge badge-stone">{d.file_type}</span>
             </div>
             <p className="text-sm text-ink-muted mb-2">
-              {d.detected_field} · {d.detected_subfield} · {d.years_experience}y · Confidence {d.field_confidence}%
+              Target Role: <strong className="text-ink-secondary">{d.detected_subfield}</strong>
+              {' · '}Experience: <strong className="text-ink-secondary">{levelLabel(d.experience_level)}</strong>
+              {' · '}Confidence: <strong className="text-ink-secondary">{d.field_confidence}%</strong>
             </p>
             <p className="text-sm text-ink-secondary leading-relaxed">{ats.interpretation}</p>
           </div>
@@ -91,10 +94,10 @@ export default function Overview() {
       {/* ── Quick stats ── */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {[
-          { label: 'ATS Score',    value: ats.total,                        sub: `Grade ${ats.grade}`,                       color: scoreColor(ats.total) },
+          { label: 'ATS Score',    value: Math.round(ats.total),              sub: `Grade ${ats.grade}`,                       color: scoreColor(ats.total) },
           { label: 'Skills Found', value: d.skill_analysis.found.length,    sub: `${d.skill_analysis.missing.length} missing`,color: '#57534E' },
           { label: 'Best Match',   value: `${topJob?.match_percent || 0}%`, sub: topJob?.role || '—',                        color: '#4B5570' },
-          { label: 'Experience',   value: `${d.years_experience}y`,         sub: levelLabel(d.experience_level),             color: '#9E6F1A' },
+          { label: 'Experience',   value: d.years_experience > 0 ? `${d.years_experience}y` : levelLabel(d.experience_level), sub: levelLabel(d.experience_level), color: '#9E6F1A' },
         ].map(({ label, value, sub, color }) => (
           <div key={label} className="stat-card stat-card-premium card-hover">
             <p className="text-[11px] font-semibold text-ink-faint uppercase tracking-wide mb-2">{label}</p>
