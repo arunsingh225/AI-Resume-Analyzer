@@ -1059,8 +1059,8 @@
         "preferred_skills": [
           "SQL",
           "Python",
-          "Tableau",
-          "Business Intelligence",
+          "AWS QuickSight",
+          "A/B Testing",
           "Excel"
         ]
       },
@@ -1070,14 +1070,14 @@
         "preferred_skills": [
           "SQL",
           "BigQuery",
-          "Data Studio",
           "Python",
-          "Statistics"
+          "Looker",
+          "Data Studio"
         ]
       },
       {
         "name": "Microsoft (BI)",
-        "ats_strictness": "medium",
+        "ats_strictness": "high",
         "preferred_skills": [
           "Power BI",
           "SQL",
@@ -1087,34 +1087,14 @@
         ]
       },
       {
-        "name": "Google",
+        "name": "IBM (Analytics)",
         "ats_strictness": "high",
         "preferred_skills": [
           "SQL",
           "Python",
-          "Looker",
-          "BigQuery",
-          "Statistics"
-        ]
-      },
-      {
-        "name": "Amazon",
-        "ats_strictness": "high",
-        "preferred_skills": [
-          "SQL",
-          "Python",
-          "Redshift",
-          "QuickSight"
-        ]
-      },
-      {
-        "name": "Microsoft",
-        "ats_strictness": "high",
-        "preferred_skills": [
-          "SQL",
-          "Power BI",
-          "Excel",
-          "Azure"
+          "Cognos",
+          "Watson Analytics",
+          "SPSS"
         ]
       },
       {
@@ -1124,48 +1104,283 @@
           "SQL",
           "Tableau",
           "Python",
+          "Power BI",
           "Excel"
         ]
       },
       {
-        "name": "EY",
+        "name": "EY (Analytics)",
         "ats_strictness": "medium",
         "preferred_skills": [
           "SQL",
           "Tableau",
           "Python",
-          "Excel",
-          "SAP"
+          "Alteryx",
+          "Financial Modeling"
         ]
       },
       {
-        "name": "Deloitte",
+        "name": "Deloitte (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Power BI",
+          "Statistics"
+        ]
+      },
+      {
+        "name": "KPMG (Data Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Tableau",
+          "Power BI",
+          "Excel",
+          "Data Governance"
+        ]
+      },
+      {
+        "name": "PwC (Data Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Excel",
+          "Risk Analytics"
+        ]
+      },
+      {
+        "name": "McKinsey (Analytics)",
+        "ats_strictness": "high",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "R",
+          "Statistics",
+          "Tableau"
+        ]
+      },
+      {
+        "name": "BCG (Analytics)",
+        "ats_strictness": "high",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Tableau",
+          "Machine Learning"
+        ]
+      },
+      {
+        "name": "Bain & Company",
+        "ats_strictness": "high",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Tableau",
+          "Statistics"
+        ]
+      },
+      {
+        "name": "Capgemini (Insights)",
         "ats_strictness": "medium",
         "preferred_skills": [
           "SQL",
           "Power BI",
           "Python",
-          "Analytics"
+          "Azure",
+          "Tableau"
         ]
       },
       {
-        "name": "KPMG",
-        "ats_strictness": "medium",
-        "preferred_skills": [
-          "SQL",
-          "Excel",
-          "Tableau",
-          "Auditing"
-        ]
-      },
-      {
-        "name": "PwC",
+        "name": "TCS (Analytics)",
         "ats_strictness": "medium",
         "preferred_skills": [
           "SQL",
           "Python",
-          "Alteryx",
-          "Power BI"
+          "Power BI",
+          "Excel",
+          "Reporting"
+        ]
+      },
+      {
+        "name": "Infosys (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Power BI",
+          "Excel"
+        ]
+      },
+      {
+        "name": "Wipro (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Excel",
+          "Data Modeling"
+        ]
+      },
+      {
+        "name": "HCL Technologies",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Power BI",
+          "Excel",
+          "JIRA"
+        ]
+      },
+      {
+        "name": "Cognizant (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Tableau",
+          "Python",
+          "Power BI",
+          "Excel"
+        ]
+      },
+      {
+        "name": "WNS Analytics",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Tableau",
+          "Python",
+          "Operations Analytics"
+        ]
+      },
+      {
+        "name": "Genpact (Analytics)",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Tableau",
+          "Python",
+          "Process Analytics"
+        ]
+      },
+      {
+        "name": "Mphasis (Analytics)",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Power BI",
+          "Excel",
+          "Banking Analytics"
+        ]
+      },
+      {
+        "name": "Tech Mahindra (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Power BI",
+          "Tableau",
+          "Telecom Analytics"
+        ]
+      },
+      {
+        "name": "Nielsen",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "R",
+          "Python",
+          "Excel",
+          "Market Research"
+        ]
+      },
+      {
+        "name": "Dun & Bradstreet",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "B2B Analytics",
+          "Data Quality"
+        ]
+      },
+      {
+        "name": "S&P Global (India)",
+        "ats_strictness": "high",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Financial Analytics",
+          "Bloomberg"
+        ]
+      },
+      {
+        "name": "Moody's Analytics",
+        "ats_strictness": "high",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Risk Modeling",
+          "Credit Analytics"
+        ]
+      },
+      {
+        "name": "Oracle (Analytics Cloud)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Oracle Analytics",
+          "Python",
+          "Data Warehousing",
+          "ETL"
+        ]
+      },
+      {
+        "name": "SAP (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SAP Analytics Cloud",
+          "SQL",
+          "Python",
+          "BW",
+          "Excel"
+        ]
+      },
+      {
+        "name": "SAS Institute",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SAS",
+          "SQL",
+          "Python",
+          "Statistics",
+          "Data Mining"
+        ]
+      },
+      {
+        "name": "CRISIL (S&P)",
+        "ats_strictness": "high",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Financial Modeling",
+          "Risk Analytics"
         ]
       }
     ],
@@ -1174,9 +1389,9 @@
         "name": "Mu Sigma",
         "ats_strictness": "medium",
         "preferred_skills": [
-          "SQL",
           "Python",
-          "Business Analytics",
+          "SQL",
+          "Statistics",
           "Tableau",
           "Problem Solving"
         ]
@@ -1214,6 +1429,91 @@
         ]
       },
       {
+        "name": "LatentView Analytics",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Data Strategy"
+        ]
+      },
+      {
+        "name": "Tiger Analytics",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "Python",
+          "SQL",
+          "ML",
+          "Statistics",
+          "Tableau"
+        ]
+      },
+      {
+        "name": "Absolutdata",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "R",
+          "Python",
+          "Statistics",
+          "Market Research"
+        ]
+      },
+      {
+        "name": "AnalytixLabs",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Excel",
+          "Data Visualization"
+        ]
+      },
+      {
+        "name": "Sigmoid",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "Python",
+          "Spark",
+          "SQL",
+          "Cloud",
+          "ML"
+        ]
+      },
+      {
+        "name": "Bridgei2i Analytics",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "Python",
+          "SQL",
+          "Tableau",
+          "Supply Chain Analytics"
+        ]
+      },
+      {
+        "name": "Manthan Analytics",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Retail Analytics",
+          "Tableau"
+        ]
+      },
+      {
+        "name": "Daton.io",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "ETL",
+          "Python",
+          "Looker",
+          "BigQuery"
+        ]
+      },
+      {
         "name": "Razorpay",
         "ats_strictness": "medium",
         "preferred_skills": [
@@ -1231,6 +1531,86 @@
           "Python",
           "Tableau",
           "Product Analytics"
+        ]
+      },
+      {
+        "name": "Groww",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Fintech Analytics"
+        ]
+      },
+      {
+        "name": "Zerodha",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Trading Analytics"
+        ]
+      },
+      {
+        "name": "Upstox",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Power BI",
+          "Fintech Analytics"
+        ]
+      },
+      {
+        "name": "PhonePe",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Payments Analytics"
+        ]
+      },
+      {
+        "name": "BharatPe",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "SME Analytics"
+        ]
+      },
+      {
+        "name": "KreditBee",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Credit Analytics"
+        ]
+      },
+      {
+        "name": "Slice",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Credit Analytics"
+        ]
+      },
+      {
+        "name": "Fi (Federal Bank)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Analytics",
+          "Neobank Data"
         ]
       },
       {
@@ -1272,6 +1652,126 @@
           "Python",
           "Product Analytics"
         ]
+      },
+      {
+        "name": "Cars24",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Used Car Analytics"
+        ]
+      },
+      {
+        "name": "OLX India",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "Marketplace Analytics"
+        ]
+      },
+      {
+        "name": "Delhivery",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Logistics Analytics"
+        ]
+      },
+      {
+        "name": "Shiprocket",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "Logistics Analytics"
+        ]
+      },
+      {
+        "name": "HealthKart",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "D2C Analytics"
+        ]
+      },
+      {
+        "name": "Unacademy",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Product Analytics",
+          "EdTech Data"
+        ]
+      },
+      {
+        "name": "PW (Physics Wallah)",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "EdTech Analytics"
+        ]
+      },
+      {
+        "name": "Apna.co",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Excel",
+          "Job Platform Analytics"
+        ]
+      },
+      {
+        "name": "Internshala",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "Internship Platform Analytics"
+        ]
+      },
+      {
+        "name": "Springworks",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "HR Analytics"
+        ]
+      },
+      {
+        "name": "MoEngage",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Marketing Analytics",
+          "Segmentation"
+        ]
+      },
+      {
+        "name": "CleverTap",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Product Analytics",
+          "Cohort Analysis"
+        ]
       }
     ],
     "product_companies": [
@@ -1286,13 +1786,13 @@
         ]
       },
       {
-        "name": "Nykaa (Analytics)",
-        "ats_strictness": "low",
+        "name": "Zomato (Analytics)",
+        "ats_strictness": "medium",
         "preferred_skills": [
           "SQL",
-          "Excel",
           "Python",
-          "Beauty E-Commerce Analytics"
+          "Tableau",
+          "Restaurant Analytics"
         ]
       },
       {
@@ -1306,7 +1806,76 @@
         ]
       },
       {
-        "name": "Freshworks",
+        "name": "Ola (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Mobility Analytics"
+        ]
+      },
+      {
+        "name": "Rapido",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "Mobility Analytics"
+        ]
+      },
+      {
+        "name": "Paytm (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Fintech Analytics",
+          "Tableau"
+        ]
+      },
+      {
+        "name": "Dream11",
+        "ats_strictness": "high",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Statistics",
+          "Gaming Analytics"
+        ]
+      },
+      {
+        "name": "MPL (Mobile Premier League)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Gaming Analytics"
+        ]
+      },
+      {
+        "name": "MakeMyTrip",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Travel Analytics"
+        ]
+      },
+      {
+        "name": "OYO (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Power BI",
+          "Hospitality Analytics"
+        ]
+      },
+      {
+        "name": "Freshworks (Analytics)",
         "ats_strictness": "medium",
         "preferred_skills": [
           "SQL",
@@ -1316,7 +1885,7 @@
         ]
       },
       {
-        "name": "Zoho",
+        "name": "Zoho Analytics",
         "ats_strictness": "medium",
         "preferred_skills": [
           "SQL",
@@ -1325,12 +1894,131 @@
         ]
       },
       {
-        "name": "Paytm",
+        "name": "Postman (Analytics)",
         "ats_strictness": "medium",
         "preferred_skills": [
           "SQL",
           "Python",
-          "Fintech Analytics"
+          "API Analytics",
+          "Looker"
+        ]
+      },
+      {
+        "name": "BrowserStack",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "SaaS Analytics",
+          "Looker"
+        ]
+      },
+      {
+        "name": "Darwinbox",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Power BI",
+          "HR Analytics"
+        ]
+      },
+      {
+        "name": "Leadsquared",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Excel",
+          "Python",
+          "CRM Analytics"
+        ]
+      },
+      {
+        "name": "Chargebee",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "SaaS Metrics",
+          "Revenue Analytics"
+        ]
+      },
+      {
+        "name": "Druva (Analytics)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Cloud Analytics",
+          "Tableau"
+        ]
+      },
+      {
+        "name": "Sprinklr",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Social Analytics",
+          "Tableau"
+        ]
+      },
+      {
+        "name": "Gainsight (India)",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Customer Success Analytics"
+        ]
+      },
+      {
+        "name": "Whatfix",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Product Analytics",
+          "DAP Data"
+        ]
+      },
+      {
+        "name": "Vymo",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Sales Analytics",
+          "Salesforce"
+        ]
+      },
+      {
+        "name": "yellowAI",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Conversation Analytics",
+          "NLP"
+        ]
+      },
+      {
+        "name": "Mindtickle",
+        "ats_strictness": "low",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Sales Enablement Analytics"
+        ]
+      },
+      {
+        "name": "Icertis",
+        "ats_strictness": "medium",
+        "preferred_skills": [
+          "SQL",
+          "Python",
+          "Power BI",
+          "Contract Analytics"
         ]
       }
     ]

@@ -538,8 +538,8 @@ def get_company_recommendations(field_key: str, level: str) -> dict:
         return result
 
     return {
-        "mncs":              _enrich(field_companies.get("mncs", []),              10),
-        "startups":          _enrich(field_companies.get("startups", []),          10),
-        "product_companies": _enrich(field_companies.get("product_companies", []), 8),
+        "mncs":              _enrich(field_companies.get("mncs", []),              30),
+        "startups":          _enrich(field_companies.get("startups", []),          38),
+        "product_companies": _enrich(field_companies.get("product_companies", []), 25),
     }
 
